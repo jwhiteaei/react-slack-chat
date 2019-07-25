@@ -61,7 +61,7 @@ class ReactSlackChat extends Component {
     // Set class variables
     // Base64 decode the API Token
     this.apiToken = atob(this.props.apiToken);
-    this.refreshTime = 60000;
+    this.refreshTime = 30000; // changed from default 5 seconds to 30 seconds, less real-time but supports more users
     this.chatInitiatedTs = "";
     this.activeChannel = [];
     this.activeChannelInterval = null;
@@ -433,14 +433,14 @@ class ReactSlackChat extends Component {
                 // if div is already scrolled to bottom, scroll down again just incase a new message has arrived
                 const chatMessages = document.getElementById(
                   "widget-reactSlakChatMessages"
-                );
+                ); console.log('refreshing');
                 if (chatMessages !== null) {
                   chatMessages.scrollTop =
                     chatMessages.scrollHeight < chatMessages.scrollTop + 600 ||
                     messagesLength === 0
                       ? chatMessages.scrollHeight
                       : chatMessages.scrollTop;
-                }
+                } else { clearInterval(this.activeChannelInterval) }
               }
             );
           }
