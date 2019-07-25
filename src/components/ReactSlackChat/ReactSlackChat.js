@@ -440,7 +440,7 @@ class ReactSlackChat extends Component {
                     messagesLength === 0
                       ? chatMessages.scrollHeight
                       : chatMessages.scrollTop;
-                } else { clearInterval(this.activeChannelInterval) }
+                }
               }
             );
           }
