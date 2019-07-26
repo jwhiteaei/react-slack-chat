@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 
-import { rtm, channels } from "slack";
+import { rtm, groups } from "slack";
 import { load as emojiLoader, parse as emojiParser } from "gh-emoji";
 
 import { User } from "../User";
@@ -679,7 +679,7 @@ class ReactSlackChat extends Component {
             <h2 className={styles.transition}>
               {this.state.helpText || "Help?"}
             </h2>
-            <h2 className={styles.subText}>Click on a channel to interact.</h2>
+            <h2 className={styles.subText}>Click on a chat group to interact.</h2>
           </div>
           <div className={classNames(styles.card_circle, styles.transition)} />
           <div
