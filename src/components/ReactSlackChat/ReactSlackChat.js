@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 
-import { rtm, groups } from "slack";
+import { rtm, channels, groups } from "slack";
 import { load as emojiLoader, parse as emojiParser } from "gh-emoji";
 
 import { User } from "../User";
