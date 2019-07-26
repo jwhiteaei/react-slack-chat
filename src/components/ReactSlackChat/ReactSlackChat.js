@@ -348,7 +348,7 @@ class ReactSlackChat extends Component {
     // define loadMessages function
     const getMessagesFromSlack = () => {
       const messagesLength = that.state.messages.length;
-      channels.history(
+      groups.history(
         {
           token: this.apiToken,
           channel: channel.id
