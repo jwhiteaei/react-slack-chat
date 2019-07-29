@@ -435,13 +435,13 @@ class ReactSlackChat extends Component {
                   'widget-reactSlakChatMessages'
                 );
                 console.log('refreshing');
-                if (chatMessages !== null) {
-                  chatMessages.scrollTop =
-                    chatMessages.scrollHeight < chatMessages.scrollTop + 600 ||
-                    messagesLength === 0
-                      ? chatMessages.scrollHeight
-                      : chatMessages.scrollTop;
-                }
+                /* if (chatMessages !== null) { */
+                chatMessages.scrollTop =
+                  chatMessages.scrollHeight < chatMessages.scrollTop + 600 ||
+                  messagesLength === 0
+                    ? chatMessages.scrollHeight
+                    : chatMessages.scrollTop;
+                /* } */
               }
             );
           }

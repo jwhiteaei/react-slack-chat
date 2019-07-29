@@ -6494,12 +6494,10 @@ object-assign
                                 'widget-reactSlakChatMessages'
                               );
                               console.log('refreshing'),
-                                null !== e &&
-                                  (e.scrollTop =
-                                    e.scrollHeight < e.scrollTop + 600 ||
-                                    0 === a
-                                      ? e.scrollHeight
-                                      : e.scrollTop);
+                                (e.scrollTop =
+                                  e.scrollHeight < e.scrollTop + 600 || 0 === a
+                                    ? e.scrollHeight
+                                    : e.scrollTop);
                             })
                           );
                         }
