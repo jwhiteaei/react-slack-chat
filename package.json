@@ -16,13 +16,13 @@
   },
   "keywords": [],
   "bugs": {
-    "url": "https://github.com/5punk/react-slack-chat/issues"
+    "url": "https://github.com/jwhiteaei/react-slack-chat/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/5punk/react-slack-chat.git"
+    "url": "https://github.com/jwhiteaei/react-slack-chat.git"
   },
-  "homepage": "https://github.com/5punk/react-slack-chat#readme",
+  "homepage": "https://github.com/jwhiteaei/react-slack-chat#readme",
   "author": "Avanish Pathak",
   "license": "ISC",
   "husky": {
