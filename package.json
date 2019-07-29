@@ -5,12 +5,12 @@
   "private": false,
   "main": "./dist/react-slack-chat.js",
   "scripts": {
-    "start": "SYSTEM_HOOKS=true npx webpack-dev-server --config ./build/webpack.config.js --mode development",
+    "start": " webpack-dev-server --config ./build/webpack.config.js --mode development",
     "build": "npm run build:lite && npm run build:withHooks",
-    "deploy": "npm run build && SYSTEM_HOOKS=true npx webpack --config ./build/webpack.config.deploy.js --mode development && gh-pages -d ./dist/example",
+    "deploy": "npm run build &&  webpack --config ./build/webpack.config.deploy.js --mode development && gh-pages -d ./dist/example",
     "build:lite": "npx webpack --config ./build/webpack.config.prod.js -p --mode production",
-    "build:withHooks": "SYSTEM_HOOKS=true npx webpack --config ./build/webpack.config.prod.js -p --mode production",
-    "stats": "npx webpack --config ./build/webpack.config.prod.js -p --json > stats.json",
+    "build:withHooks": " webpack --config ./build/webpack.config.prod.js -p --mode production",
+    "stats": " webpack --config ./build/webpack.config.prod.js -p --json > stats.json",
     "test": "echo \"No test specified\" && exit 0",
     "lint": "npx prettier --write ./src/**/*.js"
   },
