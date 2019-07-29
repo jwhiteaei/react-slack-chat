@@ -115,9 +115,8 @@
           /******/ script.setAttribute('nonce', __webpack_require__.nc);
           /******/
         }
-        /******/ script.src = jsonpScriptSrc(chunkId); // create error before stack unwound to get useful stacktrace later
+        /******/ script.src = jsonpScriptSrc(chunkId);
         /******/
-        /******/ /******/ var error = new Error();
         /******/ onScriptComplete = function(event) {
           /******/ // avoid mem leaks in IE.
           /******/ script.onerror = script.onload = null;
@@ -128,15 +127,15 @@
               /******/ var errorType =
                 event && (event.type === 'load' ? 'missing' : event.type);
               /******/ var realSrc = event && event.target && event.target.src;
-              /******/ error.message =
+              /******/ var error = new Error(
                 'Loading chunk ' +
-                chunkId +
-                ' failed.\n(' +
-                errorType +
-                ': ' +
-                realSrc +
-                ')';
-              /******/ error.name = 'ChunkLoadError';
+                  chunkId +
+                  ' failed.\n(' +
+                  errorType +
+                  ': ' +
+                  realSrc +
+                  ')'
+              );
               /******/ error.type = errorType;
               /******/ error.request = realSrc;
               /******/ chunk[1](error);
