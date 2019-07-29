@@ -6422,7 +6422,7 @@ object-assign
                     (this.chatInitiatedTs = Date.now() / 1e3);
                   var a = function() {
                     var a = n.state.messages.length;
-                    u.groups.history(
+                    u.conversations.history(
                       { token: t.apiToken, channel: e.id },
                       function(r, i) {
                         if (r)
