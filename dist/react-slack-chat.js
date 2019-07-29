@@ -6764,7 +6764,7 @@ object-assign
                         o.a.createElement(
                           'h2',
                           { className: p.a.subText },
-                          'Click on a chat group to interact.'
+                          'Click on a chat group to interactest.'
                         )
                       ),
                       o.a.createElement('div', {
