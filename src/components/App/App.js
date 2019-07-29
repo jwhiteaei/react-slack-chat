@@ -119,7 +119,7 @@ class App extends Component {
       : // deploy mode will consume the generated node module
         // gotta eat your own dog food
         import(
-          /* webpackChunkName: "node-module-ReactSlackChat" */ '../../../dist/react-slack-chat'
+          /* webpackChunkName: "node-module-ReactSlackChat" */ '../ReactSlackChat'
         );
 
     !this.state.resolvedReactSlackChat &&
