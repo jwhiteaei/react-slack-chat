@@ -1,5 +1,7 @@
 # React Slack Chat
 
+This fork was created to read from a private channel, instead of a public channel. It also uses a larger interval for message history refresh, to support more simultaneous users.
+
 ![Build Status](https://travis-ci.org/5punk/react-slack-chat.svg?branch=master)
 ![Node Version](https://img.shields.io/badge/node-v9-blue.svg)
 ![React](https://img.shields.io/badge/React-v16.8-lightblue.svg)
@@ -138,7 +140,7 @@ Submit your ideas for innovative hooks or feature requests.
 
 Adding custom hooks is easy. Just pass an array of actionable custom hooks as a prop to the library. The default lite version and _heavier_ library that ships with some basic default system hooks, both support custom hooks.
 
-You're expected to follow the format: 
+You're expected to follow the format:
 ```
 {
   id: [STRING],
@@ -163,7 +165,7 @@ hooks={[
        return dispatch(showHelpWizard(true))
         .then(data => //success)
         .fail(uILogger.error('FAILED'))
-    } 
+    }
   },
   .
   .
