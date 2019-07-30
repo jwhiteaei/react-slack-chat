@@ -3,10 +3,10 @@
   "version": "1.12.0",
   "description": "A Beautiful Gooey / Material Design Slack Chat Web Integrating Widget.",
   "private": false,
-  "main": "./dist/react-slack-chat-jw.js",
+  "main": "./dist/react-slack-chat.js",
   "scripts": {
     "start": " webpack-dev-server --config ./build/webpack.config.js --mode development",
-    "build": "npm run build:lite && npm run build:withHooks",
+    "build": "npm run build:lite",
     "deploy": "npm run build &&  webpack --config ./build/webpack.config.deploy.js --mode development && gh-pages -d ./dist/example",
     "build:lite": "npx webpack --config ./build/webpack.config.prod.js -p --mode production",
     "build:withHooks": " webpack --config ./build/webpack.config.prod.js -p --mode production",
