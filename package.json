@@ -1,6 +1,6 @@
 {
   "name": "react-slack-chat-jw",
-  "version": "1.12.1",
+  "version": "1.12.2",
   "description": "A Beautiful Gooey / Material Design Slack Chat Web Integrating Widget.",
   "private": false,
   "main": "./dist/react-slack-chat.js",
@@ -27,8 +27,7 @@
   "license": "ISC",
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged",
-      "pre-push": "npm run deploy"
+      "pre-commit": "lint-staged"
     }
   },
   "prettier": {

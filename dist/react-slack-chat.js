@@ -6422,7 +6422,7 @@ object-assign
                     (this.chatInitiatedTs = Date.now() / 1e3);
                   var a = function() {
                     var a = n.state.messages.length;
-                    u.conversations.history(
+                    u.mpim.history(
                       { token: t.apiToken, channel: e.id },
                       function(r, i) {
                         if (r)
@@ -6764,7 +6764,7 @@ object-assign
                         o.a.createElement(
                           'h2',
                           { className: p.a.subText },
-                          'Click on a chat group to interactest.'
+                          'Click on a chat group to interactTESTING.'
                         )
                       ),
                       o.a.createElement('div', {
