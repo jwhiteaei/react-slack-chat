@@ -56,7 +56,8 @@ class ReactSlackChat extends Component {
         active: false,
         channelActiveView: false,
         chatActiveView: false
-      }
+      },
+      currentChannel: null
     };
     // Set class variables
     // Base64 decode the API Token
@@ -500,9 +501,8 @@ class ReactSlackChat extends Component {
   }
 
   handleChange(e) {
-    this.setState({
-      postMyMessage: e.target.value
-    });
+    this.setState({ postMyMessage: e.target.value });
+    loadMessages(this.state.currentChannel);
     return;
   }
 
@@ -560,6 +560,10 @@ class ReactSlackChat extends Component {
     return false;
   }
 
+  saveChannelToState(channel) {
+    this.setState({ currentChannel: channel });
+  }
+
   goToChatView(e, channel) {
     // stop propagation so we can prevent any other click events from firing
     e.stopPropagation();
@@ -584,6 +588,7 @@ class ReactSlackChat extends Component {
           inputTextBox.focus();
 
           this.loadMessages(channel);
+          this.saveChannelToState(channel);
         }
       );
       // Set this channel as active channel
@@ -681,7 +686,7 @@ class ReactSlackChat extends Component {
               {this.state.helpText || 'Help?'}
             </h2>
             <h2 className={styles.subText}>
-              Click on a chat group to interact.
+              Click on a chat group to interact
             </h2>
           </div>
           <div className={classNames(styles.card_circle, styles.transition)} />

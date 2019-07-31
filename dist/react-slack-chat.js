@@ -6152,7 +6152,8 @@ object-assign
                   active: !1,
                   channelActiveView: !1,
                   chatActiveView: !1
-                }
+                },
+                currentChannel: null
               }),
               (n.apiToken = atob(n.props.apiToken)),
               (n.refreshTime = 3e4),
@@ -6550,7 +6551,8 @@ object-assign
               {
                 key: 'handleChange',
                 value: function(e) {
-                  this.setState({ postMyMessage: e.target.value });
+                  this.setState({ postMyMessage: e.target.value }),
+                    loadMessages(this.state.currentChannel);
                 }
               },
               {
@@ -6640,6 +6642,12 @@ object-assign
                 }
               },
               {
+                key: 'saveChannelToState',
+                value: function(e) {
+                  this.setState({ currentChannel: e });
+                }
+              },
+              {
                 key: 'goToChatView',
                 value: function(e, t) {
                   var n = this;
@@ -6661,7 +6669,8 @@ object-assign
                             document
                               .getElementById('chat__input__text')
                               .focus(),
-                            n.loadMessages(t);
+                            n.loadMessages(t),
+                            n.saveChannelToState(t);
                         }
                       )),
                     !1
@@ -6764,7 +6773,7 @@ object-assign
                         o.a.createElement(
                           'h2',
                           { className: p.a.subText },
-                          'Click on a chat group to interact.'
+                          'Click on a chat group to interact'
                         )
                       ),
                       o.a.createElement('div', {
