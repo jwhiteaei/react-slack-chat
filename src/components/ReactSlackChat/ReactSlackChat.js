@@ -681,7 +681,7 @@ class ReactSlackChat extends Component {
               {this.state.helpText || 'Help?'}
             </h2>
             <h2 className={styles.subText}>
-              Click on a chat group to interactTESTING.
+              Click on a chat group to interact.
             </h2>
           </div>
           <div className={classNames(styles.card_circle, styles.transition)} />
