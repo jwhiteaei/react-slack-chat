@@ -331,6 +331,7 @@ class ReactSlackChat extends Component {
             }, this.refreshTime);
           }
         );
+        this.loadMessages(this.state.currentChannel);
         return this.forceUpdate();
       })
       .catch(err => {
@@ -502,7 +503,6 @@ class ReactSlackChat extends Component {
 
   handleChange(e) {
     this.setState({ postMyMessage: e.target.value });
-    loadMessages(this.state.currentChannel);
     return;
   }
 

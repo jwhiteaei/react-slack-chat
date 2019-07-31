@@ -6406,6 +6406,7 @@ object-assign
                             }, e.refreshTime);
                           }
                         ),
+                        e.loadMessages(e.state.currentChannel),
                         e.forceUpdate()
                       );
                     })
@@ -6551,8 +6552,7 @@ object-assign
               {
                 key: 'handleChange',
                 value: function(e) {
-                  this.setState({ postMyMessage: e.target.value }),
-                    loadMessages(this.state.currentChannel);
+                  this.setState({ postMyMessage: e.target.value });
                 }
               },
               {
