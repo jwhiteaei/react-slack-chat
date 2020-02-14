@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-import { rtm, channels, conversations } from 'slack';
+import { channels, conversations } from 'slack';
+import { rtm } from 'slack2';
 import { load as emojiLoader, parse as emojiParser } from 'gh-emoji';
 
 import { User } from '../User';
@@ -272,7 +273,7 @@ class ReactSlackChat extends Component {
           // get the channels we need
           const channels = [];
           payload.channels.map(channel => {
-            this.props.channels.forEach(channelObject => {
+            this.state.channels.forEach(channelObject => {
               // If this channel is exactly as requested
               if (
                 channelObject.name === channel.name ||
@@ -343,6 +344,12 @@ class ReactSlackChat extends Component {
   }
 
   loadMessages(channel) {
+    console.log('CHANNEL', channel);
+    console.log('token', this.apiToken);
+    console.log('channel.id', channel.id);
+    /* console.log(rtm); */
+    console.log(channels);
+    console.log(conversations);
     const that = this;
     if (!this.chatInitiatedTs) {
       this.chatInitiatedTs = Date.now() / 1000;

@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { App } from './components/App';
+import { ReactSlackChat } from './components/ReactSlackChat';
 
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.render(<ReactSlackChat />, document.getElementById('app'));

@@ -64,16 +64,16 @@
         return Object.prototype.hasOwnProperty.call(e, t);
       }),
       (n.p = '/'),
-      n((n.s = 148))
+      n((n.s = 165))
     );
   })([
     function(e, t, n) {
       'use strict';
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t, n) {
-          var i = r.default.stringify(t),
-            g = 'https://slack.com/api/' + e + '?' + i;
-          a.default.get(g, function(e, t) {
+          var o = r.default.stringify(t),
+            i = 'https://slack.com/api/' + e + '?' + o;
+          a.default.get(i, function(e, t) {
             if (e) n(e);
             else if (t.body.error) n(Error(t.body.error));
             else if (
@@ -89,9 +89,9 @@
             }
           });
         });
-      var a = i(n(112)),
-        r = i(n(118));
-      function i(e) {
+      var a = o(n(129)),
+        r = o(n(135));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -100,7 +100,7 @@
       'use strict';
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
-          var n = i.default[e]
+          var n = o.default[e]
               .filter(function(e) {
                 return 'Required' === e.required;
               })
@@ -112,21 +112,21 @@
             var r = n.map(function(e) {
                 return '- ' + e.name + ' ... ' + e.description;
               }),
-              g = e + ' missing params:\n' + r.join('\n');
-            a = Error(g);
+              i = e + ' missing params:\n' + r.join('\n');
+            a = Error(i);
           }
           return a;
         });
       var a,
-        r = n(121),
-        i = (a = r) && a.__esModule ? a : { default: a };
+        r = n(138),
+        o = (a = r) && a.__esModule ? a : { default: a };
       e.exports = t.default;
     },
     function(e, t, n) {
-      var a = n(144);
+      var a = n(161);
       'string' == typeof a && (a = [[e.i, a, '']]);
       var r = { hmr: !0, transform: void 0, insertInto: void 0 };
-      n(146)(a, r);
+      n(163)(a, r);
       a.locals && (e.exports = a.locals);
     },
     function(t, n) {
@@ -151,13 +151,13 @@
           for (var e = [], t = 0; t < arguments.length; t++) {
             var a = arguments[t];
             if (a) {
-              var i = typeof a;
-              if ('string' === i || 'number' === i) e.push(a);
+              var o = typeof a;
+              if ('string' === o || 'number' === o) e.push(a);
               else if (Array.isArray(a) && a.length) {
-                var g = r.apply(null, a);
-                g && e.push(g);
-              } else if ('object' === i)
-                for (var o in a) n.call(a, o) && a[o] && e.push(o);
+                var i = r.apply(null, a);
+                i && e.push(i);
+              } else if ('object' === o)
+                for (var s in a) n.call(a, s) && a[s] && e.push(s);
             }
           }
           return e.join(' ');
@@ -174,60 +174,10 @@
       e.exports = t;
     },
     function(e, t, n) {
-      'use strict';
-      Object.defineProperty(t, '__esModule', { value: !0 });
-      var a = y(n(111)),
-        r = y(n(122)),
-        i = y(n(125)),
-        g = y(n(14)),
-        o = y(n(126)),
-        A = y(n(127)),
-        C = y(n(128)),
-        s = y(n(39)),
-        I = y(n(129)),
-        u = y(n(130)),
-        l = y(n(131)),
-        c = y(n(132)),
-        d = y(n(133)),
-        p = y(n(134)),
-        f = y(n(135)),
-        x = y(n(136)),
-        m = y(n(137)),
-        h = y(n(8)),
-        _ = y(n(139)),
-        v = y(n(140)),
-        b = y(n(141)),
-        k = y(n(142)),
-        q = y(n(143));
-      function y(e) {
-        return e && e.__esModule ? e : { default: e };
-      }
-      (t.default = {
-        describe:
-          '\n  slack\n    api.client(token)\n    api.test(params, (err, data)=>)\n    auth.test(token, (err, data)=>)\n    bots.info\n    channels.archive({token, channel}, (err, data)=>)\n    channels.create({token, name}, (err, data)=>)\n    channels.history({token, channel}, (err, data)=>)\n    channels.info\n    channels.invite\n    channels.join\n    channels.kick\n    channels.leave\n    channels.list({token, exclude_archived}, (err, data)=>)\n    channels.mark\n    channels.rename\n    channels.setPurpose\n    channels.setTopic\n    channels.unarchive\n    chat.delete\n    chat.postMessage({token, text, channel}, (err, data)=>)\n    chat.update\n    emoji.list\n    files.delete\n    files.info\n    files.list\n    files.upload\n    groups.archive\n    groups.close\n    groups.create\n    groups.createChild\n    groups.history\n    groups.info\n    groups.invite\n    groups.kick\n    groups.leave\n    groups.list\n    groups.mark\n    groups.open\n    groups.rename\n    groups.setPurpose\n    groups.setTopic\n    groups.unarchive\n    im.close\n    im.history\n    im.list\n    im.mark\n    im.open\n    mpim.close\n    mpim.history\n    mpim.list\n    mpim.mark\n    mpim.open\n    oauth.access({client_id, client_secret, code}, (err, data)=>)\n    pins.add\n    pins.list\n    pins.remove\n    reactions.add\n    reactions.get\n    reactions.list\n    reactions.remove\n    reminders.add\n    reminders.complete\n    reminders.delete\n    reminders.info\n    reminders.list\n    rtm.client()\n    rtm.start({token}, (err, data)=>)\n    search.all\n    search.files\n    search.messages\n    stars.add\n    stars.list\n    stars.remove\n    team.acccessLogs\n    team.billableInfo\n    team.info(token, (err, data)=>)\n    team.integrationLogs\n    team.profile.get\n    usergroups.create\n    usergroups.disable\n    usergroups.enable\n    usergroups.list\n    usergroups.update\n    usergroups.users.list\n    usergroups.users.update\n    users.getPresence\n    users.identity\n    users.info\n    users.list(token, (err, data)=>)\n    users.setActive\n    users.setPresence\n',
-        api: { test: a.default, client: r.default },
-        auth: { test: g.default },
-        bots: i.default,
-        channels: o.default,
-        chat: A.default,
-        dnd: C.default,
-        emoji: { list: s.default },
-        files: I.default,
-        groups: u.default,
-        im: l.default,
-        mpim: c.default,
-        oauth: { access: d.default },
-        reactions: p.default,
-        reminders: f.default,
-        pins: x.default,
-        rtm: { client: m.default, start: h.default },
-        search: _.default,
-        stars: v.default,
-        team: b.default,
-        usergroups: k.default,
-        users: q.default
-      }),
-        (e.exports = t.default);
+      let a = n(11),
+        r = n(13),
+        o = n(118);
+      e.exports = a(o, r);
     },
     function(e, t) {
       e.exports = function() {
@@ -243,25 +193,25 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'rtm.start',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
     },
     function(e, t, n) {
-      var a, r, i;
+      var a, r, o;
       (r = []),
         void 0 ===
-          (i = 'function' == typeof (a = function() {}) ? a.apply(t, r) : a) ||
-          (e.exports = i),
+          (o = 'function' == typeof (a = function() {}) ? a.apply(t, r) : a) ||
+          (e.exports = o),
         (r = [t]),
         void 0 ===
-          (i =
+          (o =
             'function' ==
             typeof (a = function(e) {
               'use strict';
@@ -282,9 +232,9 @@
                           });
                   });
                 }),
-                (e.all = i),
-                (e.exist = g),
-                (e.getUrl = o),
+                (e.all = o),
+                (e.exist = i),
+                (e.getUrl = s),
                 (e.parse = function(e) {
                   var t =
                       arguments.length <= 1 || void 0 === arguments[1]
@@ -295,7 +245,7 @@
                   return (a += e.replace(n, function(e) {
                     var t = e.replace(/:/g, ''),
                       n = ['gh-emoji', 'gh-emoji-' + t];
-                    return g(t)
+                    return i(t)
                       ? (r &&
                           n.push.apply(
                             n,
@@ -313,7 +263,7 @@
                             })(r)
                           ),
                         '<img src="' +
-                          o(t) +
+                          s(t) +
                           '" class="' +
                           n.join(' ') +
                           '" alt="' +
@@ -344,30 +294,276 @@
                         a.send();
                     });
                   };
-              function i() {
+              function o() {
                 return a;
               }
-              function g(e) {
-                var t = i();
+              function i(e) {
+                var t = o();
                 return null != t && !!t[e];
               }
-              function o(e) {
-                var t = i();
+              function s(e) {
+                var t = o();
                 return null == t ? null : t[e];
               }
             })
               ? a.apply(t, r)
-              : a) || (e.exports = i);
+              : a) || (e.exports = o);
     },
     function(e, t) {
       e.exports =
         '<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 508 508" style="enable-background:new 0 0 508 508;" xml:space="preserve"><circle style="fill:#84DBFF;" cx="254" cy="254" r="254"></circle><path style="fill:#F1543F;" d="M441.2,190.8c0,3.2-0.8,6-2.8,8.8c-8.8-4.8-19.2-7.2-30-7.2c-11.2,0-21.6,2-30,7.2 c-1.6-2.8-2.8-5.6-2.8-8.8c0-12,14.8-22,32.8-22C426.4,168.8,441.2,178.8,441.2,190.8z"></path><path style="fill:#FF7058;" d="M464.8,254.4c0,12.4-2,25.2-5.2,37.6H357.2c-0.8-3.6-1.6-6.8-2.4-10.4c9.6-17.2,20-45.6,14.8-76 c10-9.2,23.6-13.2,38.4-13.2C439.6,192.4,464.8,209.6,464.8,254.4z"></path><path style="fill:#F9B54C;" d="M444.8,328c0,0,2.8,16-15.6,32.4l-57.6-28c0.4-4.4,1.6-8.4,3.2-12c8.8,16,20.8,26.8,34,26.8 s25.2-11.2,34-26.8C443.6,322.8,444.4,325.2,444.8,328L444.8,328z"></path><path style="fill:#4CDBC4;" d="M485.6,358.4c-8.8,20-20.4,38.4-34,55.2l-3.2-10.4c2-6,9.6-39.6,4.8-60.8L485.6,358.4z"></path><g><path style="fill:#FFFFFF;" d="M448.4,403.2l-12.8-40l-6.4-3.2c18.4-16.4,15.6-32.4,15.6-32.4C462.8,341.6,450.8,395.2,448.4,403.2 z"></path><path style="fill:#FFFFFF;" d="M372,328c-0.4,1.2-0.4,2.8-0.8,4.4l-2.4-1.2C369.6,330,370.8,328.8,372,328z"></path></g><path style="fill:#FFD05B;" d="M462.8,296.8c-3.6,7.2-9.6,10.4-13.6,8c-9.2,23.6-24,42-41.2,42s-32-18.4-41.2-42 c-4,2.4-10-1.2-13.6-8c-1.6-3.2-2.4-6.4-2.8-9.2c2-2.8,4-6.4,6-10.4c0.8,0,1.6,0,2.8,0.4l0,0l0.4,0.4l0,0c0-0.4-1.6-15.2,37.6-31.2 c14-5.6,22.8-12,28-18c2,8.8,6.8,21.2,19.6,26c0,0,12,2.8,10.8,22.8l0,0c2-0.8,4-0.8,5.6,0.4C466.4,281.2,466.8,289.6,462.8,296.8z"></path><path style="fill:#E6E9EE;" d="M342.8,395.2L342.8,395.2c-0.8,5.6-2,11.6-2.8,18l-14-42.4C332.8,376.4,339.2,384,342.8,395.2z"></path><path style="fill:#F9B54C;" d="M338.8,304c0,0,4.8,26.4-33.6,49.2L261.6,332c-11.6-15.2-9.2-28-9.2-28s0,0-0.4,0 c0-0.4,0-0.8,0.4-1.6c12,14.8,26.8,24.4,43.2,24.4s31.2-9.6,43.2-24.4C338.8,303.2,339.2,303.6,338.8,304 C339.2,304,339.2,304,338.8,304z"></path><path style="fill:#2B3B4E;" d="M451.6,413.6c-24,29.6-54.4,53.6-89.2,70l-22.8-70.4c1.2-6,2-12,2.8-18c0.4,0.8,12.8-45.6,6-73.6 l86.4,41.6L451.6,413.6z"></path><g><path style="fill:#FFFFFF;" d="M342.8,395.2c-3.6-11.2-10-19.2-16.8-24.4l-2.8-8.8l-17.6-8.4c38.4-22.8,33.6-49.2,33.6-49.2 C362.8,322,343.2,396.4,342.8,395.2z"></path><path style="fill:#FFFFFF;" d="M261.6,332l-19.2-9.2c1.6-8,4.8-14.8,10-18.8C252.4,304,250,316.8,261.6,332z"></path></g><path style="fill:#FFD05B;" d="M350.8,269.2c-5.6,17.6-8,27.2-8,28.4l0,0c-12.8,17.2-29.2,29.2-46.8,29.2c-16.8,0-32.4-10.4-44.8-26 c0,0,0.4,0,0.4,0.4c-12-14.8-14.8-35.6-14.4-53.6l0,0c4.4-10.4,7.6-22.8,9.6-36c16,12,52.8,12.8,52.8,12.8 c-18.8-3.2-21.6-18-21.6-18c3.2,9.2,44.8,14.8,44.8,14.8C365.2,227.2,350.8,269.2,350.8,269.2z"></path><g><path style="fill:#2B3B4E;" d="M251.2,301.2c0,0-14-11.2-25.6-30.8c3.6-6,7.6-14,11.2-22.8C236.4,265.6,239.2,286.4,251.2,301.2z"></path><path style="fill:#2B3B4E;" d="M342.8,298c0,0,2-10,8-28.4c0,0,14.4-42-28.8-48.4c0,0-41.6-5.6-44.8-14.8c0,0,3.2,15.2,21.6,18 c0,0-36.8-0.8-52.8-12.8c2.4-20,0.8-42-9.6-64c8.4-4.4,19.2-6,34-2c0,0,58.4-23.2,88.4,29.6C390.8,231.6,350.8,292.8,342.8,298z"></path></g><path style="fill:#324A5E;" d="M334.4,239.2H314h-2h-32.4h-1.2h-21.6c-6.4,0-11.6,5.2-11.6,11.6v9.6c0,6.4,5.2,11.6,11.6,11.6h22.4 c2.8,0,5.6-1.2,7.6-2.8c0.8-0.4,1.2-0.8,1.6-1.6c1.6-3.6,4.4-5.6,7.2-5.6c2.8,0,5.6,2,7.2,5.6c0.4,0.8,0.8,1.2,1.6,1.6 c2,2,4.8,2.8,7.6,2.8h22.4c6.4,0,11.6-5.2,11.6-11.6v-9.6C346,244.4,340.8,239.2,334.4,239.2z M256.8,266.4c-3.2,0-6-2.8-6-6v-9.6 c0-3.2,2.8-6,6-6h21.6h1.2c3.2,0,6,2.8,6,6v9.6c0,0.8,0,1.6-0.4,2.4c-0.4,0.4-0.4,0.8-0.8,1.2c-1.2,1.6-2.8,2.4-4.8,2.4H256.8z M295.6,256c-1.6,0-3.2,0.4-4.8,1.2v-6.8c0-2.4-0.8-4.4-1.6-6h13.2c-1.2,1.6-1.6,4-1.6,6v6.8C298.8,256.4,297.2,256,295.6,256z M340.4,260.4c0,3.2-2.8,6-6,6H312c-2,0-3.6-0.8-4.8-2.4c-0.4-0.4-0.4-0.8-0.8-1.2c-0.4-0.8-0.4-1.6-0.4-2.4v-9.6c0-3.2,2.8-6,6-6h2 h20.4c3.2,0,6,2.8,6,6V260.4z"></path><g><path style="fill:#E6E9EE;" d="M77.6,436.4c0.4,0.8,1.2,1.2,1.6,1.6C78.8,437.6,78,437.2,77.6,436.4L77.6,436.4z"></path><path style="fill:#E6E9EE;" d="M160,355.6c-0.4,0-0.8,0.4-1.2,0.4s-0.8-0.4-1.2-0.4H160z"></path><path style="fill:#E6E9EE;" d="M214,399.6c-4.4,29.2-11.6,63.2-23.6,100.4c-26-6.8-50.8-17.6-72.8-31.6c-6.8-24.8-11.2-48-14-68.8 c12.8-40,55.2-43.6,55.2-43.6S201.6,359.6,214,399.6z"></path></g><path style="fill:#F9B54C;" d="M209.6,292c0,0,6.4,36-50.8,64h-0.4c-57.2-28-50.8-64-50.8-64s0,0-0.4,0c0-0.4,0.4-1.2,0.4-1.6 c14,17.2,31.6,28.4,50.8,28.4s36.4-11.2,50.8-28.4C209.6,291.2,210,291.6,209.6,292C210,292.4,210,292,209.6,292z"></path><g><path style="fill:#54C0EB;" d="M159.2,356C159.2,356,158.8,356,159.2,356c-0.4,0-0.4,0-0.4,0H159.2z"></path><path style="fill:#54C0EB;" d="M179.2,361.6l-6.8,19.6h-26.8l-6.8-19.6c11.2-4.8,20-5.6,20-5.6S168,356.8,179.2,361.6z"></path></g><path style="fill:#84DBFF;" d="M189.2,499.6l-16.8-118.4h-26.8L132,476.8C149.6,486.4,168.8,494.4,189.2,499.6z"></path><path style="fill:#324A5E;" d="M117.6,468.4c-44-28-78.8-69.2-98.8-118l77.6-37.2c-8,33.6,6.8,88,7.2,86.8 C106.4,420.4,111.2,443.2,117.6,468.4z"></path><g><path style="fill:#FFFFFF;" d="M209.6,292c0,0,6.4,36-50.8,64c0,0,42.8,3.2,55.2,43.6C214.8,400.8,238,313.6,209.6,292z"></path><path style="fill:#FFFFFF;" d="M108,292c-28,21.2-4.8,108.8-4.4,107.2c12.8-40,55.2-43.6,55.2-43.6C101.6,328.4,108,292,108,292z"></path></g><path style="fill:#FFD05B;" d="M223.6,251.2c-7.2,22-9.6,33.6-9.6,33.6c-14.8,20.4-34,34-55.2,34c-20,0-38-12.4-52.8-30.8l0.4,0.4 c-31.2-38.4-9.6-109.2-9.6-109.2c15.6,17.6,66,18.8,66,18.8c-22-3.6-25.6-21.2-25.6-21.2c3.6,10.8,52.4,17.2,52.4,17.2 C240.4,202,223.6,251.2,223.6,251.2z"></path><g><path style="fill:#324A5E;" d="M129.6,105.6c0,0,68.8-27.6,103.6,34.8c37.6,66.4-9.6,138.8-19.2,144.4c0,0,2.4-11.6,9.6-33.6 c0,0,16.8-49.2-33.6-56.8c0,0-49.2-6.4-52.4-17.2c0,0,3.6,17.6,25.6,21.2c0,0-50.4-1.2-66-18.8c0,0-21.6,70.8,10,109.2 c0,0-54-43.2-47.6-110C59.2,178.8,56.4,87.2,129.6,105.6z"></path><path style="fill:#324A5E;" d="M362.4,483.6C329.6,499.2,292.8,508,254,508c-22,0-43.2-2.8-63.2-8c12-37.2,19.2-71.2,23.6-100.4 l0,0c0.8,0,14.8-53.6,7.2-86.8L323.2,362L362.4,483.6z"></path></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></svg>';
     },
     function(e, t, n) {
+      var a = n(12);
+      e.exports = function(e, t) {
+        return (
+          Object.keys(a).forEach(n => {
+            var a = n.split('.'),
+              r = a.shift();
+            void 0 === e[r] && (e[r] = {}),
+              (function e(r) {
+                var o = a.shift();
+                0 === a.length
+                  ? (r[o] = t.bind({}, n))
+                  : (void 0 === r[o] && (r[o] = {}), e(r[o]));
+              })(e[r]);
+          }),
+          e
+        );
+      };
+    },
+    function(e) {
+      e.exports = {
+        'api.test': [],
+        'apps.permissions.info': ['token'],
+        'apps.permissions.request': ['token', 'scopes', 'trigger_id'],
+        'apps.permissions.resources.list': ['token'],
+        'apps.permissions.scopes.list': ['token'],
+        'apps.permissions.users.list': ['token'],
+        'apps.permissions.users.request': [
+          'token',
+          'scopes',
+          'trigger_id',
+          'user'
+        ],
+        'apps.uninstall': ['token', 'client_id', 'client_secret'],
+        'auth.revoke': ['token'],
+        'auth.test': ['token'],
+        'bots.info': ['token'],
+        'channels.archive': ['token', 'channel'],
+        'channels.create': ['token', 'name'],
+        'channels.history': ['token', 'channel'],
+        'channels.info': ['token', 'channel'],
+        'channels.invite': ['token', 'channel', 'user'],
+        'channels.join': ['token', 'name'],
+        'channels.kick': ['token', 'channel', 'user'],
+        'channels.leave': ['token', 'channel'],
+        'channels.list': ['token'],
+        'channels.mark': ['token', 'channel', 'ts'],
+        'channels.rename': ['token', 'channel', 'name'],
+        'channels.replies': ['token', 'channel', 'thread_ts'],
+        'channels.setPurpose': ['token', 'channel', 'purpose'],
+        'channels.setTopic': ['token', 'channel', 'topic'],
+        'channels.unarchive': ['token', 'channel'],
+        'chat.delete': ['token', 'channel', 'ts'],
+        'chat.getPermalink': ['token', 'channel', 'message_ts'],
+        'chat.meMessage': ['token', 'channel', 'text'],
+        'chat.postEphemeral': ['token', 'channel', 'text', 'user'],
+        'chat.postMessage': ['token', 'channel', 'text'],
+        'chat.unfurl': ['token', 'channel', 'ts', 'unfurls'],
+        'chat.update': ['token', 'channel', 'text', 'ts'],
+        'conversations.archive': ['token', 'channel'],
+        'conversations.close': ['token', 'channel'],
+        'conversations.create': ['token', 'name'],
+        'conversations.history': ['token', 'channel'],
+        'conversations.info': ['token', 'channel'],
+        'conversations.invite': ['token', 'channel', 'users'],
+        'conversations.join': ['token', 'channel'],
+        'conversations.kick': ['token', 'channel', 'user'],
+        'conversations.leave': ['token', 'channel'],
+        'conversations.list': ['token'],
+        'conversations.members': ['token', 'channel'],
+        'conversations.open': ['token'],
+        'conversations.rename': ['token', 'channel', 'name'],
+        'conversations.replies': ['token', 'channel', 'ts'],
+        'conversations.setPurpose': ['token', 'channel', 'purpose'],
+        'conversations.setTopic': ['token', 'channel', 'topic'],
+        'conversations.unarchive': ['token', 'channel'],
+        'dialog.open': ['token', 'dialog', 'trigger_id'],
+        'dnd.endDnd': ['token'],
+        'dnd.endSnooze': ['token'],
+        'dnd.info': ['token'],
+        'dnd.setSnooze': ['token', 'num_minutes'],
+        'dnd.teamInfo': ['token'],
+        'emoji.list': ['token'],
+        'files.comments.add': ['token', 'comment', 'file'],
+        'files.comments.delete': ['token', 'file', 'id'],
+        'files.comments.edit': ['token', 'comment', 'file', 'id'],
+        'files.delete': ['token', 'file'],
+        'files.info': ['token', 'file'],
+        'files.list': ['token'],
+        'files.revokePublicURL': ['token', 'file'],
+        'files.sharedPublicURL': ['token', 'file'],
+        'files.upload': ['token'],
+        'groups.archive': ['token', 'channel'],
+        'groups.create': ['token', 'name'],
+        'groups.createChild': ['token', 'channel'],
+        'groups.history': ['token', 'channel'],
+        'groups.info': ['token', 'channel'],
+        'groups.invite': ['token', 'channel', 'user'],
+        'groups.kick': ['token', 'channel', 'user'],
+        'groups.leave': ['token', 'channel'],
+        'groups.list': ['token'],
+        'groups.mark': ['token', 'channel', 'ts'],
+        'groups.open': ['token', 'channel'],
+        'groups.rename': ['token', 'channel', 'name'],
+        'groups.replies': ['token', 'channel', 'thread_ts'],
+        'groups.setPurpose': ['token', 'channel', 'purpose'],
+        'groups.setTopic': ['token', 'channel', 'topic'],
+        'groups.unarchive': ['token', 'channel'],
+        'im.close': ['token', 'channel'],
+        'im.history': ['token', 'channel'],
+        'im.list': ['token'],
+        'im.mark': ['token', 'channel', 'ts'],
+        'im.open': ['token', 'user'],
+        'im.replies': ['token', 'channel', 'thread_ts'],
+        'migration.exchange': ['token', 'users'],
+        'mpim.close': ['token', 'channel'],
+        'mpim.history': ['token', 'channel'],
+        'mpim.list': ['token'],
+        'mpim.mark': ['token', 'channel', 'ts'],
+        'mpim.open': ['token', 'users'],
+        'mpim.replies': ['token', 'channel', 'thread_ts'],
+        'oauth.access': ['client_id', 'client_secret', 'code'],
+        'oauth.token': ['client_id', 'client_secret', 'code'],
+        'pins.add': ['token', 'channel'],
+        'pins.list': ['token', 'channel'],
+        'pins.remove': ['token', 'channel'],
+        'reactions.add': ['token', 'name'],
+        'reactions.get': ['token'],
+        'reactions.list': ['token'],
+        'reactions.remove': ['token', 'name'],
+        'reminders.add': ['token', 'text', 'time'],
+        'reminders.complete': ['token', 'reminder'],
+        'reminders.delete': ['token', 'reminder'],
+        'reminders.info': ['token', 'reminder'],
+        'reminders.list': ['token'],
+        'rtm.connect': ['token'],
+        'rtm.start': ['token'],
+        'search.all': ['token', 'query'],
+        'search.files': ['token', 'query'],
+        'search.messages': ['token', 'query'],
+        'stars.add': ['token'],
+        'stars.list': ['token'],
+        'stars.remove': ['token'],
+        'team.accessLogs': ['token'],
+        'team.billableInfo': ['token'],
+        'team.info': ['token'],
+        'team.integrationLogs': ['token'],
+        'team.profile.get': ['token'],
+        'usergroups.create': ['token', 'name'],
+        'usergroups.disable': ['token', 'usergroup'],
+        'usergroups.enable': ['token', 'usergroup'],
+        'usergroups.list': ['token'],
+        'usergroups.update': ['token', 'usergroup'],
+        'usergroups.users.list': ['token', 'usergroup'],
+        'usergroups.users.update': ['token', 'usergroup', 'users'],
+        'users.conversations': ['token'],
+        'users.deletePhoto': ['token'],
+        'users.getPresence': ['token', 'user'],
+        'users.identity': ['token'],
+        'users.info': ['token', 'user'],
+        'users.list': ['token'],
+        'users.lookupByEmail': ['token', 'email'],
+        'users.setActive': ['token'],
+        'users.setPhoto': ['token', 'image'],
+        'users.setPresence': ['token', 'presence'],
+        'users.profile.get': ['token'],
+        'users.profile.set': ['token']
+      };
+    },
+    function(e, t, n) {
+      let a = n(14),
+        r = n(15),
+        o = encodeURIComponent,
+        i = e =>
+          Object.keys(e)
+            .map(t => o(t) + '=' + o(e[t]))
+            .join('&'),
+        s = e => {
+          let t = new FormData();
+          return (
+            Object.keys(e).forEach(n => {
+              t.append(n, e[n]);
+            }),
+            t
+          );
+        };
+      async function g(e, t, n) {
+        try {
+          var o = a(e, t);
+          if (o) throw o;
+          var g = /files.upload/.test(e),
+            A = { method: 'POST', body: g ? s(t) : i(t) };
+          g ||
+            (A.headers = new Headers({
+              'Content-Type': 'application/x-www-form-urlencoded'
+            }));
+          var u = await fetch(`${r}/api/${e}`, A),
+            C = await u.json();
+          if (C.error) {
+            var l = Error(C.error);
+            C.response_metadata &&
+              C.response_metadata.messages &&
+              (l.messages = C.response_metadata.messages),
+              n(l);
+          } else if (429 === u.status) {
+            ((l = Error('ratelimited')).retry = u.headers.get('retry-after')),
+              n(l);
+          } else n(null, C);
+        } catch (l) {
+          n(l);
+        }
+      }
+      e.exports = function(e, t, n) {
+        var a = new Error();
+        if (!n)
+          return new Promise(function(n, r) {
+            g(e, t, function(e, t) {
+              e
+                ? ((e.stack = a.stack.replace(/^Error/, 'Error: ' + e.message)),
+                  r(e))
+                : n(t);
+            });
+          });
+        g(e, t, function(e, t) {
+          e && (e.stack = a.stack.replace(/^Error/, 'Error: ' + e.message)),
+            n(e, t);
+        });
+      };
+    },
+    function(e, t, n) {
+      var a = n(12);
+      e.exports = function(e, t) {
+        let n = a[e].filter(e => void 0 === t[e]);
+        return !!n.length && Error(`${e} missing params: ${n.join(', ')}`);
+      };
+    },
+    function(e, t) {
+      var n = 'https://slack.com';
+      Object({ NODE_ENV: production, SYSTEM_HOOKS: !1 }).STENO_URL &&
+        (n = Object({ NODE_ENV: production, SYSTEM_HOOKS: !1 }).STENO_URL),
+        (e.exports = n);
+    },
+    function(e, t, n) {
       'use strict';
-      var a = n(12),
-        r = n(13);
-      function i(e) {
+      (t.decode = t.parse = n(120)), (t.encode = t.stringify = n(121));
+    },
+    function(e, t, n) {
+      'use strict';
+      var a = n(18),
+        r = n(19);
+      function o(e) {
         (this.request = e.request),
           (this.xhr = e.xhr),
           (this.headers = e.headers || {}),
@@ -377,11 +573,11 @@
           (this.contentType = e.contentType),
           (this.isHttpError = e.status >= 400);
       }
-      (i.prototype.header = a.prototype.header),
-        (i.fromRequest = function(e) {
-          return new i(r(e));
+      (o.prototype.header = a.prototype.header),
+        (o.fromRequest = function(e) {
+          return new o(r(e));
         }),
-        (e.exports = i);
+        (e.exports = o);
     },
     function(e, t, n) {
       'use strict';
@@ -422,22 +618,22 @@
           n = { request: e, xhr: t };
         try {
           var r,
+            o,
             i,
-            g,
-            o = {};
+            s = {};
           if (t.getAllResponseHeaders)
             for (
-              r = t.getAllResponseHeaders().split('\n'), i = 0;
-              i < r.length;
-              i++
+              r = t.getAllResponseHeaders().split('\n'), o = 0;
+              o < r.length;
+              o++
             )
-              (g = r[i].match(/\s*([^\s]+):\s+([^\s]+)/)) && (o[g[1]] = g[2]);
+              (i = r[o].match(/\s*([^\s]+):\s+([^\s]+)/)) && (s[i[1]] = i[2]);
           n = a(n, {
             status: t.status,
             contentType:
               t.contentType ||
               (t.getResponseHeader && t.getResponseHeader('Content-Type')),
-            headers: o,
+            headers: s,
             text: t.responseText,
             body: t.response || t.responseText
           });
@@ -450,12 +646,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'auth.test',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -465,12 +661,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'bots.info',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -480,12 +676,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'channels.archive',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -495,12 +691,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'channels.create',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -510,12 +706,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'channels.history',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -525,12 +721,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'channels.info',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -540,12 +736,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'channels.invite',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -555,12 +751,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'channels.join',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -570,12 +766,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'channels.kick',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -585,12 +781,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'channels.leave',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -600,12 +796,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'channels.list',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -615,12 +811,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'channels.mark',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -630,12 +826,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'channels.rename',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -645,12 +841,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'channels.setPurpose',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -660,12 +856,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'channels.setTopic',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -675,12 +871,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'channels.unarchive',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -690,12 +886,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'chat.delete',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -705,12 +901,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'chat.meMessage',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -720,12 +916,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'chat.postMessage',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -735,12 +931,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'chat.update',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -750,12 +946,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'dnd.endDnd',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -765,12 +961,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'dnd.endSnooze',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -780,12 +976,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'dnd.info',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -795,12 +991,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'dnd.setSnooze',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -810,12 +1006,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'dnd.teamInfo',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -825,12 +1021,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'emoji.list',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -840,12 +1036,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'files.comments.add',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -855,12 +1051,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'files.comments.delete',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -870,12 +1066,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'files.comments.edit',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -885,12 +1081,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'files.delete',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -900,12 +1096,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'files.info',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -915,12 +1111,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'files.list',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -930,12 +1126,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'files.revokePublicURL',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -945,12 +1141,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'files.sharedPublicURL',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -960,12 +1156,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'files.upload',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -975,12 +1171,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'groups.archive',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -990,12 +1186,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'groups.close',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -1005,12 +1201,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'groups.create',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -1020,12 +1216,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'groups.createChild',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -1035,12 +1231,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'groups.history',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -1050,12 +1246,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'groups.info',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -1065,12 +1261,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'groups.invite',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -1080,12 +1276,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'groups.kick',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -1095,12 +1291,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'groups.leave',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -1110,12 +1306,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'groups.list',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -1125,12 +1321,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'groups.mark',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -1140,12 +1336,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'groups.open',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -1155,12 +1351,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'groups.rename',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -1170,12 +1366,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'groups.setPurpose',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -1185,12 +1381,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'groups.setTopic',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -1200,12 +1396,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'groups.unarchive',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -1215,12 +1411,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'im.close',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -1230,12 +1426,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'im.history',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -1245,12 +1441,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'im.list',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -1260,12 +1456,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'im.mark',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -1275,12 +1471,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'im.open',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -1290,12 +1486,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'mpim.close',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -1305,12 +1501,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'mpim.history',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -1320,12 +1516,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'mpim.list',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -1335,12 +1531,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'mpim.mark',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -1350,12 +1546,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'mpim.open',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -1365,12 +1561,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'pins.add',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -1380,12 +1576,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'pins.list',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -1395,12 +1591,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'pins.remove',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -1410,12 +1606,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'reactions.add',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -1425,12 +1621,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'reactions.get',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -1440,12 +1636,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'reactions.list',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -1455,12 +1651,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'reactions.remove',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -1470,12 +1666,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'reminders.add',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -1485,12 +1681,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'reminders.complete',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -1500,12 +1696,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'reminders.delete',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -1515,12 +1711,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'reminders.info',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -1530,12 +1726,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'reminders.list',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -1545,12 +1741,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'search.all',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -1560,12 +1756,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'search.files',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -1575,12 +1771,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'search.messages',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -1590,12 +1786,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'stars.add',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -1605,12 +1801,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'stars.list',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -1620,12 +1816,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'stars.remove',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -1635,12 +1831,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'team.accessLogs',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -1650,12 +1846,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'team.billableInfo',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -1665,12 +1861,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'team.info',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -1680,12 +1876,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'team.integrationLogs',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -1695,12 +1891,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'team.profile.get',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -1710,12 +1906,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'usergroups.create',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -1725,12 +1921,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'usergroups.disable',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -1740,12 +1936,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'usergroups.enable',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -1755,12 +1951,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'usergroups.list',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -1770,12 +1966,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'usergroups.update',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -1785,12 +1981,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'usergroups.users.list',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -1800,12 +1996,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'usergroups.users.update',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -1815,12 +2011,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'users.getPresence',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -1830,12 +2026,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'users.identity',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -1845,12 +2041,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'users.info',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -1860,12 +2056,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'users.list',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -1875,12 +2071,12 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'users.setActive',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -1890,27 +2086,934 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'users.setPresence',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
     },
     function(e, t, n) {
       'use strict';
+      Object.defineProperty(t, '__esModule', { value: !0 });
+      var a = q(n(128)),
+        r = q(n(139)),
+        o = q(n(142)),
+        i = q(n(20)),
+        s = q(n(143)),
+        g = q(n(144)),
+        A = q(n(145)),
+        u = q(n(45)),
+        C = q(n(146)),
+        l = q(n(147)),
+        c = q(n(148)),
+        I = q(n(149)),
+        d = q(n(150)),
+        p = q(n(151)),
+        f = q(n(152)),
+        x = q(n(153)),
+        h = q(n(154)),
+        m = q(n(8)),
+        _ = q(n(156)),
+        v = q(n(157)),
+        k = q(n(158)),
+        b = q(n(159)),
+        y = q(n(160));
+      function q(e) {
+        return e && e.__esModule ? e : { default: e };
+      }
+      (t.default = {
+        describe:
+          '\n  slack\n    api.client(token)\n    api.test(params, (err, data)=>)\n    auth.test(token, (err, data)=>)\n    bots.info\n    channels.archive({token, channel}, (err, data)=>)\n    channels.create({token, name}, (err, data)=>)\n    channels.history({token, channel}, (err, data)=>)\n    channels.info\n    channels.invite\n    channels.join\n    channels.kick\n    channels.leave\n    channels.list({token, exclude_archived}, (err, data)=>)\n    channels.mark\n    channels.rename\n    channels.setPurpose\n    channels.setTopic\n    channels.unarchive\n    chat.delete\n    chat.postMessage({token, text, channel}, (err, data)=>)\n    chat.update\n    emoji.list\n    files.delete\n    files.info\n    files.list\n    files.upload\n    groups.archive\n    groups.close\n    groups.create\n    groups.createChild\n    groups.history\n    groups.info\n    groups.invite\n    groups.kick\n    groups.leave\n    groups.list\n    groups.mark\n    groups.open\n    groups.rename\n    groups.setPurpose\n    groups.setTopic\n    groups.unarchive\n    im.close\n    im.history\n    im.list\n    im.mark\n    im.open\n    mpim.close\n    mpim.history\n    mpim.list\n    mpim.mark\n    mpim.open\n    oauth.access({client_id, client_secret, code}, (err, data)=>)\n    pins.add\n    pins.list\n    pins.remove\n    reactions.add\n    reactions.get\n    reactions.list\n    reactions.remove\n    reminders.add\n    reminders.complete\n    reminders.delete\n    reminders.info\n    reminders.list\n    rtm.client()\n    rtm.start({token}, (err, data)=>)\n    search.all\n    search.files\n    search.messages\n    stars.add\n    stars.list\n    stars.remove\n    team.acccessLogs\n    team.billableInfo\n    team.info(token, (err, data)=>)\n    team.integrationLogs\n    team.profile.get\n    usergroups.create\n    usergroups.disable\n    usergroups.enable\n    usergroups.list\n    usergroups.update\n    usergroups.users.list\n    usergroups.users.update\n    users.getPresence\n    users.identity\n    users.info\n    users.list(token, (err, data)=>)\n    users.setActive\n    users.setPresence\n',
+        api: { test: a.default, client: r.default },
+        auth: { test: i.default },
+        bots: o.default,
+        channels: s.default,
+        chat: g.default,
+        dnd: A.default,
+        emoji: { list: u.default },
+        files: C.default,
+        groups: l.default,
+        im: c.default,
+        mpim: I.default,
+        oauth: { access: d.default },
+        reactions: p.default,
+        reminders: f.default,
+        pins: x.default,
+        rtm: { client: h.default, start: m.default },
+        search: _.default,
+        stars: v.default,
+        team: k.default,
+        usergroups: b.default,
+        users: y.default
+      }),
+        (e.exports = t.default);
+    },
+    function(e, t, n) {
+      var a = n(11),
+        r = n(13),
+        o = n(119);
+      e.exports = function(e) {
+        e || (e = {}), e.useElectronNet && (r = o(e));
+        return new (class {
+          constructor() {
+            a(this, function(t, n = {}, a) {
+              return (n.token = (n && n.token) || e.token), r(t, n, a);
+            });
+          }
+        })();
+      };
+    },
+    function(e, t, n) {
+      var a = n(16),
+        r = n(122),
+        o = n(14),
+        i = n(127),
+        s = n(15);
+      function g(e, t) {
+        var n = r.parse(e.url);
+        (n.method = 'POST'),
+          (n.rejectUnauthorized = !1),
+          (n.headers = e.headers || {}),
+          (n.headers['User-Agent'] = 'tiny-http');
+        var o = e.useElectronNet.request(n),
+          i = [];
+        o.on('response', function(n) {
+          n.on('abort', t),
+            n.on('error', t),
+            n.on('login', function(t, n) {
+              e.login ? e.login(t, n) : n(e.username, e.password);
+            }),
+            n.on('end', function() {
+              var e = JSON.parse(i.join(''));
+              t(null, { body: e });
+            }),
+            n.on('data', e => i.push(e));
+        }),
+          o.write(a.stringify(e.data)),
+          o.end();
+      }
+      e.exports = function(e) {
+        var t = new Error(),
+          n = (function(e) {
+            return function(t, n, a) {
+              var r = o(t, n);
+              if (r) a(r);
+              else {
+                Object.keys(n).forEach(function(e) {
+                  'object' == typeof n[e] && (n[e] = JSON.stringify(n[e]));
+                });
+                var i = {
+                  url: `${s}/api/${t}`,
+                  headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                  },
+                  data: n
+                };
+                e && (i = Object.assign({}, i, e)),
+                  g(i, function(e, t) {
+                    if (e) a(e);
+                    else if (429 === t.statusCode) {
+                      var n = Error('ratelimited');
+                      (n.retry = t.headers['retry-after']), a(n);
+                    } else if (t.body && t.body.error) {
+                      var n = Error(t.body.error);
+                      t.body.response_metadata &&
+                        t.body.response_metadata.messages &&
+                        (n.messages = t.body.response_metadata.messages),
+                        a(n);
+                    } else a(null, t.body);
+                  });
+              }
+            };
+          })(e);
+        return function(e, a, r) {
+          if (!r)
+            return i(n)(e, a).catch(function(e) {
+              throw ((e.stack = t.stack.replace(
+                /^Error/,
+                'Error: ' + e.message
+              )),
+              e);
+            });
+          n(e, a, function(e, n) {
+            e && (e.stack = t.stack.replace(/^Error/, 'Error: ' + e.message)),
+              r(e, n);
+          });
+        };
+      };
+    },
+    function(e, t, n) {
+      'use strict';
+      function a(e, t) {
+        return Object.prototype.hasOwnProperty.call(e, t);
+      }
+      e.exports = function(e, t, n, o) {
+        (t = t || '&'), (n = n || '=');
+        var i = {};
+        if ('string' != typeof e || 0 === e.length) return i;
+        var s = /\+/g;
+        e = e.split(t);
+        var g = 1e3;
+        o && 'number' == typeof o.maxKeys && (g = o.maxKeys);
+        var A = e.length;
+        g > 0 && A > g && (A = g);
+        for (var u = 0; u < A; ++u) {
+          var C,
+            l,
+            c,
+            I,
+            d = e[u].replace(s, '%20'),
+            p = d.indexOf(n);
+          p >= 0
+            ? ((C = d.substr(0, p)), (l = d.substr(p + 1)))
+            : ((C = d), (l = '')),
+            (c = decodeURIComponent(C)),
+            (I = decodeURIComponent(l)),
+            a(i, c)
+              ? r(i[c])
+                ? i[c].push(I)
+                : (i[c] = [i[c], I])
+              : (i[c] = I);
+        }
+        return i;
+      };
+      var r =
+        Array.isArray ||
+        function(e) {
+          return '[object Array]' === Object.prototype.toString.call(e);
+        };
+    },
+    function(e, t, n) {
+      'use strict';
+      var a = function(e) {
+        switch (typeof e) {
+          case 'string':
+            return e;
+          case 'boolean':
+            return e ? 'true' : 'false';
+          case 'number':
+            return isFinite(e) ? e : '';
+          default:
+            return '';
+        }
+      };
+      e.exports = function(e, t, n, s) {
+        return (
+          (t = t || '&'),
+          (n = n || '='),
+          null === e && (e = void 0),
+          'object' == typeof e
+            ? o(i(e), function(i) {
+                var s = encodeURIComponent(a(i)) + n;
+                return r(e[i])
+                  ? o(e[i], function(e) {
+                      return s + encodeURIComponent(a(e));
+                    }).join(t)
+                  : s + encodeURIComponent(a(e[i]));
+              }).join(t)
+            : s
+            ? encodeURIComponent(a(s)) + n + encodeURIComponent(a(e))
+            : ''
+        );
+      };
+      var r =
+        Array.isArray ||
+        function(e) {
+          return '[object Array]' === Object.prototype.toString.call(e);
+        };
+      function o(e, t) {
+        if (e.map) return e.map(t);
+        for (var n = [], a = 0; a < e.length; a++) n.push(t(e[a], a));
+        return n;
+      }
+      var i =
+        Object.keys ||
+        function(e) {
+          var t = [];
+          for (var n in e)
+            Object.prototype.hasOwnProperty.call(e, n) && t.push(n);
+          return t;
+        };
+    },
+    function(e, t, n) {
+      'use strict';
+      var a = n(123),
+        r = n(126);
+      function o() {
+        (this.protocol = null),
+          (this.slashes = null),
+          (this.auth = null),
+          (this.host = null),
+          (this.port = null),
+          (this.hostname = null),
+          (this.hash = null),
+          (this.search = null),
+          (this.query = null),
+          (this.pathname = null),
+          (this.path = null),
+          (this.href = null);
+      }
+      (t.parse = h),
+        (t.resolve = function(e, t) {
+          return h(e, !1, !0).resolve(t);
+        }),
+        (t.resolveObject = function(e, t) {
+          return e ? h(e, !1, !0).resolveObject(t) : t;
+        }),
+        (t.format = function(e) {
+          r.isString(e) && (e = h(e));
+          return e instanceof o ? e.format() : o.prototype.format.call(e);
+        }),
+        (t.Url = o);
+      var i = /^([a-z0-9.+-]+:)/i,
+        s = /:[0-9]*$/,
+        g = /^(\/\/?(?!\/)[^\?\s]*)(\?[^\s]*)?$/,
+        A = ['{', '}', '|', '\\', '^', '`'].concat([
+          '<',
+          '>',
+          '"',
+          '`',
+          ' ',
+          '\r',
+          '\n',
+          '\t'
+        ]),
+        u = ["'"].concat(A),
+        C = ['%', '/', '?', ';', '#'].concat(u),
+        l = ['/', '?', '#'],
+        c = /^[+a-z0-9A-Z_-]{0,63}$/,
+        I = /^([+a-z0-9A-Z_-]{0,63})(.*)$/,
+        d = { javascript: !0, 'javascript:': !0 },
+        p = { javascript: !0, 'javascript:': !0 },
+        f = {
+          http: !0,
+          https: !0,
+          ftp: !0,
+          gopher: !0,
+          file: !0,
+          'http:': !0,
+          'https:': !0,
+          'ftp:': !0,
+          'gopher:': !0,
+          'file:': !0
+        },
+        x = n(16);
+      function h(e, t, n) {
+        if (e && r.isObject(e) && e instanceof o) return e;
+        var a = new o();
+        return a.parse(e, t, n), a;
+      }
+      (o.prototype.parse = function(e, t, n) {
+        if (!r.isString(e))
+          throw new TypeError(
+            "Parameter 'url' must be a string, not " + typeof e
+          );
+        var o = e.indexOf('?'),
+          s = -1 !== o && o < e.indexOf('#') ? '?' : '#',
+          A = e.split(s);
+        A[0] = A[0].replace(/\\/g, '/');
+        var h = (e = A.join(s));
+        if (((h = h.trim()), !n && 1 === e.split('#').length)) {
+          var m = g.exec(h);
+          if (m)
+            return (
+              (this.path = h),
+              (this.href = h),
+              (this.pathname = m[1]),
+              m[2]
+                ? ((this.search = m[2]),
+                  (this.query = t
+                    ? x.parse(this.search.substr(1))
+                    : this.search.substr(1)))
+                : t && ((this.search = ''), (this.query = {})),
+              this
+            );
+        }
+        var _ = i.exec(h);
+        if (_) {
+          var v = (_ = _[0]).toLowerCase();
+          (this.protocol = v), (h = h.substr(_.length));
+        }
+        if (n || _ || h.match(/^\/\/[^@\/]+@[^@\/]+/)) {
+          var k = '//' === h.substr(0, 2);
+          !k || (_ && p[_]) || ((h = h.substr(2)), (this.slashes = !0));
+        }
+        if (!p[_] && (k || (_ && !f[_]))) {
+          for (var b, y, q = -1, R = 0; R < l.length; R++) {
+            -1 !== (M = h.indexOf(l[R])) && (-1 === q || M < q) && (q = M);
+          }
+          -1 !== (y = -1 === q ? h.lastIndexOf('@') : h.lastIndexOf('@', q)) &&
+            ((b = h.slice(0, y)),
+            (h = h.slice(y + 1)),
+            (this.auth = decodeURIComponent(b))),
+            (q = -1);
+          for (R = 0; R < C.length; R++) {
+            var M;
+            -1 !== (M = h.indexOf(C[R])) && (-1 === q || M < q) && (q = M);
+          }
+          -1 === q && (q = h.length),
+            (this.host = h.slice(0, q)),
+            (h = h.slice(q)),
+            this.parseHost(),
+            (this.hostname = this.hostname || '');
+          var w =
+            '[' === this.hostname[0] &&
+            ']' === this.hostname[this.hostname.length - 1];
+          if (!w)
+            for (
+              var O = this.hostname.split(/\./), j = ((R = 0), O.length);
+              R < j;
+              R++
+            ) {
+              var P = O[R];
+              if (P && !P.match(c)) {
+                for (var S = '', T = 0, E = P.length; T < E; T++)
+                  P.charCodeAt(T) > 127 ? (S += 'x') : (S += P[T]);
+                if (!S.match(c)) {
+                  var N = O.slice(0, R),
+                    U = O.slice(R + 1),
+                    F = P.match(I);
+                  F && (N.push(F[1]), U.unshift(F[2])),
+                    U.length && (h = '/' + U.join('.') + h),
+                    (this.hostname = N.join('.'));
+                  break;
+                }
+              }
+            }
+          this.hostname.length > 255
+            ? (this.hostname = '')
+            : (this.hostname = this.hostname.toLowerCase()),
+            w || (this.hostname = a.toASCII(this.hostname));
+          var z = this.port ? ':' + this.port : '',
+            D = this.hostname || '';
+          (this.host = D + z),
+            (this.href += this.host),
+            w &&
+              ((this.hostname = this.hostname.substr(
+                1,
+                this.hostname.length - 2
+              )),
+              '/' !== h[0] && (h = '/' + h));
+        }
+        if (!d[v])
+          for (R = 0, j = u.length; R < j; R++) {
+            var G = u[R];
+            if (-1 !== h.indexOf(G)) {
+              var L = encodeURIComponent(G);
+              L === G && (L = escape(G)), (h = h.split(G).join(L));
+            }
+          }
+        var Z = h.indexOf('#');
+        -1 !== Z && ((this.hash = h.substr(Z)), (h = h.slice(0, Z)));
+        var B = h.indexOf('?');
+        if (
+          (-1 !== B
+            ? ((this.search = h.substr(B)),
+              (this.query = h.substr(B + 1)),
+              t && (this.query = x.parse(this.query)),
+              (h = h.slice(0, B)))
+            : t && ((this.search = ''), (this.query = {})),
+          h && (this.pathname = h),
+          f[v] && this.hostname && !this.pathname && (this.pathname = '/'),
+          this.pathname || this.search)
+        ) {
+          z = this.pathname || '';
+          var H = this.search || '';
+          this.path = z + H;
+        }
+        return (this.href = this.format()), this;
+      }),
+        (o.prototype.format = function() {
+          var e = this.auth || '';
+          e &&
+            ((e = (e = encodeURIComponent(e)).replace(/%3A/i, ':')),
+            (e += '@'));
+          var t = this.protocol || '',
+            n = this.pathname || '',
+            a = this.hash || '',
+            o = !1,
+            i = '';
+          this.host
+            ? (o = e + this.host)
+            : this.hostname &&
+              ((o =
+                e +
+                (-1 === this.hostname.indexOf(':')
+                  ? this.hostname
+                  : '[' + this.hostname + ']')),
+              this.port && (o += ':' + this.port)),
+            this.query &&
+              r.isObject(this.query) &&
+              Object.keys(this.query).length &&
+              (i = x.stringify(this.query));
+          var s = this.search || (i && '?' + i) || '';
+          return (
+            t && ':' !== t.substr(-1) && (t += ':'),
+            this.slashes || ((!t || f[t]) && !1 !== o)
+              ? ((o = '//' + (o || '')),
+                n && '/' !== n.charAt(0) && (n = '/' + n))
+              : o || (o = ''),
+            a && '#' !== a.charAt(0) && (a = '#' + a),
+            s && '?' !== s.charAt(0) && (s = '?' + s),
+            t +
+              o +
+              (n = n.replace(/[?#]/g, function(e) {
+                return encodeURIComponent(e);
+              })) +
+              (s = s.replace('#', '%23')) +
+              a
+          );
+        }),
+        (o.prototype.resolve = function(e) {
+          return this.resolveObject(h(e, !1, !0)).format();
+        }),
+        (o.prototype.resolveObject = function(e) {
+          if (r.isString(e)) {
+            var t = new o();
+            t.parse(e, !1, !0), (e = t);
+          }
+          for (
+            var n = new o(), a = Object.keys(this), i = 0;
+            i < a.length;
+            i++
+          ) {
+            var s = a[i];
+            n[s] = this[s];
+          }
+          if (((n.hash = e.hash), '' === e.href))
+            return (n.href = n.format()), n;
+          if (e.slashes && !e.protocol) {
+            for (var g = Object.keys(e), A = 0; A < g.length; A++) {
+              var u = g[A];
+              'protocol' !== u && (n[u] = e[u]);
+            }
+            return (
+              f[n.protocol] &&
+                n.hostname &&
+                !n.pathname &&
+                (n.path = n.pathname = '/'),
+              (n.href = n.format()),
+              n
+            );
+          }
+          if (e.protocol && e.protocol !== n.protocol) {
+            if (!f[e.protocol]) {
+              for (var C = Object.keys(e), l = 0; l < C.length; l++) {
+                var c = C[l];
+                n[c] = e[c];
+              }
+              return (n.href = n.format()), n;
+            }
+            if (((n.protocol = e.protocol), e.host || p[e.protocol]))
+              n.pathname = e.pathname;
+            else {
+              for (
+                var I = (e.pathname || '').split('/');
+                I.length && !(e.host = I.shift());
+
+              );
+              e.host || (e.host = ''),
+                e.hostname || (e.hostname = ''),
+                '' !== I[0] && I.unshift(''),
+                I.length < 2 && I.unshift(''),
+                (n.pathname = I.join('/'));
+            }
+            if (
+              ((n.search = e.search),
+              (n.query = e.query),
+              (n.host = e.host || ''),
+              (n.auth = e.auth),
+              (n.hostname = e.hostname || e.host),
+              (n.port = e.port),
+              n.pathname || n.search)
+            ) {
+              var d = n.pathname || '',
+                x = n.search || '';
+              n.path = d + x;
+            }
+            return (
+              (n.slashes = n.slashes || e.slashes), (n.href = n.format()), n
+            );
+          }
+          var h = n.pathname && '/' === n.pathname.charAt(0),
+            m = e.host || (e.pathname && '/' === e.pathname.charAt(0)),
+            _ = m || h || (n.host && e.pathname),
+            v = _,
+            k = (n.pathname && n.pathname.split('/')) || [],
+            b =
+              ((I = (e.pathname && e.pathname.split('/')) || []),
+              n.protocol && !f[n.protocol]);
+          if (
+            (b &&
+              ((n.hostname = ''),
+              (n.port = null),
+              n.host && ('' === k[0] ? (k[0] = n.host) : k.unshift(n.host)),
+              (n.host = ''),
+              e.protocol &&
+                ((e.hostname = null),
+                (e.port = null),
+                e.host && ('' === I[0] ? (I[0] = e.host) : I.unshift(e.host)),
+                (e.host = null)),
+              (_ = _ && ('' === I[0] || '' === k[0]))),
+            m)
+          )
+            (n.host = e.host || '' === e.host ? e.host : n.host),
+              (n.hostname =
+                e.hostname || '' === e.hostname ? e.hostname : n.hostname),
+              (n.search = e.search),
+              (n.query = e.query),
+              (k = I);
+          else if (I.length)
+            k || (k = []),
+              k.pop(),
+              (k = k.concat(I)),
+              (n.search = e.search),
+              (n.query = e.query);
+          else if (!r.isNullOrUndefined(e.search)) {
+            if (b)
+              (n.hostname = n.host = k.shift()),
+                (w =
+                  !!(n.host && n.host.indexOf('@') > 0) && n.host.split('@')) &&
+                  ((n.auth = w.shift()), (n.host = n.hostname = w.shift()));
+            return (
+              (n.search = e.search),
+              (n.query = e.query),
+              (r.isNull(n.pathname) && r.isNull(n.search)) ||
+                (n.path =
+                  (n.pathname ? n.pathname : '') + (n.search ? n.search : '')),
+              (n.href = n.format()),
+              n
+            );
+          }
+          if (!k.length)
+            return (
+              (n.pathname = null),
+              n.search ? (n.path = '/' + n.search) : (n.path = null),
+              (n.href = n.format()),
+              n
+            );
+          for (
+            var y = k.slice(-1)[0],
+              q =
+                ((n.host || e.host || k.length > 1) &&
+                  ('.' === y || '..' === y)) ||
+                '' === y,
+              R = 0,
+              M = k.length;
+            M >= 0;
+            M--
+          )
+            '.' === (y = k[M])
+              ? k.splice(M, 1)
+              : '..' === y
+              ? (k.splice(M, 1), R++)
+              : R && (k.splice(M, 1), R--);
+          if (!_ && !v) for (; R--; R) k.unshift('..');
+          !_ ||
+            '' === k[0] ||
+            (k[0] && '/' === k[0].charAt(0)) ||
+            k.unshift(''),
+            q && '/' !== k.join('/').substr(-1) && k.push('');
+          var w,
+            O = '' === k[0] || (k[0] && '/' === k[0].charAt(0));
+          b &&
+            ((n.hostname = n.host = O ? '' : k.length ? k.shift() : ''),
+            (w = !!(n.host && n.host.indexOf('@') > 0) && n.host.split('@')) &&
+              ((n.auth = w.shift()), (n.host = n.hostname = w.shift())));
+          return (
+            (_ = _ || (n.host && k.length)) && !O && k.unshift(''),
+            k.length
+              ? (n.pathname = k.join('/'))
+              : ((n.pathname = null), (n.path = null)),
+            (r.isNull(n.pathname) && r.isNull(n.search)) ||
+              (n.path =
+                (n.pathname ? n.pathname : '') + (n.search ? n.search : '')),
+            (n.auth = e.auth || n.auth),
+            (n.slashes = n.slashes || e.slashes),
+            (n.href = n.format()),
+            n
+          );
+        }),
+        (o.prototype.parseHost = function() {
+          var e = this.host,
+            t = s.exec(e);
+          t &&
+            (':' !== (t = t[0]) && (this.port = t.substr(1)),
+            (e = e.substr(0, e.length - t.length))),
+            e && (this.hostname = e);
+        });
+    },
+    function(e, t, n) {
+      (function(e, a) {
+        var r;
+        /*! https://mths.be/punycode v1.4.1 by @mathias */ !(function(o) {
+          t && t.nodeType, e && e.nodeType;
+          var i = 'object' == typeof a && a;
+          i.global !== i && i.window !== i && i.self;
+          var s,
+            g = 2147483647,
+            A = 36,
+            u = 1,
+            C = 26,
+            l = 38,
+            c = 700,
+            I = 72,
+            d = 128,
+            p = '-',
+            f = /^xn--/,
+            x = /[^\x20-\x7E]/,
+            h = /[\x2E\u3002\uFF0E\uFF61]/g,
+            m = {
+              overflow: 'Overflow: input needs wider integers to process',
+              'not-basic': 'Illegal input >= 0x80 (not a basic code point)',
+              'invalid-input': 'Invalid input'
+            },
+            _ = A - u,
+            v = Math.floor,
+            k = String.fromCharCode;
+          function b(e) {
+            throw new RangeError(m[e]);
+          }
+          function y(e, t) {
+            for (var n = e.length, a = []; n--; ) a[n] = t(e[n]);
+            return a;
+          }
+          function q(e, t) {
+            var n = e.split('@'),
+              a = '';
+            return (
+              n.length > 1 && ((a = n[0] + '@'), (e = n[1])),
+              a + y((e = e.replace(h, '.')).split('.'), t).join('.')
+            );
+          }
+          function R(e) {
+            for (var t, n, a = [], r = 0, o = e.length; r < o; )
+              (t = e.charCodeAt(r++)) >= 55296 && t <= 56319 && r < o
+                ? 56320 == (64512 & (n = e.charCodeAt(r++)))
+                  ? a.push(((1023 & t) << 10) + (1023 & n) + 65536)
+                  : (a.push(t), r--)
+                : a.push(t);
+            return a;
+          }
+          function M(e) {
+            return y(e, function(e) {
+              var t = '';
+              return (
+                e > 65535 &&
+                  ((t += k((((e -= 65536) >>> 10) & 1023) | 55296)),
+                  (e = 56320 | (1023 & e))),
+                (t += k(e))
+              );
+            }).join('');
+          }
+          function w(e, t) {
+            return e + 22 + 75 * (e < 26) - ((0 != t) << 5);
+          }
+          function O(e, t, n) {
+            var a = 0;
+            for (
+              e = n ? v(e / c) : e >> 1, e += v(e / t);
+              e > (_ * C) >> 1;
+              a += A
+            )
+              e = v(e / _);
+            return v(a + ((_ + 1) * e) / (e + l));
+          }
+          function j(e) {
+            var t,
+              n,
+              a,
+              r,
+              o,
+              i,
+              s,
+              l,
+              c,
+              f,
+              x,
+              h = [],
+              m = e.length,
+              _ = 0,
+              k = d,
+              y = I;
+            for ((n = e.lastIndexOf(p)) < 0 && (n = 0), a = 0; a < n; ++a)
+              e.charCodeAt(a) >= 128 && b('not-basic'), h.push(e.charCodeAt(a));
+            for (r = n > 0 ? n + 1 : 0; r < m; ) {
+              for (
+                o = _, i = 1, s = A;
+                r >= m && b('invalid-input'),
+                  ((l =
+                    (x = e.charCodeAt(r++)) - 48 < 10
+                      ? x - 22
+                      : x - 65 < 26
+                      ? x - 65
+                      : x - 97 < 26
+                      ? x - 97
+                      : A) >= A ||
+                    l > v((g - _) / i)) &&
+                    b('overflow'),
+                  (_ += l * i),
+                  !(l < (c = s <= y ? u : s >= y + C ? C : s - y));
+                s += A
+              )
+                i > v(g / (f = A - c)) && b('overflow'), (i *= f);
+              (y = O(_ - o, (t = h.length + 1), 0 == o)),
+                v(_ / t) > g - k && b('overflow'),
+                (k += v(_ / t)),
+                (_ %= t),
+                h.splice(_++, 0, k);
+            }
+            return M(h);
+          }
+          function P(e) {
+            var t,
+              n,
+              a,
+              r,
+              o,
+              i,
+              s,
+              l,
+              c,
+              f,
+              x,
+              h,
+              m,
+              _,
+              y,
+              q = [];
+            for (h = (e = R(e)).length, t = d, n = 0, o = I, i = 0; i < h; ++i)
+              (x = e[i]) < 128 && q.push(k(x));
+            for (a = r = q.length, r && q.push(p); a < h; ) {
+              for (s = g, i = 0; i < h; ++i)
+                (x = e[i]) >= t && x < s && (s = x);
+              for (
+                s - t > v((g - n) / (m = a + 1)) && b('overflow'),
+                  n += (s - t) * m,
+                  t = s,
+                  i = 0;
+                i < h;
+                ++i
+              )
+                if (((x = e[i]) < t && ++n > g && b('overflow'), x == t)) {
+                  for (
+                    l = n, c = A;
+                    !(l < (f = c <= o ? u : c >= o + C ? C : c - o));
+                    c += A
+                  )
+                    (y = l - f),
+                      (_ = A - f),
+                      q.push(k(w(f + (y % _), 0))),
+                      (l = v(y / _));
+                  q.push(k(w(l, 0))), (o = O(n, m, a == r)), (n = 0), ++a;
+                }
+              ++n, ++t;
+            }
+            return q.join('');
+          }
+          (s = {
+            version: '1.4.1',
+            ucs2: { decode: R, encode: M },
+            decode: j,
+            encode: P,
+            toASCII: function(e) {
+              return q(e, function(e) {
+                return x.test(e) ? 'xn--' + P(e) : e;
+              });
+            },
+            toUnicode: function(e) {
+              return q(e, function(e) {
+                return f.test(e) ? j(e.slice(4).toLowerCase()) : e;
+              });
+            }
+          }),
+            void 0 ===
+              (r = function() {
+                return s;
+              }.call(t, n, t, e)) || (e.exports = r);
+        })();
+      }.call(this, n(124)(e), n(125)));
+    },
+    function(e, t) {
+      e.exports = function(e) {
+        return (
+          e.webpackPolyfill ||
+            ((e.deprecate = function() {}),
+            (e.paths = []),
+            e.children || (e.children = []),
+            Object.defineProperty(e, 'loaded', {
+              enumerable: !0,
+              get: function() {
+                return e.l;
+              }
+            }),
+            Object.defineProperty(e, 'id', {
+              enumerable: !0,
+              get: function() {
+                return e.i;
+              }
+            }),
+            (e.webpackPolyfill = 1)),
+          e
+        );
+      };
+    },
+    function(e, t) {
+      var n;
+      n = (function() {
+        return this;
+      })();
+      try {
+        n = n || new Function('return this')();
+      } catch (e) {
+        'object' == typeof window && (n = window);
+      }
+      e.exports = n;
+    },
+    function(e, t, n) {
+      'use strict';
+      e.exports = {
+        isString: function(e) {
+          return 'string' == typeof e;
+        },
+        isObject: function(e) {
+          return 'object' == typeof e && null !== e;
+        },
+        isNull: function(e) {
+          return null === e;
+        },
+        isNullOrUndefined: function(e) {
+          return null == e;
+        }
+      };
+    },
+    function(e, t) {
+      e.exports = function(e) {
+        return function(...t) {
+          return new Promise(function(n, a) {
+            t.push(function(e, t) {
+              e ? a(e) : n(t);
+            }),
+              e.apply({}, t);
+          });
+        };
+      };
+    },
+    function(e, t, n) {
+      'use strict';
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'api.test',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -1918,43 +3021,43 @@
     function(e, t, n) {
       'use strict';
       var a,
-        r = n(113),
-        i = n(114),
-        g = n(115),
-        o = n(116),
-        A = n(11),
-        C = n(12),
-        s = n(7),
-        I = n(117),
-        u = o.create;
+        r = n(130),
+        o = n(131),
+        i = n(132),
+        s = n(133),
+        g = n(17),
+        A = n(18),
+        u = n(7),
+        C = n(134),
+        l = s.create;
       e.exports = (function e(t, n) {
         function r(e, r) {
-          var o, l, c, d, p, f;
-          for (e = new C(s(t, e)), a = 0; a < n.length; a++)
-            (l = n[a]).processRequest && l.processRequest(e);
+          var s, c, I, d, p, f;
+          for (e = new A(u(t, e)), a = 0; a < n.length; a++)
+            (c = n[a]).processRequest && c.processRequest(e);
           for (a = 0; a < n.length; a++)
-            if ((l = n[a]).createXHR) {
-              o = l.createXHR(e);
+            if ((c = n[a]).createXHR) {
+              s = c.createXHR(e);
               break;
             }
-          for (d in ((o = o || new i()),
-          (e.xhr = o),
-          (c = I(
-            g(function(t) {
+          for (d in ((s = s || new o()),
+          (e.xhr = s),
+          (I = C(
+            i(function(t) {
               clearTimeout(p),
-                (o.onload = o.onerror = o.onabort = o.onreadystatechange = o.ontimeout = o.onprogress = null);
-              var i = (function(e, t) {
+                (s.onload = s.onerror = s.onabort = s.onreadystatechange = s.ontimeout = s.onprogress = null);
+              var o = (function(e, t) {
                   if (e.aborted)
-                    return u('Request aborted', e, { name: 'Abort' });
+                    return l('Request aborted', e, { name: 'Abort' });
                   if (e.timedOut)
-                    return u('Request timeout', e, { name: 'Timeout' });
+                    return l('Request timeout', e, { name: 'Timeout' });
                   var n,
                     a = e.xhr;
                   switch (Math.floor(a.status / 100)) {
                     case 0:
                     case 2:
                       if (!t) return;
-                      return u(t.message, e);
+                      return l(t.message, e);
                     case 4:
                       if (404 === a.status && !e.errorOn404) return;
                       n = 'Client';
@@ -1974,66 +3077,66 @@
                     ' ' +
                     e.url +
                     '"';
-                  return u(r, e);
+                  return l(r, e);
                 })(e, t),
-                g = i || A.fromRequest(e);
+                i = o || g.fromRequest(e);
               for (a = 0; a < n.length; a++)
-                (l = n[a]).processResponse && l.processResponse(g);
-              i && e.onerror && e.onerror(i),
-                !i && e.onload && e.onload(g),
-                r && r(i, i ? void 0 : g);
+                (c = n[a]).processResponse && c.processResponse(i);
+              o && e.onerror && e.onerror(o),
+                !o && e.onload && e.onload(i),
+                r && r(o, o ? void 0 : i);
             })
           )),
-          (f = 'onload' in o && 'onerror' in o),
-          (o.onload = function() {
-            c();
+          (f = 'onload' in s && 'onerror' in s),
+          (s.onload = function() {
+            I();
           }),
-          (o.onerror = c),
-          (o.onabort = function() {
-            c();
+          (s.onerror = I),
+          (s.onabort = function() {
+            I();
           }),
-          (o.onreadystatechange = function() {
-            if (4 === o.readyState) {
-              if (e.aborted) return c();
+          (s.onreadystatechange = function() {
+            if (4 === s.readyState) {
+              if (e.aborted) return I();
               if (!f) {
                 var t;
                 try {
-                  t = o.status;
+                  t = s.status;
                 } catch (n) {}
                 var n = 0 === t ? new Error('Internal XHR Error') : null;
-                return c(n);
+                return I(n);
               }
             }
           }),
-          (o.ontimeout = function() {}),
-          (o.onprogress = function() {}),
-          o.open(e.method, e.url),
+          (s.ontimeout = function() {}),
+          (s.onprogress = function() {}),
+          s.open(e.method, e.url),
           e.timeout &&
             (p = setTimeout(function() {
-              (e.timedOut = !0), c();
+              (e.timedOut = !0), I();
               try {
-                o.abort();
+                s.abort();
               } catch (e) {}
             }, e.timeout)),
           e.headers))
-            e.headers.hasOwnProperty(d) && o.setRequestHeader(d, e.headers[d]);
-          return o.send(e.body), e;
+            e.headers.hasOwnProperty(d) && s.setRequestHeader(d, e.headers[d]);
+          return s.send(e.body), e;
         }
         (t = t || {}), (n = n || []);
-        var l,
-          c = ['get', 'post', 'put', 'head', 'patch', 'delete'],
+        var c,
+          I = ['get', 'post', 'put', 'head', 'patch', 'delete'],
           d = function(e) {
             return function(t, n) {
-              return ((t = new C(t)).method = e), r(t, n);
+              return ((t = new A(t)).method = e), r(t, n);
             };
           };
-        for (a = 0; a < c.length; a++) r[(l = c[a])] = d(l);
+        for (a = 0; a < I.length; a++) r[(c = I[a])] = d(c);
         return (
           (r.plugins = function() {
             return n;
           }),
           (r.defaults = function(a) {
-            return a ? e(s(t, a), n) : t;
+            return a ? e(u(t, a), n) : t;
           }),
           (r.use = function() {
             var a = Array.prototype.slice.call(arguments, 0);
@@ -2042,9 +3145,9 @@
           (r.bare = function() {
             return e();
           }),
-          (r.Request = C),
-          (r.Response = A),
-          (r.RequestError = o),
+          (r.Request = A),
+          (r.Response = g),
+          (r.RequestError = s),
           r
         );
       })({}, [r]);
@@ -2075,10 +3178,10 @@
     },
     function(e, t, n) {
       'use strict';
-      var a = n(11),
-        r = n(13),
-        i = n(7);
-      function g(e, t) {
+      var a = n(17),
+        r = n(19),
+        o = n(7);
+      function i(e, t) {
         var n = new Error(e);
         for (var a in ((n.name = 'RequestError'),
         (this.name = n.name),
@@ -2090,13 +3193,13 @@
         t))
           t.hasOwnProperty(a) && (this[a] = t[a]);
       }
-      (g.prototype = i(Error.prototype)),
-        (g.prototype.constructor = g),
-        (g.create = function(e, t, n) {
-          var i = new g(e, n);
-          return a.call(i, r(t)), i;
+      (i.prototype = o(Error.prototype)),
+        (i.prototype.constructor = i),
+        (i.create = function(e, t, n) {
+          var o = new i(e, n);
+          return a.call(o, r(t)), o;
         }),
-        (e.exports = g);
+        (e.exports = i);
     },
     function(e, t, n) {
       'use strict';
@@ -2110,9 +3213,9 @@
     },
     function(e, t, n) {
       'use strict';
-      var a = n(119),
-        r = n(120);
-      function i(e, t) {
+      var a = n(136),
+        r = n(137);
+      function o(e, t) {
         return t.encode ? (t.strict ? a(e) : encodeURIComponent(e)) : e;
       }
       (t.extract = function(e) {
@@ -2153,9 +3256,9 @@
             ? (e.split('&').forEach(function(e) {
                 var t = e.replace(/\+/g, ' ').split('='),
                   r = t.shift(),
-                  i = t.length > 0 ? t.join('=') : void 0;
-                (i = void 0 === i ? null : decodeURIComponent(i)),
-                  n(decodeURIComponent(r), i, a);
+                  o = t.length > 0 ? t.join('=') : void 0;
+                (o = void 0 === o ? null : decodeURIComponent(o)),
+                  n(decodeURIComponent(r), o, a);
               }),
               Object.keys(a)
                 .sort()
@@ -2188,20 +3291,20 @@
               case 'index':
                 return function(t, n, a) {
                   return null === n
-                    ? [i(t, e), '[', a, ']'].join('')
-                    : [i(t, e), '[', i(a, e), ']=', i(n, e)].join('');
+                    ? [o(t, e), '[', a, ']'].join('')
+                    : [o(t, e), '[', o(a, e), ']=', o(n, e)].join('');
                 };
               case 'bracket':
                 return function(t, n) {
                   return null === n
-                    ? i(t, e)
-                    : [i(t, e), '[]=', i(n, e)].join('');
+                    ? o(t, e)
+                    : [o(t, e), '[]=', o(n, e)].join('');
                 };
               default:
                 return function(t, n) {
                   return null === n
-                    ? i(t, e)
-                    : [i(t, e), '=', i(n, e)].join('');
+                    ? o(t, e)
+                    : [o(t, e), '=', o(n, e)].join('');
                 };
             }
           })((t = r({ encode: !0, strict: !0, arrayFormat: 'none' }, t)));
@@ -2211,17 +3314,17 @@
                 .map(function(a) {
                   var r = e[a];
                   if (void 0 === r) return '';
-                  if (null === r) return i(a, t);
+                  if (null === r) return o(a, t);
                   if (Array.isArray(r)) {
-                    var g = [];
+                    var i = [];
                     return (
                       r.slice().forEach(function(e) {
-                        void 0 !== e && g.push(n(a, e, g.length));
+                        void 0 !== e && i.push(n(a, e, i.length));
                       }),
-                      g.join('&')
+                      i.join('&')
                     );
                   }
-                  return i(a, t) + '=' + i(r, t);
+                  return o(a, t) + '=' + o(r, t);
                 })
                 .filter(function(e) {
                   return e.length > 0;
@@ -2253,7 +3356,7 @@ object-assign
 */ var a =
           Object.getOwnPropertySymbols,
         r = Object.prototype.hasOwnProperty,
-        i = Object.prototype.propertyIsEnumerable;
+        o = Object.prototype.propertyIsEnumerable;
       e.exports = (function() {
         try {
           if (!Object.assign) return !1;
@@ -2287,27 +3390,27 @@ object-assign
         : function(e, t) {
             for (
               var n,
-                g,
-                o = (function(e) {
+                i,
+                s = (function(e) {
                   if (null == e)
                     throw new TypeError(
                       'Object.assign cannot be called with null or undefined'
                     );
                   return Object(e);
                 })(e),
-                A = 1;
-              A < arguments.length;
-              A++
+                g = 1;
+              g < arguments.length;
+              g++
             ) {
-              for (var C in (n = Object(arguments[A])))
-                r.call(n, C) && (o[C] = n[C]);
+              for (var A in (n = Object(arguments[g])))
+                r.call(n, A) && (s[A] = n[A]);
               if (a) {
-                g = a(n);
-                for (var s = 0; s < g.length; s++)
-                  i.call(n, g[s]) && (o[g[s]] = n[g[s]]);
+                i = a(n);
+                for (var u = 0; u < i.length; u++)
+                  o.call(n, i[u]) && (s[i[u]] = n[i[u]]);
               }
             }
-            return o;
+            return s;
           };
     },
     function(e) {
@@ -4734,304 +5837,304 @@ object-assign
             (t.users = {}),
             (t.users.profile = {}),
             (t.auth.test = function(t, a) {
-              (t.token = e), n(14).call({}, t, a);
-            }),
-            (t.bots.info = function(t, a) {
-              (t.token = e), n(15).call({}, t, a);
-            }),
-            (t.channels.archive = function(t, a) {
-              (t.token = e), n(16).call({}, t, a);
-            }),
-            (t.channels.create = function(t, a) {
-              (t.token = e), n(17).call({}, t, a);
-            }),
-            (t.channels.history = function(t, a) {
-              (t.token = e), n(18).call({}, t, a);
-            }),
-            (t.channels.info = function(t, a) {
-              (t.token = e), n(19).call({}, t, a);
-            }),
-            (t.channels.invite = function(t, a) {
               (t.token = e), n(20).call({}, t, a);
             }),
-            (t.channels.join = function(t, a) {
+            (t.bots.info = function(t, a) {
               (t.token = e), n(21).call({}, t, a);
             }),
-            (t.channels.kick = function(t, a) {
+            (t.channels.archive = function(t, a) {
               (t.token = e), n(22).call({}, t, a);
             }),
-            (t.channels.leave = function(t, a) {
+            (t.channels.create = function(t, a) {
               (t.token = e), n(23).call({}, t, a);
             }),
-            (t.channels.list = function(t, a) {
+            (t.channels.history = function(t, a) {
               (t.token = e), n(24).call({}, t, a);
             }),
-            (t.channels.mark = function(t, a) {
+            (t.channels.info = function(t, a) {
               (t.token = e), n(25).call({}, t, a);
             }),
-            (t.channels.rename = function(t, a) {
+            (t.channels.invite = function(t, a) {
               (t.token = e), n(26).call({}, t, a);
             }),
-            (t.channels.setPurpose = function(t, a) {
+            (t.channels.join = function(t, a) {
               (t.token = e), n(27).call({}, t, a);
             }),
-            (t.channels.setTopic = function(t, a) {
+            (t.channels.kick = function(t, a) {
               (t.token = e), n(28).call({}, t, a);
             }),
-            (t.channels.unarchive = function(t, a) {
+            (t.channels.leave = function(t, a) {
               (t.token = e), n(29).call({}, t, a);
             }),
-            (t.chat.delete = function(t, a) {
+            (t.channels.list = function(t, a) {
               (t.token = e), n(30).call({}, t, a);
             }),
-            (t.chat.meMessage = function(t, a) {
+            (t.channels.mark = function(t, a) {
               (t.token = e), n(31).call({}, t, a);
             }),
-            (t.chat.postMessage = function(t, a) {
+            (t.channels.rename = function(t, a) {
               (t.token = e), n(32).call({}, t, a);
             }),
-            (t.chat.update = function(t, a) {
+            (t.channels.setPurpose = function(t, a) {
               (t.token = e), n(33).call({}, t, a);
             }),
-            (t.dnd.endDnd = function(t, a) {
+            (t.channels.setTopic = function(t, a) {
               (t.token = e), n(34).call({}, t, a);
             }),
-            (t.dnd.endSnooze = function(t, a) {
+            (t.channels.unarchive = function(t, a) {
               (t.token = e), n(35).call({}, t, a);
             }),
-            (t.dnd.info = function(t, a) {
+            (t.chat.delete = function(t, a) {
               (t.token = e), n(36).call({}, t, a);
             }),
-            (t.dnd.setSnooze = function(t, a) {
+            (t.chat.meMessage = function(t, a) {
               (t.token = e), n(37).call({}, t, a);
             }),
-            (t.dnd.teamInfo = function(t, a) {
+            (t.chat.postMessage = function(t, a) {
               (t.token = e), n(38).call({}, t, a);
             }),
-            (t.emoji.list = function(t, a) {
+            (t.chat.update = function(t, a) {
               (t.token = e), n(39).call({}, t, a);
             }),
-            (t.files.comments.add = function(t, a) {
+            (t.dnd.endDnd = function(t, a) {
               (t.token = e), n(40).call({}, t, a);
             }),
-            (t.files.comments.delete = function(t, a) {
+            (t.dnd.endSnooze = function(t, a) {
               (t.token = e), n(41).call({}, t, a);
             }),
-            (t.files.comments.edit = function(t, a) {
+            (t.dnd.info = function(t, a) {
               (t.token = e), n(42).call({}, t, a);
             }),
-            (t.files.delete = function(t, a) {
+            (t.dnd.setSnooze = function(t, a) {
               (t.token = e), n(43).call({}, t, a);
             }),
-            (t.files.info = function(t, a) {
+            (t.dnd.teamInfo = function(t, a) {
               (t.token = e), n(44).call({}, t, a);
             }),
-            (t.files.list = function(t, a) {
+            (t.emoji.list = function(t, a) {
               (t.token = e), n(45).call({}, t, a);
             }),
-            (t.files.revokePublicURL = function(t, a) {
+            (t.files.comments.add = function(t, a) {
               (t.token = e), n(46).call({}, t, a);
             }),
-            (t.files.sharedPublicURL = function(t, a) {
+            (t.files.comments.delete = function(t, a) {
               (t.token = e), n(47).call({}, t, a);
             }),
-            (t.files.upload = function(t, a) {
+            (t.files.comments.edit = function(t, a) {
               (t.token = e), n(48).call({}, t, a);
             }),
-            (t.groups.archive = function(t, a) {
+            (t.files.delete = function(t, a) {
               (t.token = e), n(49).call({}, t, a);
             }),
-            (t.groups.close = function(t, a) {
+            (t.files.info = function(t, a) {
               (t.token = e), n(50).call({}, t, a);
             }),
-            (t.groups.create = function(t, a) {
+            (t.files.list = function(t, a) {
               (t.token = e), n(51).call({}, t, a);
             }),
-            (t.groups.createChild = function(t, a) {
+            (t.files.revokePublicURL = function(t, a) {
               (t.token = e), n(52).call({}, t, a);
             }),
-            (t.groups.history = function(t, a) {
+            (t.files.sharedPublicURL = function(t, a) {
               (t.token = e), n(53).call({}, t, a);
             }),
-            (t.groups.info = function(t, a) {
+            (t.files.upload = function(t, a) {
               (t.token = e), n(54).call({}, t, a);
             }),
-            (t.groups.invite = function(t, a) {
+            (t.groups.archive = function(t, a) {
               (t.token = e), n(55).call({}, t, a);
             }),
-            (t.groups.kick = function(t, a) {
+            (t.groups.close = function(t, a) {
               (t.token = e), n(56).call({}, t, a);
             }),
-            (t.groups.leave = function(t, a) {
+            (t.groups.create = function(t, a) {
               (t.token = e), n(57).call({}, t, a);
             }),
-            (t.groups.list = function(t, a) {
+            (t.groups.createChild = function(t, a) {
               (t.token = e), n(58).call({}, t, a);
             }),
-            (t.groups.mark = function(t, a) {
+            (t.groups.history = function(t, a) {
               (t.token = e), n(59).call({}, t, a);
             }),
-            (t.groups.open = function(t, a) {
+            (t.groups.info = function(t, a) {
               (t.token = e), n(60).call({}, t, a);
             }),
-            (t.groups.rename = function(t, a) {
+            (t.groups.invite = function(t, a) {
               (t.token = e), n(61).call({}, t, a);
             }),
-            (t.groups.setPurpose = function(t, a) {
+            (t.groups.kick = function(t, a) {
               (t.token = e), n(62).call({}, t, a);
             }),
-            (t.groups.setTopic = function(t, a) {
+            (t.groups.leave = function(t, a) {
               (t.token = e), n(63).call({}, t, a);
             }),
-            (t.groups.unarchive = function(t, a) {
+            (t.groups.list = function(t, a) {
               (t.token = e), n(64).call({}, t, a);
             }),
-            (t.im.close = function(t, a) {
+            (t.groups.mark = function(t, a) {
               (t.token = e), n(65).call({}, t, a);
             }),
-            (t.im.history = function(t, a) {
+            (t.groups.open = function(t, a) {
               (t.token = e), n(66).call({}, t, a);
             }),
-            (t.im.list = function(t, a) {
+            (t.groups.rename = function(t, a) {
               (t.token = e), n(67).call({}, t, a);
             }),
-            (t.im.mark = function(t, a) {
+            (t.groups.setPurpose = function(t, a) {
               (t.token = e), n(68).call({}, t, a);
             }),
-            (t.im.open = function(t, a) {
+            (t.groups.setTopic = function(t, a) {
               (t.token = e), n(69).call({}, t, a);
             }),
-            (t.mpim.close = function(t, a) {
+            (t.groups.unarchive = function(t, a) {
               (t.token = e), n(70).call({}, t, a);
             }),
-            (t.mpim.history = function(t, a) {
+            (t.im.close = function(t, a) {
               (t.token = e), n(71).call({}, t, a);
             }),
-            (t.mpim.list = function(t, a) {
+            (t.im.history = function(t, a) {
               (t.token = e), n(72).call({}, t, a);
             }),
-            (t.mpim.mark = function(t, a) {
+            (t.im.list = function(t, a) {
               (t.token = e), n(73).call({}, t, a);
             }),
-            (t.mpim.open = function(t, a) {
+            (t.im.mark = function(t, a) {
               (t.token = e), n(74).call({}, t, a);
             }),
-            (t.pins.add = function(t, a) {
+            (t.im.open = function(t, a) {
               (t.token = e), n(75).call({}, t, a);
             }),
-            (t.pins.list = function(t, a) {
+            (t.mpim.close = function(t, a) {
               (t.token = e), n(76).call({}, t, a);
             }),
-            (t.pins.remove = function(t, a) {
+            (t.mpim.history = function(t, a) {
               (t.token = e), n(77).call({}, t, a);
             }),
-            (t.reactions.add = function(t, a) {
+            (t.mpim.list = function(t, a) {
               (t.token = e), n(78).call({}, t, a);
             }),
-            (t.reactions.get = function(t, a) {
+            (t.mpim.mark = function(t, a) {
               (t.token = e), n(79).call({}, t, a);
             }),
-            (t.reactions.list = function(t, a) {
+            (t.mpim.open = function(t, a) {
               (t.token = e), n(80).call({}, t, a);
             }),
-            (t.reactions.remove = function(t, a) {
+            (t.pins.add = function(t, a) {
               (t.token = e), n(81).call({}, t, a);
             }),
-            (t.reminders.add = function(t, a) {
+            (t.pins.list = function(t, a) {
               (t.token = e), n(82).call({}, t, a);
             }),
-            (t.reminders.complete = function(t, a) {
+            (t.pins.remove = function(t, a) {
               (t.token = e), n(83).call({}, t, a);
             }),
-            (t.reminders.delete = function(t, a) {
+            (t.reactions.add = function(t, a) {
               (t.token = e), n(84).call({}, t, a);
             }),
-            (t.reminders.info = function(t, a) {
+            (t.reactions.get = function(t, a) {
               (t.token = e), n(85).call({}, t, a);
             }),
-            (t.reminders.list = function(t, a) {
+            (t.reactions.list = function(t, a) {
               (t.token = e), n(86).call({}, t, a);
+            }),
+            (t.reactions.remove = function(t, a) {
+              (t.token = e), n(87).call({}, t, a);
+            }),
+            (t.reminders.add = function(t, a) {
+              (t.token = e), n(88).call({}, t, a);
+            }),
+            (t.reminders.complete = function(t, a) {
+              (t.token = e), n(89).call({}, t, a);
+            }),
+            (t.reminders.delete = function(t, a) {
+              (t.token = e), n(90).call({}, t, a);
+            }),
+            (t.reminders.info = function(t, a) {
+              (t.token = e), n(91).call({}, t, a);
+            }),
+            (t.reminders.list = function(t, a) {
+              (t.token = e), n(92).call({}, t, a);
             }),
             (t.rtm.start = function(t, a) {
               (t.token = e), n(8).call({}, t, a);
             }),
             (t.search.all = function(t, a) {
-              (t.token = e), n(87).call({}, t, a);
-            }),
-            (t.search.files = function(t, a) {
-              (t.token = e), n(88).call({}, t, a);
-            }),
-            (t.search.messages = function(t, a) {
-              (t.token = e), n(89).call({}, t, a);
-            }),
-            (t.stars.add = function(t, a) {
-              (t.token = e), n(90).call({}, t, a);
-            }),
-            (t.stars.list = function(t, a) {
-              (t.token = e), n(91).call({}, t, a);
-            }),
-            (t.stars.remove = function(t, a) {
-              (t.token = e), n(92).call({}, t, a);
-            }),
-            (t.team.accessLogs = function(t, a) {
               (t.token = e), n(93).call({}, t, a);
             }),
-            (t.team.billableInfo = function(t, a) {
+            (t.search.files = function(t, a) {
               (t.token = e), n(94).call({}, t, a);
             }),
-            (t.team.info = function(t, a) {
+            (t.search.messages = function(t, a) {
               (t.token = e), n(95).call({}, t, a);
             }),
-            (t.team.integrationLogs = function(t, a) {
+            (t.stars.add = function(t, a) {
               (t.token = e), n(96).call({}, t, a);
             }),
-            (t.team.profile.get = function(t, a) {
+            (t.stars.list = function(t, a) {
               (t.token = e), n(97).call({}, t, a);
             }),
-            (t.usergroups.create = function(t, a) {
+            (t.stars.remove = function(t, a) {
               (t.token = e), n(98).call({}, t, a);
             }),
-            (t.usergroups.disable = function(t, a) {
+            (t.team.accessLogs = function(t, a) {
               (t.token = e), n(99).call({}, t, a);
             }),
-            (t.usergroups.enable = function(t, a) {
+            (t.team.billableInfo = function(t, a) {
               (t.token = e), n(100).call({}, t, a);
             }),
-            (t.usergroups.list = function(t, a) {
+            (t.team.info = function(t, a) {
               (t.token = e), n(101).call({}, t, a);
             }),
-            (t.usergroups.update = function(t, a) {
+            (t.team.integrationLogs = function(t, a) {
               (t.token = e), n(102).call({}, t, a);
             }),
-            (t.usergroups.users.list = function(t, a) {
+            (t.team.profile.get = function(t, a) {
               (t.token = e), n(103).call({}, t, a);
             }),
-            (t.usergroups.users.update = function(t, a) {
+            (t.usergroups.create = function(t, a) {
               (t.token = e), n(104).call({}, t, a);
             }),
-            (t.users.getPresence = function(t, a) {
+            (t.usergroups.disable = function(t, a) {
               (t.token = e), n(105).call({}, t, a);
             }),
-            (t.users.identity = function(t, a) {
+            (t.usergroups.enable = function(t, a) {
               (t.token = e), n(106).call({}, t, a);
             }),
-            (t.users.info = function(t, a) {
+            (t.usergroups.list = function(t, a) {
               (t.token = e), n(107).call({}, t, a);
             }),
-            (t.users.list = function(t, a) {
+            (t.usergroups.update = function(t, a) {
               (t.token = e), n(108).call({}, t, a);
             }),
-            (t.users.profile.get = function(t, a) {
-              (t.token = e), n(123).call({}, t, a);
-            }),
-            (t.users.profile.set = function(t, a) {
-              (t.token = e), n(124).call({}, t, a);
-            }),
-            (t.users.setActive = function(t, a) {
+            (t.usergroups.users.list = function(t, a) {
               (t.token = e), n(109).call({}, t, a);
             }),
-            (t.users.setPresence = function(t, a) {
+            (t.usergroups.users.update = function(t, a) {
               (t.token = e), n(110).call({}, t, a);
+            }),
+            (t.users.getPresence = function(t, a) {
+              (t.token = e), n(111).call({}, t, a);
+            }),
+            (t.users.identity = function(t, a) {
+              (t.token = e), n(112).call({}, t, a);
+            }),
+            (t.users.info = function(t, a) {
+              (t.token = e), n(113).call({}, t, a);
+            }),
+            (t.users.list = function(t, a) {
+              (t.token = e), n(114).call({}, t, a);
+            }),
+            (t.users.profile.get = function(t, a) {
+              (t.token = e), n(140).call({}, t, a);
+            }),
+            (t.users.profile.set = function(t, a) {
+              (t.token = e), n(141).call({}, t, a);
+            }),
+            (t.users.setActive = function(t, a) {
+              (t.token = e), n(115).call({}, t, a);
+            }),
+            (t.users.setPresence = function(t, a) {
+              (t.token = e), n(116).call({}, t, a);
             }),
             t
           );
@@ -5043,12 +6146,12 @@ object-assign
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'users.profile.get',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -5058,12 +6161,12 @@ object-assign
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'users.profile.set',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -5072,43 +6175,43 @@ object-assign
       'use strict';
       Object.defineProperty(t, '__esModule', { value: !0 });
       var a,
-        r = n(15),
-        i = (a = r) && a.__esModule ? a : { default: a };
-      (t.default = { info: i.default }), (e.exports = t.default);
+        r = n(21),
+        o = (a = r) && a.__esModule ? a : { default: a };
+      (t.default = { info: o.default }), (e.exports = t.default);
     },
     function(e, t, n) {
       'use strict';
       Object.defineProperty(t, '__esModule', { value: !0 });
-      var a = f(n(16)),
-        r = f(n(17)),
-        i = f(n(18)),
-        g = f(n(19)),
-        o = f(n(20)),
-        A = f(n(21)),
-        C = f(n(22)),
-        s = f(n(23)),
-        I = f(n(24)),
-        u = f(n(25)),
-        l = f(n(26)),
-        c = f(n(27)),
-        d = f(n(28)),
-        p = f(n(29));
+      var a = f(n(22)),
+        r = f(n(23)),
+        o = f(n(24)),
+        i = f(n(25)),
+        s = f(n(26)),
+        g = f(n(27)),
+        A = f(n(28)),
+        u = f(n(29)),
+        C = f(n(30)),
+        l = f(n(31)),
+        c = f(n(32)),
+        I = f(n(33)),
+        d = f(n(34)),
+        p = f(n(35));
       function f(e) {
         return e && e.__esModule ? e : { default: e };
       }
       (t.default = {
         archive: a.default,
         create: r.default,
-        history: i.default,
-        info: g.default,
-        invite: o.default,
-        join: A.default,
-        kick: C.default,
-        leave: s.default,
-        list: I.default,
-        mark: u.default,
-        rename: l.default,
-        setPurpose: c.default,
+        history: o.default,
+        info: i.default,
+        invite: s.default,
+        join: g.default,
+        kick: A.default,
+        leave: u.default,
+        list: C.default,
+        mark: l.default,
+        rename: c.default,
+        setPurpose: I.default,
         setTopic: d.default,
         unarchive: p.default
       }),
@@ -5117,102 +6220,102 @@ object-assign
     function(e, t, n) {
       'use strict';
       Object.defineProperty(t, '__esModule', { value: !0 });
-      var a = o(n(30)),
-        r = o(n(32)),
-        i = o(n(33)),
-        g = o(n(31));
-      function o(e) {
+      var a = s(n(36)),
+        r = s(n(38)),
+        o = s(n(39)),
+        i = s(n(37));
+      function s(e) {
         return e && e.__esModule ? e : { default: e };
       }
       (t.default = {
         postMessage: r.default,
         delete: a.default,
-        update: i.default,
-        meMessage: g.default
+        update: o.default,
+        meMessage: i.default
       }),
         (e.exports = t.default);
     },
     function(e, t, n) {
       'use strict';
       Object.defineProperty(t, '__esModule', { value: !0 });
-      var a = A(n(36)),
-        r = A(n(34)),
-        i = A(n(35)),
-        g = A(n(37)),
-        o = A(n(38));
-      function A(e) {
+      var a = g(n(42)),
+        r = g(n(40)),
+        o = g(n(41)),
+        i = g(n(43)),
+        s = g(n(44));
+      function g(e) {
         return e && e.__esModule ? e : { default: e };
       }
       (t.default = {
         info: a.default,
         endDnd: r.default,
-        endSnooze: i.default,
-        setSnooze: g.default,
-        teamInfo: o.default
+        endSnooze: o.default,
+        setSnooze: i.default,
+        teamInfo: s.default
       }),
         (e.exports = t.default);
     },
     function(e, t, n) {
       'use strict';
       Object.defineProperty(t, '__esModule', { value: !0 });
-      var a = u(n(43)),
-        r = u(n(44)),
-        i = u(n(45)),
-        g = u(n(48)),
-        o = u(n(40)),
-        A = u(n(41)),
-        C = u(n(42)),
-        s = u(n(46)),
-        I = u(n(47));
-      function u(e) {
+      var a = l(n(49)),
+        r = l(n(50)),
+        o = l(n(51)),
+        i = l(n(54)),
+        s = l(n(46)),
+        g = l(n(47)),
+        A = l(n(48)),
+        u = l(n(52)),
+        C = l(n(53));
+      function l(e) {
         return e && e.__esModule ? e : { default: e };
       }
       (t.default = {
         delete: a.default,
         info: r.default,
-        list: i.default,
-        upload: g.default,
-        comments: { add: o.default, delete: A.default, edit: C.default },
-        revokePublicURL: s.default,
-        sharedPublicURL: I.default
+        list: o.default,
+        upload: i.default,
+        comments: { add: s.default, delete: g.default, edit: A.default },
+        revokePublicURL: u.default,
+        sharedPublicURL: C.default
       }),
         (e.exports = t.default);
     },
     function(e, t, n) {
       'use strict';
       Object.defineProperty(t, '__esModule', { value: !0 });
-      var a = m(n(49)),
-        r = m(n(50)),
-        i = m(n(51)),
-        g = m(n(52)),
-        o = m(n(53)),
-        A = m(n(54)),
-        C = m(n(55)),
-        s = m(n(56)),
-        I = m(n(57)),
-        u = m(n(58)),
-        l = m(n(59)),
-        c = m(n(60)),
-        d = m(n(61)),
-        p = m(n(62)),
-        f = m(n(63)),
-        x = m(n(64));
-      function m(e) {
+      var a = h(n(55)),
+        r = h(n(56)),
+        o = h(n(57)),
+        i = h(n(58)),
+        s = h(n(59)),
+        g = h(n(60)),
+        A = h(n(61)),
+        u = h(n(62)),
+        C = h(n(63)),
+        l = h(n(64)),
+        c = h(n(65)),
+        I = h(n(66)),
+        d = h(n(67)),
+        p = h(n(68)),
+        f = h(n(69)),
+        x = h(n(70));
+      function h(e) {
         return e && e.__esModule ? e : { default: e };
       }
       (t.default = {
         archive: a.default,
         close: r.default,
-        create: i.default,
-        createChild: g.default,
-        history: o.default,
-        info: A.default,
-        invite: C.default,
-        kick: s.default,
-        leave: I.default,
-        list: u.default,
-        mark: l.default,
-        open: c.default,
+        create: o.default,
+        createChild: i.default,
+        history: s.default,
+        info: g.default,
+        invite: A.default,
+        kick: u.default,
+        leave: C.default,
+        list: l.default,
+        mark: c.default,
+        open: I.default,
         rename: d.default,
         setPurpose: p.default,
         setTopic: f.default,
@@ -5223,40 +6326,40 @@ object-assign
     function(e, t, n) {
       'use strict';
       Object.defineProperty(t, '__esModule', { value: !0 });
-      var a = A(n(65)),
-        r = A(n(66)),
-        i = A(n(67)),
-        g = A(n(68)),
-        o = A(n(69));
-      function A(e) {
+      var a = g(n(71)),
+        r = g(n(72)),
+        o = g(n(73)),
+        i = g(n(74)),
+        s = g(n(75));
+      function g(e) {
         return e && e.__esModule ? e : { default: e };
       }
       (t.default = {
         close: a.default,
         history: r.default,
-        list: i.default,
-        mark: g.default,
-        open: o.default
+        list: o.default,
+        mark: i.default,
+        open: s.default
       }),
         (e.exports = t.default);
     },
     function(e, t, n) {
       'use strict';
       Object.defineProperty(t, '__esModule', { value: !0 });
-      var a = A(n(70)),
-        r = A(n(71)),
-        i = A(n(72)),
-        g = A(n(73)),
-        o = A(n(74));
-      function A(e) {
+      var a = g(n(76)),
+        r = g(n(77)),
+        o = g(n(78)),
+        i = g(n(79)),
+        s = g(n(80));
+      function g(e) {
         return e && e.__esModule ? e : { default: e };
       }
       (t.default = {
         close: a.default,
         history: r.default,
-        list: i.default,
-        mark: g.default,
-        open: o.default
+        list: o.default,
+        mark: i.default,
+        open: s.default
       }),
         (e.exports = t.default);
     },
@@ -5265,12 +6368,12 @@ object-assign
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'oauth.access',
-            i = (0, r.default)(n, e);
-          i ? t(i) : (0, a.default)(n, e, t);
+            o = (0, r.default)(n, e);
+          o ? t(o) : (0, a.default)(n, e, t);
         });
-      var a = i(n(0)),
-        r = i(n(1));
-      function i(e) {
+      var a = o(n(0)),
+        r = o(n(1));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -5278,51 +6381,51 @@ object-assign
     function(e, t, n) {
       'use strict';
       Object.defineProperty(t, '__esModule', { value: !0 });
-      var a = o(n(78)),
-        r = o(n(79)),
-        i = o(n(80)),
-        g = o(n(81));
-      function o(e) {
+      var a = s(n(84)),
+        r = s(n(85)),
+        o = s(n(86)),
+        i = s(n(87));
+      function s(e) {
         return e && e.__esModule ? e : { default: e };
       }
       (t.default = {
         add: a.default,
         get: r.default,
-        list: i.default,
-        remove: g.default
+        list: o.default,
+        remove: i.default
       }),
         (e.exports = t.default);
     },
     function(e, t, n) {
       'use strict';
       Object.defineProperty(t, '__esModule', { value: !0 });
-      var a = A(n(82)),
-        r = A(n(83)),
-        i = A(n(84)),
-        g = A(n(85)),
-        o = A(n(86));
-      function A(e) {
+      var a = g(n(88)),
+        r = g(n(89)),
+        o = g(n(90)),
+        i = g(n(91)),
+        s = g(n(92));
+      function g(e) {
         return e && e.__esModule ? e : { default: e };
       }
       (t.default = {
         add: a.default,
         complete: r.default,
-        delete: i.default,
-        info: g.default,
-        list: o.default
+        delete: o.default,
+        info: i.default,
+        list: s.default
       }),
         (e.exports = t.default);
     },
     function(e, t, n) {
       'use strict';
       Object.defineProperty(t, '__esModule', { value: !0 });
-      var a = g(n(75)),
-        r = g(n(76)),
-        i = g(n(77));
-      function g(e) {
+      var a = i(n(81)),
+        r = i(n(82)),
+        o = i(n(83));
+      function i(e) {
         return e && e.__esModule ? e : { default: e };
       }
-      (t.default = { add: a.default, list: r.default, remove: i.default }),
+      (t.default = { add: a.default, list: r.default, remove: o.default }),
         (e.exports = t.default);
     },
     function(e, t, n) {
@@ -5366,9 +6469,9 @@ object-assign
             e
           );
         });
-      var a = i(n(8)),
-        r = i(n(138));
-      function i(e) {
+      var a = o(n(8)),
+        r = o(n(155));
+      function o(e) {
         return e && e.__esModule ? e : { default: e };
       }
       e.exports = t.default;
@@ -5456,94 +6559,94 @@ object-assign
     function(e, t, n) {
       'use strict';
       Object.defineProperty(t, '__esModule', { value: !0 });
-      var a = g(n(87)),
-        r = g(n(88)),
-        i = g(n(89));
-      function g(e) {
+      var a = i(n(93)),
+        r = i(n(94)),
+        o = i(n(95));
+      function i(e) {
         return e && e.__esModule ? e : { default: e };
       }
-      (t.default = { all: a.default, files: r.default, messages: i.default }),
+      (t.default = { all: a.default, files: r.default, messages: o.default }),
         (e.exports = t.default);
     },
     function(e, t, n) {
       'use strict';
       Object.defineProperty(t, '__esModule', { value: !0 });
-      var a = g(n(90)),
-        r = g(n(91)),
-        i = g(n(92));
-      function g(e) {
+      var a = i(n(96)),
+        r = i(n(97)),
+        o = i(n(98));
+      function i(e) {
         return e && e.__esModule ? e : { default: e };
       }
-      (t.default = { add: a.default, list: r.default, remove: i.default }),
+      (t.default = { add: a.default, list: r.default, remove: o.default }),
         (e.exports = t.default);
     },
     function(e, t, n) {
       'use strict';
       Object.defineProperty(t, '__esModule', { value: !0 });
-      var a = A(n(93)),
-        r = A(n(94)),
-        i = A(n(95)),
-        g = A(n(96)),
-        o = A(n(97));
-      function A(e) {
+      var a = g(n(99)),
+        r = g(n(100)),
+        o = g(n(101)),
+        i = g(n(102)),
+        s = g(n(103));
+      function g(e) {
         return e && e.__esModule ? e : { default: e };
       }
       (t.default = {
         accessLogs: a.default,
         billableInfo: r.default,
-        info: i.default,
-        integrationLogs: g.default,
-        profile: { get: o.default }
+        info: o.default,
+        integrationLogs: i.default,
+        profile: { get: s.default }
       }),
         (e.exports = t.default);
     },
     function(e, t, n) {
       'use strict';
       Object.defineProperty(t, '__esModule', { value: !0 });
-      var a = s(n(98)),
-        r = s(n(99)),
-        i = s(n(100)),
-        g = s(n(101)),
-        o = s(n(102)),
-        A = s(n(103)),
-        C = s(n(104));
-      function s(e) {
+      var a = u(n(104)),
+        r = u(n(105)),
+        o = u(n(106)),
+        i = u(n(107)),
+        s = u(n(108)),
+        g = u(n(109)),
+        A = u(n(110));
+      function u(e) {
         return e && e.__esModule ? e : { default: e };
       }
       (t.default = {
         create: a.default,
         disable: r.default,
-        enable: i.default,
-        list: g.default,
-        update: o.default,
-        users: { list: A.default, update: C.default }
+        enable: o.default,
+        list: i.default,
+        update: s.default,
+        users: { list: g.default, update: A.default }
       }),
         (e.exports = t.default);
     },
     function(e, t, n) {
       'use strict';
       Object.defineProperty(t, '__esModule', { value: !0 });
-      var a = C(n(105)),
-        r = C(n(106)),
-        i = C(n(107)),
-        g = C(n(108)),
-        o = C(n(109)),
-        A = C(n(110));
-      function C(e) {
+      var a = A(n(111)),
+        r = A(n(112)),
+        o = A(n(113)),
+        i = A(n(114)),
+        s = A(n(115)),
+        g = A(n(116));
+      function A(e) {
         return e && e.__esModule ? e : { default: e };
       }
       (t.default = {
         getPresence: a.default,
         identity: r.default,
-        info: i.default,
-        list: g.default,
-        setActive: o.default,
-        setPresence: A.default
+        info: o.default,
+        list: i.default,
+        setActive: s.default,
+        setPresence: g.default
       }),
         (e.exports = t.default);
     },
     function(e, t, n) {
-      (t = e.exports = n(145)(!1)).push([
+      (t = e.exports = n(162)(!1)).push([
         e.i,
         '@import url(https://fonts.googleapis.com/css?family=Raleway:400,200);',
         ''
@@ -5616,19 +6719,19 @@ object-assign
                 if (!a) return n;
                 if (t && 'function' == typeof btoa) {
                   var r =
-                      ((g = a),
+                      ((i = a),
                       '/*# sourceMappingURL=data:application/json;charset=utf-8;base64,' +
-                        btoa(unescape(encodeURIComponent(JSON.stringify(g)))) +
+                        btoa(unescape(encodeURIComponent(JSON.stringify(i)))) +
                         ' */'),
-                    i = a.sources.map(function(e) {
+                    o = a.sources.map(function(e) {
                       return '/*# sourceURL=' + a.sourceRoot + e + ' */';
                     });
                   return [n]
-                    .concat(i)
+                    .concat(o)
                     .concat([r])
                     .join('\n');
                 }
-                var g;
+                var i;
                 return [n].join('\n');
               })(t, e);
               return t[2] ? '@media ' + t[2] + '{' + n + '}' : n;
@@ -5637,16 +6740,16 @@ object-assign
           (t.i = function(e, n) {
             'string' == typeof e && (e = [[null, e, '']]);
             for (var a = {}, r = 0; r < this.length; r++) {
-              var i = this[r][0];
-              null != i && (a[i] = !0);
+              var o = this[r][0];
+              null != o && (a[o] = !0);
             }
             for (r = 0; r < e.length; r++) {
-              var g = e[r];
-              (null != g[0] && a[g[0]]) ||
-                (n && !g[2]
-                  ? (g[2] = n)
-                  : n && (g[2] = '(' + g[2] + ') and (' + n + ')'),
-                t.push(g));
+              var i = e[r];
+              (null != i[0] && a[i[0]]) ||
+                (n && !i[2]
+                  ? (i[2] = n)
+                  : n && (i[2] = '(' + i[2] + ') and (' + n + ')'),
+                t.push(i));
             }
           }),
           t
@@ -5656,15 +6759,15 @@ object-assign
     function(e, t, n) {
       var a,
         r,
-        i = {},
-        g =
+        o = {},
+        i =
           ((a = function() {
             return window && document && document.all && !window.atob;
           }),
           function() {
             return void 0 === r && (r = a.apply(this, arguments)), r;
           }),
-        o = (function(e) {
+        s = (function(e) {
           var t = {};
           return function(e, n) {
             if ('function' == typeof e) return e();
@@ -5686,63 +6789,63 @@ object-assign
             return t[e];
           };
         })(),
-        A = null,
-        C = 0,
-        s = [],
-        I = n(147);
-      function u(e, t) {
+        g = null,
+        A = 0,
+        u = [],
+        C = n(164);
+      function l(e, t) {
         for (var n = 0; n < e.length; n++) {
           var a = e[n],
-            r = i[a.id];
+            r = o[a.id];
           if (r) {
             r.refs++;
-            for (var g = 0; g < r.parts.length; g++) r.parts[g](a.parts[g]);
-            for (; g < a.parts.length; g++) r.parts.push(x(a.parts[g], t));
+            for (var i = 0; i < r.parts.length; i++) r.parts[i](a.parts[i]);
+            for (; i < a.parts.length; i++) r.parts.push(x(a.parts[i], t));
           } else {
-            var o = [];
-            for (g = 0; g < a.parts.length; g++) o.push(x(a.parts[g], t));
-            i[a.id] = { id: a.id, refs: 1, parts: o };
+            var s = [];
+            for (i = 0; i < a.parts.length; i++) s.push(x(a.parts[i], t));
+            o[a.id] = { id: a.id, refs: 1, parts: s };
           }
         }
       }
-      function l(e, t) {
+      function c(e, t) {
         for (var n = [], a = {}, r = 0; r < e.length; r++) {
-          var i = e[r],
-            g = t.base ? i[0] + t.base : i[0],
-            o = { css: i[1], media: i[2], sourceMap: i[3] };
-          a[g] ? a[g].parts.push(o) : n.push((a[g] = { id: g, parts: [o] }));
+          var o = e[r],
+            i = t.base ? o[0] + t.base : o[0],
+            s = { css: o[1], media: o[2], sourceMap: o[3] };
+          a[i] ? a[i].parts.push(s) : n.push((a[i] = { id: i, parts: [s] }));
         }
         return n;
       }
-      function c(e, t) {
-        var n = o(e.insertInto);
+      function I(e, t) {
+        var n = s(e.insertInto);
         if (!n)
           throw new Error(
             "Couldn't find a style target. This probably means that the value for the 'insertInto' parameter is invalid."
           );
-        var a = s[s.length - 1];
+        var a = u[u.length - 1];
         if ('top' === e.insertAt)
           a
             ? a.nextSibling
               ? n.insertBefore(t, a.nextSibling)
               : n.appendChild(t)
             : n.insertBefore(t, n.firstChild),
-            s.push(t);
+            u.push(t);
         else if ('bottom' === e.insertAt) n.appendChild(t);
         else {
           if ('object' != typeof e.insertAt || !e.insertAt.before)
             throw new Error(
               "[Style Loader]\n\n Invalid value for parameter 'insertAt' ('options.insertAt') found.\n Must be 'top', 'bottom', or Object.\n (https://github.com/webpack-contrib/style-loader#insertat)\n"
             );
-          var r = o(e.insertAt.before, n);
+          var r = s(e.insertAt.before, n);
           n.insertBefore(t, r);
         }
       }
       function d(e) {
         if (null === e.parentNode) return !1;
         e.parentNode.removeChild(e);
-        var t = s.indexOf(e);
-        t >= 0 && s.splice(t, 1);
+        var t = u.indexOf(e);
+        t >= 0 && u.splice(t, 1);
       }
       function p(e) {
         var t = document.createElement('style');
@@ -5756,7 +6859,7 @@ object-assign
           })();
           a && (e.attrs.nonce = a);
         }
-        return f(t, e.attrs), c(e, t), t;
+        return f(t, e.attrs), I(e, t), t;
       }
       function f(e, t) {
         Object.keys(t).forEach(function(n) {
@@ -5764,22 +6867,22 @@ object-assign
         });
       }
       function x(e, t) {
-        var n, a, r, i;
+        var n, a, r, o;
         if (t.transform && e.css) {
           if (
-            !(i =
+            !(o =
               'function' == typeof t.transform
                 ? t.transform(e.css)
                 : t.transform.default(e.css))
           )
             return function() {};
-          e.css = i;
+          e.css = o;
         }
         if (t.singleton) {
-          var g = C++;
-          (n = A || (A = p(t))),
-            (a = _.bind(null, n, g, !1)),
-            (r = _.bind(null, n, g, !0));
+          var i = A++;
+          (n = g || (g = p(t))),
+            (a = _.bind(null, n, i, !1)),
+            (r = _.bind(null, n, i, !0));
         } else
           e.sourceMap &&
           'function' == typeof URL &&
@@ -5793,23 +6896,23 @@ object-assign
                   void 0 === e.attrs.type && (e.attrs.type = 'text/css'),
                   (e.attrs.rel = 'stylesheet'),
                   f(t, e.attrs),
-                  c(e, t),
+                  I(e, t),
                   t
                 );
               })(t)),
               (a = function(e, t, n) {
                 var a = n.css,
                   r = n.sourceMap,
-                  i = void 0 === t.convertToAbsoluteUrls && r;
-                (t.convertToAbsoluteUrls || i) && (a = I(a));
+                  o = void 0 === t.convertToAbsoluteUrls && r;
+                (t.convertToAbsoluteUrls || o) && (a = C(a));
                 r &&
                   (a +=
                     '\n/*# sourceMappingURL=data:application/json;base64,' +
                     btoa(unescape(encodeURIComponent(JSON.stringify(r)))) +
                     ' */');
-                var g = new Blob([a], { type: 'text/css' }),
-                  o = e.href;
-                (e.href = URL.createObjectURL(g)), o && URL.revokeObjectURL(o);
+                var i = new Blob([a], { type: 'text/css' }),
+                  s = e.href;
+                (e.href = URL.createObjectURL(i)), s && URL.revokeObjectURL(s);
               }.bind(null, n, t)),
               (r = function() {
                 d(n), n.href && URL.revokeObjectURL(n.href);
@@ -5849,42 +6952,42 @@ object-assign
             'The style-loader cannot be used in a non-browser environment'
           );
         ((t = t || {}).attrs = 'object' == typeof t.attrs ? t.attrs : {}),
-          t.singleton || 'boolean' == typeof t.singleton || (t.singleton = g()),
+          t.singleton || 'boolean' == typeof t.singleton || (t.singleton = i()),
           t.insertInto || (t.insertInto = 'head'),
           t.insertAt || (t.insertAt = 'bottom');
-        var n = l(e, t);
+        var n = c(e, t);
         return (
-          u(n, t),
+          l(n, t),
           function(e) {
             for (var a = [], r = 0; r < n.length; r++) {
-              var g = n[r];
-              (o = i[g.id]).refs--, a.push(o);
+              var i = n[r];
+              (s = o[i.id]).refs--, a.push(s);
             }
-            e && u(l(e, t), t);
+            e && l(c(e, t), t);
             for (r = 0; r < a.length; r++) {
-              var o;
-              if (0 === (o = a[r]).refs) {
-                for (var A = 0; A < o.parts.length; A++) o.parts[A]();
-                delete i[o.id];
+              var s;
+              if (0 === (s = a[r]).refs) {
+                for (var g = 0; g < s.parts.length; g++) s.parts[g]();
+                delete o[s.id];
               }
             }
           }
         );
       };
-      var m,
-        h =
-          ((m = []),
+      var h,
+        m =
+          ((h = []),
           function(e, t) {
-            return (m[e] = t), m.filter(Boolean).join('\n');
+            return (h[e] = t), h.filter(Boolean).join('\n');
           });
       function _(e, t, n, a) {
         var r = n ? '' : a.css;
-        if (e.styleSheet) e.styleSheet.cssText = h(t, r);
+        if (e.styleSheet) e.styleSheet.cssText = m(t, r);
         else {
-          var i = document.createTextNode(r),
-            g = e.childNodes;
-          g[t] && e.removeChild(g[t]),
-            g.length ? e.insertBefore(i, g[t]) : e.appendChild(i);
+          var o = document.createTextNode(r),
+            i = e.childNodes;
+          i[t] && e.removeChild(i[t]),
+            i.length ? e.insertBefore(o, i[t]) : e.appendChild(o);
         }
       }
     },
@@ -5899,7 +7002,7 @@ object-assign
           /url\s*\(((?:[^)(]|\((?:[^)(]+|\([^)(]*\))*\))*)\)/gi,
           function(e, t) {
             var r,
-              i = t
+              o = t
                 .trim()
                 .replace(/^"(.*)"$/, function(e, t) {
                   return t;
@@ -5907,14 +7010,14 @@ object-assign
                 .replace(/^'(.*)'$/, function(e, t) {
                   return t;
                 });
-            return /^(#|data:|http:\/\/|https:\/\/|file:\/\/\/|\s*$)/i.test(i)
+            return /^(#|data:|http:\/\/|https:\/\/|file:\/\/\/|\s*$)/i.test(o)
               ? e
               : ((r =
-                  0 === i.indexOf('//')
-                    ? i
-                    : 0 === i.indexOf('/')
-                    ? n + i
-                    : a + i.replace(/^\.\//, '')),
+                  0 === o.indexOf('//')
+                    ? o
+                    : 0 === o.indexOf('/')
+                    ? n + o
+                    : a + o.replace(/^\.\//, '')),
                 'url(' + JSON.stringify(r) + ')');
           }
         );
@@ -5929,30 +7032,31 @@ object-assign
           return m;
         }),
         n.d(a, 'arraysIdentical', function() {
-          return h;
+          return _;
         });
       var r = {};
       n.r(r),
         n.d(r, 'isHookMessage', function() {
-          return y;
+          return R;
         }),
         n.d(r, 'execHooksIfFound', function() {
-          return R;
+          return M;
         });
-      var i = {};
-      n.r(i),
-        n.d(i, 'changeColorRecursive', function() {
-          return w;
+      var o = {};
+      n.r(o),
+        n.d(o, 'changeColorRecursive', function() {
+          return O;
         });
-      var g = n(3),
-        o = n.n(g),
-        A = n(5),
-        C = n.n(A),
-        s = n(4),
-        I = n.n(s),
-        u = n(6),
-        l = n(9);
-      var c = function e(t) {
+      var i = n(3),
+        s = n.n(i),
+        g = n(5),
+        A = n.n(g),
+        u = n(4),
+        C = n.n(u),
+        l = n(6),
+        c = n(117),
+        I = n(9);
+      var d = function e(t) {
           !(function(e, t) {
             if (!(e instanceof t))
               throw new TypeError('Cannot call a class as a function');
@@ -5963,64 +7067,64 @@ object-assign
             (this.real_name = t.real_name || t.name),
             (this.image = t.profile.image_48);
         },
-        d = n(2),
-        p = n.n(d),
-        f = n(10),
-        x = n.n(f),
+        p = n(2),
+        f = n.n(p),
+        x = n(10),
+        h = n.n(x),
         m = function() {},
-        h = function(e, t) {
+        _ = function(e, t) {
           return JSON.stringify(e) === JSON.stringify(t);
         },
-        _ = function(e) {
+        v = function(e) {
           var t = e.text,
             n = e.lastThreadTs,
             a = e.apiToken,
             r = e.channel,
-            i = e.username;
-          return new Promise(function(e, g) {
+            o = e.username;
+          return new Promise(function(e, i) {
             if ('' !== t)
-              return u.chat.postMessage(
-                { token: a, thread_ts: n, channel: r, text: t, username: i },
+              return l.chat.postMessage(
+                { token: a, thread_ts: n, channel: r, text: t, username: o },
                 function(t, n) {
-                  return t ? g(t) : e(n);
+                  return t ? i(t) : e(n);
                 }
               );
           });
         },
-        v = function(e) {
+        k = function(e) {
           return /<@.[^|]*[|].*>/.test(e.text) && e.text.indexOf(e.user) > -1;
         },
         b = function(e) {
           return void 0 !== e.user;
         },
-        k = function(e, t) {
+        y = function(e, t) {
           return !(e.username === t) && e.text.indexOf('@'.concat(t)) > -1;
         },
         q = function(e) {
           var t = document.createElement('textarea');
           return (t.innerHTML = e), t.value;
         },
-        y = function(e) {
+        R = function(e) {
           return /\$=>(@.*.):(.*)/.exec(e);
         },
-        R = function(e) {
+        M = function(e) {
           var t = e.message,
             n = e.customHooks,
             a = e.apiToken,
             r = e.channel,
-            i = e.username,
-            g = q(t.text),
-            o = y(g);
-          o &&
-            k(t, i) &&
+            o = e.username,
+            i = q(t.text),
+            s = R(i);
+          s &&
+            y(t, o) &&
             b(t) &&
-            o[2] &&
+            s[2] &&
               n.map(function(e) {
-                e.id === o[2] &&
-                  M({ hook: e, apiToken: a, channel: r, username: i });
+                e.id === s[2] &&
+                  w({ hook: e, apiToken: a, channel: r, username: o });
               });
         },
-        M = function(e) {
+        w = function(e) {
           var t = e.hook,
             n = e.apiToken,
             a = e.channel,
@@ -6032,7 +7136,7 @@ object-assign
               .then(function(e) {
                 return (
                   m('Action executed. Posting response.'),
-                  _({
+                  v({
                     text: '$=>@['.concat(t.id, ']:').concat(e),
                     apiToken: n,
                     channel: a,
@@ -6042,16 +7146,16 @@ object-assign
               })
           );
         },
-        w = function e(t, n, a) {
+        O = function e(t, n, a) {
           if (t.style) {
             var r = window.getComputedStyle(t).backgroundColor;
-            r && O(r) === n && (t.style.backgroundColor = a);
+            r && j(r) === n && (t.style.backgroundColor = a);
           }
           if (t.childNodes)
-            for (var i = 0; i < t.childNodes.length; i++)
-              e(t.childNodes[i], n, a);
+            for (var o = 0; o < t.childNodes.length; o++)
+              e(t.childNodes[o], n, a);
         },
-        O = function(e) {
+        j = function(e) {
           return (e = e.match(
             /^rgba?[\s+]?\([\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?/i
           )) && 4 === e.length
@@ -6061,8 +7165,8 @@ object-assign
                 ('0' + parseInt(e[3], 10).toString(16)).slice(-2)
             : '';
         };
-      function j(e) {
-        return (j =
+      function P(e) {
+        return (P =
           'function' == typeof Symbol && 'symbol' == typeof Symbol.iterator
             ? function(e) {
                 return typeof e;
@@ -6076,7 +7180,7 @@ object-assign
                   : typeof e;
               })(e);
       }
-      function P() {
+      function S() {
         var e = (function(e, t) {
           t || (t = e.slice(0));
           return Object.freeze(
@@ -6084,13 +7188,13 @@ object-assign
           );
         })(['Could not connect to Slack Server. Reason: ', '']);
         return (
-          (P = function() {
+          (S = function() {
             return e;
           }),
           e
         );
       }
-      function S(e, t) {
+      function T(e, t) {
         for (var n = 0; n < t.length; n++) {
           var a = t[n];
           (a.enumerable = a.enumerable || !1),
@@ -6099,33 +7203,33 @@ object-assign
             Object.defineProperty(e, a.key, a);
         }
       }
-      function T(e) {
-        return (T = Object.setPrototypeOf
+      function E(e) {
+        return (E = Object.setPrototypeOf
           ? Object.getPrototypeOf
           : function(e) {
               return e.__proto__ || Object.getPrototypeOf(e);
             })(e);
       }
-      function E(e) {
+      function N(e) {
         if (void 0 === e)
           throw new ReferenceError(
             "this hasn't been initialised - super() hasn't been called"
           );
         return e;
       }
-      function N(e, t) {
-        return (N =
+      function U(e, t) {
+        return (U =
           Object.setPrototypeOf ||
           function(e, t) {
             return (e.__proto__ = t), e;
           })(e, t);
       }
-      var U = a.debugLog,
-        F = a.arraysIdentical,
-        z = r.isHookMessage,
+      var F = a.debugLog,
+        z = a.arraysIdentical,
+        D = r.isHookMessage,
         G = r.execHooksIfFound,
-        D = i.changeColorRecursive,
-        L = (function(e) {
+        L = o.changeColorRecursive,
+        Z = (function(e) {
           function t(e) {
             var n, a, r;
             return (
@@ -6134,11 +7238,11 @@ object-assign
                   throw new TypeError('Cannot call a class as a function');
               })(this, t),
               (a = this),
-              (r = T(t).call(this, e)),
+              (r = E(t).call(this, e)),
               ((n =
-                !r || ('object' !== j(r) && 'function' != typeof r)
-                  ? E(a)
-                  : r).bot = u.rtm.client()),
+                !r || ('object' !== P(r) && 'function' != typeof r)
+                  ? N(a)
+                  : r).bot = c.rtm.client()),
               (n.state = {
                 failed: !1,
                 helpText: n.props.helpText,
@@ -6163,30 +7267,30 @@ object-assign
               (n.messageFormatter = { emoji: !1 }),
               (n.fileUploadTitle = 'Posted by '.concat(n.props.botName)),
               (n.themeDefaultColor = '#2e7eea'),
-              (n.loadMessages = n.loadMessages.bind(E(n))),
-              (n.postMyMessage = n.postMyMessage.bind(E(n))),
-              (n.gotNewMessages = n.gotNewMessages.bind(E(n))),
-              (n.getUserImg = n.getUserImg.bind(E(n))),
-              (n.handleChange = n.handleChange.bind(E(n))),
-              (n.handleFileChange = n.handleFileChange.bind(E(n))),
-              (n.openChatBox = n.openChatBox.bind(E(n))),
-              (n.closeChatBox = n.closeChatBox.bind(E(n))),
-              (n.goToChatView = n.goToChatView.bind(E(n))),
-              (n.goToChannelView = n.goToChannelView.bind(E(n))),
+              (n.loadMessages = n.loadMessages.bind(N(n))),
+              (n.postMyMessage = n.postMyMessage.bind(N(n))),
+              (n.gotNewMessages = n.gotNewMessages.bind(N(n))),
+              (n.getUserImg = n.getUserImg.bind(N(n))),
+              (n.handleChange = n.handleChange.bind(N(n))),
+              (n.handleFileChange = n.handleFileChange.bind(N(n))),
+              (n.openChatBox = n.openChatBox.bind(N(n))),
+              (n.closeChatBox = n.closeChatBox.bind(N(n))),
+              (n.goToChatView = n.goToChatView.bind(N(n))),
+              (n.goToChannelView = n.goToChannelView.bind(N(n))),
               (n.displayFormattedMessage = n.displayFormattedMessage.bind(
-                E(n)
+                N(n)
               )),
-              Object(l.load)()
+              Object(I.load)()
                 .then(function() {
                   n.messageFormatter = { emoji: !0 };
                 })
                 .catch(function(e) {
-                  return U('Cant initiate emoji library '.concat(e));
+                  return F('Cant initiate emoji library '.concat(e));
                 }),
               n
-                .connectBot(E(n))
+                .connectBot(N(n))
                 .then(function(e) {
-                  U('CONNECTED!', 'got data', e),
+                  F('CONNECTED!', 'got data', e),
                     n.props.defaultChannel &&
                       (n.activeChannel = e.channels.filter(function(e) {
                         return e.name === n.props.defaultChannel;
@@ -6197,7 +7301,7 @@ object-assign
                     });
                 })
                 .catch(function(e) {
-                  U('could not intialize slack bot', e),
+                  F('could not intialize slack bot', e),
                     n.setState({ failed: !0 });
                 }),
               n
@@ -6213,8 +7317,8 @@ object-assign
               (e.prototype = Object.create(t && t.prototype, {
                 constructor: { value: e, writable: !0, configurable: !0 }
               })),
-                t && N(e, t);
-            })(t, g['Component']),
+                t && U(e, t);
+            })(t, i['Component']),
             (n = t),
             (a = [
               {
@@ -6229,101 +7333,101 @@ object-assign
                 value: function(e) {
                   var t = q(e.text),
                     n = e.username === this.props.botName;
-                  if (v(e)) {
+                  if (k(e)) {
                     var a = e.text.match(
                       /uploaded a file: <(https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_+.~#?&\/\/=]*))/
                     );
                     if (a && a[0] && a[1]) {
                       var r = e.text.indexOf(this.fileUploadTitle) > -1,
-                        i = a[1].split('/');
-                      return o.a.createElement(
+                        o = a[1].split('/');
+                      return s.a.createElement(
                         'div',
                         {
-                          className: I()(
-                            p.a.chat__msgRow,
-                            r ? p.a.mine : p.a.notMine
+                          className: C()(
+                            f.a.chat__msgRow,
+                            r ? f.a.mine : f.a.notMine
                           ),
                           key: e.ts
                         },
                         r
-                          ? o.a.createElement('img', {
+                          ? s.a.createElement('img', {
                               src: this.props.userImage,
-                              className: p.a.user__contact__photo,
+                              className: f.a.user__contact__photo,
                               alt: 'userIcon'
                             })
                           : null,
-                        o.a.createElement(
+                        s.a.createElement(
                           'div',
                           {
-                            className: I()(
-                              p.a.chat__message,
-                              r ? p.a.mine : p.a.notMine
+                            className: C()(
+                              f.a.chat__message,
+                              r ? f.a.mine : f.a.notMine
                             )
                           },
-                          o.a.createElement(
+                          s.a.createElement(
                             'strong',
                             null,
                             'Sent an Attachment: '
                           ),
-                          o.a.createElement('span', null, i[i.length - 1]),
-                          o.a.createElement('hr', null),
-                          o.a.createElement(
+                          s.a.createElement('span', null, o[o.length - 1]),
+                          s.a.createElement('hr', null),
+                          s.a.createElement(
                             'a',
                             { href: a[1], target: '_blank' },
-                            o.a.createElement('span', null, 'Click to Download')
+                            s.a.createElement('span', null, 'Click to Download')
                           )
                         ),
                         r ? null : this.getUserImg(e)
                       );
                     }
-                    return o.a.createElement(
+                    return s.a.createElement(
                       'div',
-                      { className: I()(p.a.chat__msgRow), key: e.ts },
-                      o.a.createElement('div', {
-                        className: I()(p.a.chat__message, p.a.system__message),
+                      { className: C()(f.a.chat__msgRow), key: e.ts },
+                      s.a.createElement('div', {
+                        className: C()(f.a.chat__message, f.a.system__message),
                         dangerouslySetInnerHTML: { __html: t }
                       })
                     );
                   }
-                  if (z(t)) return null;
-                  var g = k(e, this.props.botName),
-                    A = (function(e) {
+                  if (D(t)) return null;
+                  var i = y(e, this.props.botName),
+                    g = (function(e) {
                       return /(:[:a-zA-Z\/_]*:)/.test(e);
                     })(t);
                   return (
                     this.messageFormatter.emoji &&
-                      A &&
-                      (t = Object(l.parse)(t)),
-                    o.a.createElement(
+                      g &&
+                      (t = Object(I.parse)(t)),
+                    s.a.createElement(
                       'div',
                       {
-                        className: I()(
-                          p.a.chat__msgRow,
-                          n ? p.a.mine : p.a.notMine
+                        className: C()(
+                          f.a.chat__msgRow,
+                          n ? f.a.mine : f.a.notMine
                         ),
                         key: e.ts
                       },
                       n
-                        ? o.a.createElement('img', {
+                        ? s.a.createElement('img', {
                             src: this.props.userImage,
-                            className: p.a.user__contact__photo,
+                            className: f.a.user__contact__photo,
                             alt: 'userIcon'
                           })
                         : null,
-                      A
-                        ? o.a.createElement('div', {
-                            className: I()(
-                              p.a.chat__message,
-                              g ? p.a.mentioned : ''
+                      g
+                        ? s.a.createElement('div', {
+                            className: C()(
+                              f.a.chat__message,
+                              i ? f.a.mentioned : ''
                             ),
                             dangerouslySetInnerHTML: { __html: t }
                           })
-                        : o.a.createElement(
+                        : s.a.createElement(
                             'div',
                             {
-                              className: I()(
-                                p.a.chat__message,
-                                g ? p.a.mentioned : ''
+                              className: C()(
+                                f.a.chat__message,
+                                i ? f.a.mentioned : ''
                               )
                             },
                             t
@@ -6346,17 +7450,17 @@ object-assign
                   return new Promise(function(t, n) {
                     try {
                       e.bot.started(function(n) {
-                        U(n);
+                        F(n);
                         var a = [];
                         n.users.map(function(t) {
                           return e.isValidOnlineUser(t)
-                            ? a.push(new c(t))
+                            ? a.push(new d(t))
                             : null;
                         });
                         var r = [];
                         return (
                           n.channels.map(function(t) {
-                            e.props.channels.forEach(function(n) {
+                            e.state.channels.forEach(function(n) {
                               (n.name !== t.name && n.id !== t.id) ||
                                 (e.props.defaultChannel === t.name &&
                                   (e.activeChannel = n),
@@ -6369,7 +7473,7 @@ object-assign
                       }),
                         e.bot.listen({ token: e.apiToken }, function(t) {
                           t &&
-                            (U(P(), JSON.stringify(t)),
+                            (F(S(), JSON.stringify(t)),
                             e.setState({
                               helpText: 'Slack Connection Error!'
                             }));
@@ -6384,7 +7488,7 @@ object-assign
                 key: 'postMyMessage',
                 value: function() {
                   var e = this;
-                  return _({
+                  return v({
                     text: this.state.postMyMessage,
                     lastThreadTs: this.state.userThreadTss[
                       this.state.userThreadTss.length - 1
@@ -6411,25 +7515,30 @@ object-assign
                       );
                     })
                     .catch(function(e) {
-                      return e ? U('failed to post. Err:', e) : null;
+                      return e ? F('failed to post. Err:', e) : null;
                     });
                 }
               },
               {
                 key: 'loadMessages',
                 value: function(e) {
-                  var t = this,
-                    n = this;
+                  var t = this;
+                  console.log('CHANNEL', e),
+                    console.log('token', this.apiToken),
+                    console.log('channel.id', e.id),
+                    console.log(l.channels),
+                    console.log(l.conversations);
+                  var n = this;
                   this.chatInitiatedTs ||
                     (this.chatInitiatedTs = Date.now() / 1e3);
                   var a = function() {
                     var a = n.state.messages.length;
-                    u.conversations.history(
+                    l.conversations.history(
                       { token: t.apiToken, channel: e.id },
-                      function(r, i) {
+                      function(r, o) {
                         if (r)
                           return (
-                            U(
+                            F(
                               'There was an error loading messages for '
                                 .concat(e.name, '. ')
                                 .concat(r)
@@ -6437,25 +7546,25 @@ object-assign
                             t.setState({ failed: !0 })
                           );
                         if (
-                          (U('got data', i),
-                          !F(t.state.messages, i.messages.reverse()))
+                          (F('got data', o),
+                          !z(t.state.messages, o.messages.reverse()))
                         ) {
                           if (0 !== t.state.messages.length) {
-                            var g =
-                              ((o = t.state.messages),
-                              (A = i.messages),
-                              (C = t.props.botName),
-                              (s = JSON.stringify(o)),
-                              A.filter(function(e) {
+                            var i =
+                              ((s = t.state.messages),
+                              (g = o.messages),
+                              (A = t.props.botName),
+                              (u = JSON.stringify(s)),
+                              g.filter(function(e) {
                                 if (
-                                  -1 === s.indexOf(JSON.stringify(e)) &&
-                                  e.username !== C
+                                  -1 === u.indexOf(JSON.stringify(e)) &&
+                                  e.username !== A
                                 )
                                   return e;
                               }));
-                            t.gotNewMessages(g),
-                              g &&
-                                g.map(function(e) {
+                            t.gotNewMessages(i),
+                              i &&
+                                i.map(function(e) {
                                   return G({
                                     message: e,
                                     username: t.props.botName,
@@ -6466,7 +7575,7 @@ object-assign
                                 });
                           }
                           return (
-                            (n.messages = i.messages),
+                            (n.messages = o.messages),
                             t.props.singleUserMode &&
                               (n.messages.length > 0
                                 ? (n.messages = n.messages.filter(function(e) {
@@ -6503,7 +7612,7 @@ object-assign
                             })
                           );
                         }
-                        var o, A, C, s;
+                        var s, g, A, u;
                       }
                     );
                   };
@@ -6524,26 +7633,26 @@ object-assign
                       e.id === n && (t = e.image);
                     }),
                     t
-                      ? o.a.createElement('img', {
+                      ? s.a.createElement('img', {
                           src: t,
-                          className: p.a.chat__contact__photo,
+                          className: f.a.chat__contact__photo,
                           alt: 'mentionedUserImg'
                         })
                       : b(e)
-                      ? o.a.createElement('img', {
+                      ? s.a.createElement('img', {
                           src: 'https://robohash.org/'.concat(n, '?set=set2'),
-                          className: p.a.chat__contact__photo,
+                          className: f.a.chat__contact__photo,
                           alt: n
                         })
-                      : v(e)
-                      ? o.a.createElement('img', {
+                      : k(e)
+                      ? s.a.createElement('img', {
                           src: 'https://robohash.org/'.concat(n, '?set=set3'),
-                          className: p.a.chat__contact__photo,
+                          className: f.a.chat__contact__photo,
                           alt: n
                         })
-                      : o.a.createElement('img', {
+                      : s.a.createElement('img', {
                           src: 'https://robohash.org/'.concat(n),
-                          className: p.a.chat__contact__photo,
+                          className: f.a.chat__contact__photo,
                           alt: n
                         })
                   );
@@ -6559,7 +7668,7 @@ object-assign
                 key: 'handleFileChange',
                 value: function(e) {
                   var t = this;
-                  U('Going to upload', e.target.value, e.target);
+                  F('Going to upload', e.target.value, e.target);
                   var n = document.getElementById('chat__upload').files[0];
                   return this.setState(
                     { postMyFile: e.target.value, fileUploadLoader: !0 },
@@ -6572,33 +7681,33 @@ object-assign
                       }),
                       (a = e.file),
                       (r = e.title),
-                      (i = e.apiToken),
-                      (g = e.channel),
+                      (o = e.apiToken),
+                      (i = e.channel),
                       new Promise(function(e, t) {
                         m('UPLOADING', a);
                         var n = {
-                            token: i,
+                            token: o,
                             title: r,
                             filename: a.name,
                             filetype: 'auto',
-                            channels: g
+                            channels: i
                           },
-                          o = new FormData();
-                        o.append('token', n.token),
-                          o.append('filename', n.filename),
-                          o.append('title', n.title),
-                          o.append('filetype', n.filetype),
-                          o.append('channels', n.channels),
-                          o.append('file', new Blob([a]));
-                        var A = new XMLHttpRequest();
-                        A.open('POST', 'https://slack.com/api/files.upload'),
-                          A.send(o),
-                          (A.onload = function() {
-                            if (200 !== A.status) {
+                          s = new FormData();
+                        s.append('token', n.token),
+                          s.append('filename', n.filename),
+                          s.append('title', n.title),
+                          s.append('filetype', n.filetype),
+                          s.append('channels', n.channels),
+                          s.append('file', new Blob([a]));
+                        var g = new XMLHttpRequest();
+                        g.open('POST', 'https://slack.com/api/files.upload'),
+                          g.send(s),
+                          (g.onload = function() {
+                            if (200 !== g.status) {
                               var n = new Error(
                                 'There was an error uploading the file. Response:',
-                                A.status,
-                                A.responseText
+                                g.status,
+                                g.responseText
                               );
                               return t(n);
                             }
@@ -6612,9 +7721,9 @@ object-assign
                           });
                         })
                         .catch(function(e) {
-                          U('Could not post file', e);
+                          F('Could not post file', e);
                         });
-                      var e, a, r, i, g;
+                      var e, a, r, o, i;
                     }
                   );
                 }
@@ -6725,7 +7834,7 @@ object-assign
                 value: function() {
                   var e = this;
                   this.props.themeColor &&
-                    D(
+                    L(
                       document.body,
                       this.themeDefaultColor,
                       this.props.themeColor
@@ -6740,175 +7849,175 @@ object-assign
                 value: function() {
                   var e = this;
                   if (this.state.failed) return !1;
-                  var t = o.a.createElement(
+                  var t = s.a.createElement(
                     'div',
                     null,
-                    o.a.createElement(
+                    s.a.createElement(
                       'div',
                       {
-                        className: I()(
-                          p.a.card,
-                          p.a.transition,
-                          this.state.chatbox.active ? p.a.active : '',
+                        className: C()(
+                          f.a.card,
+                          f.a.transition,
+                          this.state.chatbox.active ? f.a.active : '',
                           this.state.chatbox.chatActiveView
-                            ? p.a.chatActive
+                            ? f.a.chatActive
                             : ''
                         ),
                         onClick: this.openChatBox
                       },
-                      o.a.createElement(
+                      s.a.createElement(
                         'div',
-                        { className: p.a.helpHeader },
+                        { className: f.a.helpHeader },
                         this.state.newMessageNotification > 0 &&
-                          o.a.createElement(
+                          s.a.createElement(
                             'span',
-                            { className: p.a.unreadNotificationsBadge },
+                            { className: f.a.unreadNotificationsBadge },
                             this.state.newMessageNotification
                           ),
-                        o.a.createElement(
+                        s.a.createElement(
                           'h2',
-                          { className: p.a.transition },
+                          { className: f.a.transition },
                           this.state.helpText || 'Help?'
                         ),
-                        o.a.createElement(
+                        s.a.createElement(
                           'h2',
-                          { className: p.a.subText },
+                          { className: f.a.subText },
                           'Click on a chat group to interact'
                         )
                       ),
-                      o.a.createElement('div', {
-                        className: I()(p.a.card_circle, p.a.transition)
+                      s.a.createElement('div', {
+                        className: C()(f.a.card_circle, f.a.transition)
                       }),
-                      o.a.createElement(
+                      s.a.createElement(
                         'div',
                         {
-                          className: I()(
-                            p.a.channels,
-                            p.a.transition,
+                          className: C()(
+                            f.a.channels,
+                            f.a.transition,
                             this.state.chatbox.channelActiveView
-                              ? p.a.channelActive
+                              ? f.a.channelActive
                               : ''
                           )
                         },
                         this.state.channels.map(function(t) {
-                          return o.a.createElement(
+                          return s.a.createElement(
                             'div',
                             {
-                              className: p.a.contact,
+                              className: f.a.contact,
                               key: t.id,
                               onClick: function(n) {
                                 return e.goToChatView(n, t);
                               }
                             },
                             t.icon
-                              ? o.a.createElement('img', {
+                              ? s.a.createElement('img', {
                                   src: t.icon,
-                                  className: p.a.contact__photo
+                                  className: f.a.contact__photo
                                 })
-                              : o.a.createElement('div', {
-                                  dangerouslySetInnerHTML: { __html: x.a },
-                                  className: p.a.contact__photo
+                              : s.a.createElement('div', {
+                                  dangerouslySetInnerHTML: { __html: h.a },
+                                  className: f.a.contact__photo
                                 }),
-                            o.a.createElement(
+                            s.a.createElement(
                               'span',
-                              { className: p.a.contact__name },
+                              { className: f.a.contact__name },
                               t.name
                             ),
-                            o.a.createElement('span', {
-                              className: I()(p.a.contact__status, p.a.online)
+                            s.a.createElement('span', {
+                              className: C()(f.a.contact__status, f.a.online)
                             })
                           );
                         })
                       ),
-                      o.a.createElement(
+                      s.a.createElement(
                         'div',
-                        { className: I()(p.a.chat) },
-                        o.a.createElement(
+                        { className: C()(f.a.chat) },
+                        s.a.createElement(
                           'div',
-                          { className: I()(p.a.chatHeader) },
-                          o.a.createElement('span', {
-                            className: p.a.chat__back,
+                          { className: C()(f.a.chatHeader) },
+                          s.a.createElement('span', {
+                            className: f.a.chat__back,
                             onClick: this.goToChannelView
                           }),
-                          o.a.createElement(
+                          s.a.createElement(
                             'div',
-                            { className: p.a.chat__person },
-                            o.a.createElement(
+                            { className: f.a.chat__person },
+                            s.a.createElement(
                               'span',
-                              { className: p.a.chat__status },
+                              { className: f.a.chat__status },
                               'status'
                             ),
-                            o.a.createElement('span', {
-                              className: I()(p.a.chat__online, p.a.active)
+                            s.a.createElement('span', {
+                              className: C()(f.a.chat__online, f.a.active)
                             }),
-                            o.a.createElement(
+                            s.a.createElement(
                               'span',
-                              { className: p.a.chat__name },
+                              { className: f.a.chat__name },
                               this.activeChannel.name
                             )
                           ),
                           this.activeChannel.icon
-                            ? o.a.createElement('img', {
+                            ? s.a.createElement('img', {
                                 src: this.activeChannel.icon,
-                                className: p.a.channel__header__photo
+                                className: f.a.channel__header__photo
                               })
-                            : o.a.createElement('div', {
-                                dangerouslySetInnerHTML: { __html: x.a },
-                                className: p.a.channel__header__photo
+                            : s.a.createElement('div', {
+                                dangerouslySetInnerHTML: { __html: h.a },
+                                className: f.a.channel__header__photo
                               }),
                           this.props.closeChatButton
-                            ? o.a.createElement(
+                            ? s.a.createElement(
                                 'button',
                                 {
-                                  className: p.a.channel__close__button,
+                                  className: f.a.channel__close__button,
                                   onClick: this.closeChatBox
                                 },
                                 '×'
                               )
                             : null
                         ),
-                        o.a.createElement(
+                        s.a.createElement(
                           'div',
                           {
-                            className: p.a.chat__messages,
+                            className: f.a.chat__messages,
                             id: 'widget-reactSlakChatMessages'
                           },
                           this.state.messages.map(function(t) {
                             return e.displayFormattedMessage(t);
                           })
                         ),
-                        o.a.createElement(
+                        s.a.createElement(
                           'div',
                           null,
                           this.state.fileUploadLoader
-                            ? o.a.createElement(
+                            ? s.a.createElement(
                                 'div',
-                                { className: p.a.chat__file__uploading },
-                                o.a.createElement(
+                                { className: f.a.chat__file__uploading },
+                                s.a.createElement(
                                   'span',
-                                  { className: p.a.loading },
+                                  { className: f.a.loading },
                                   'Uploading'
                                 )
                               )
                             : null,
                           this.state.fileUploadLoader
                             ? null
-                            : o.a.createElement(
+                            : s.a.createElement(
                                 'div',
                                 null,
-                                o.a.createElement(
+                                s.a.createElement(
                                   'div',
-                                  { className: p.a.attachment },
-                                  o.a.createElement(
+                                  { className: f.a.attachment },
+                                  s.a.createElement(
                                     'label',
                                     {
                                       htmlFor: 'chat__upload',
-                                      className: p.a.attachmentIcon
+                                      className: f.a.attachmentIcon
                                     },
-                                    o.a.createElement('input', {
+                                    s.a.createElement('input', {
                                       type: 'file',
                                       id: 'chat__upload',
-                                      className: p.a.chat__upload,
+                                      className: f.a.chat__upload,
                                       value: this.state.postMyFile,
                                       onChange: function(t) {
                                         return e.handleFileChange(t);
@@ -6916,10 +8025,10 @@ object-assign
                                     })
                                   )
                                 ),
-                                o.a.createElement('input', {
+                                s.a.createElement('input', {
                                   type: 'text',
                                   id: 'chat__input__text',
-                                  className: p.a.chat__input,
+                                  className: f.a.chat__input,
                                   value: this.state.postMyMessage,
                                   placeholder: 'Enter your message...',
                                   onKeyPress: function(t) {
@@ -6936,31 +8045,31 @@ object-assign
                       )
                     )
                   );
-                  return o.a.createElement('div', null, t);
+                  return s.a.createElement('div', null, t);
                 }
               }
-            ]) && S(n.prototype, a),
-            r && S(n, r),
+            ]) && T(n.prototype, a),
+            r && T(n, r),
             t
           );
         })();
-      L.propTypes = {
-        apiToken: C.a.string.isRequired,
-        channels: C.a.array.isRequired,
-        botName: C.a.string,
-        helpText: C.a.string,
-        defaultChannel: C.a.string,
-        defaultMessage: C.a.string,
-        singleUserMode: C.a.bool,
-        closeChatButton: C.a.bool,
-        themeColor: C.a.string,
-        userImage: C.a.string,
-        hooks: C.a.array,
-        debugMode: C.a.bool
+      Z.propTypes = {
+        apiToken: A.a.string.isRequired,
+        channels: A.a.array.isRequired,
+        botName: A.a.string,
+        helpText: A.a.string,
+        defaultChannel: A.a.string,
+        defaultMessage: A.a.string,
+        singleUserMode: A.a.bool,
+        closeChatButton: A.a.bool,
+        themeColor: A.a.string,
+        userImage: A.a.string,
+        hooks: A.a.array,
+        debugMode: A.a.bool
       };
-      var Z = L;
+      var B = Z;
       n.d(t, 'ReactSlackChat', function() {
-        return Z;
+        return B;
       });
     }
   ]);

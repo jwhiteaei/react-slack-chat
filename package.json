@@ -71,6 +71,7 @@
     "prop-types": "15.6.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "slack": "^7.7.3"
+    "slack": "git+https://github.com/smallwins/slack.git",
+    "slack2": "npm:slack@^7.7.3"
   }
 }
