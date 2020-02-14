@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-import { rtm, channels, mpim } from 'slack';
+import { rtm, channels, conversations } from 'slack';
 import { load as emojiLoader, parse as emojiParser } from 'gh-emoji';
 
 import { User } from '../User';
@@ -350,7 +350,7 @@ class ReactSlackChat extends Component {
     // define loadMessages function
     const getMessagesFromSlack = () => {
       const messagesLength = that.state.messages.length;
-      mpim.history(
+      conversations.history(
         {
           token: this.apiToken,
           channel: channel.id
