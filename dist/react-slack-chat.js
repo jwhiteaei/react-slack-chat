@@ -6014,11 +6014,11 @@ object-assign
           o &&
             k(t, i) &&
             b(t) &&
-            (o[2] &&
+            o[2] &&
               n.map(function(e) {
                 e.id === o[2] &&
                   M({ hook: e, apiToken: a, channel: r, username: i });
-              }));
+              });
         },
         M = function(e) {
           var t = e.hook,
@@ -6424,7 +6424,7 @@ object-assign
                     (this.chatInitiatedTs = Date.now() / 1e3);
                   var a = function() {
                     var a = n.state.messages.length;
-                    u.mpim.history(
+                    u.conversations.history(
                       { token: t.apiToken, channel: e.id },
                       function(r, i) {
                         if (r)
