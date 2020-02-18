@@ -332,20 +332,11 @@ class ReactSlackChat extends Component {
   }
 
   postMyMessage() {
-    console.log('POSTING MESSAGE');
-    console.log('THIS.STATE.POSTMYMESSAGE', this.state.postMyMessage);
-    console.log('THIS.APITOKEN', this.apiToken);
-    console.log('THIS.ACTIVECHANNEL.ID', this.activeChannel.id);
-    console.log('THIS.PROPS.BOTNAME', this.props.botName);
-    console.log(
-      'THIS.STATE.USERTHREADTSS[THIS.STATE.USERTHREADTSS.LENGTH - 1]',
-      this.state.userThreadTss[this.state.userThreadTss.length - 1]
-    );
     return postMessage({
       text: this.state.postMyMessage,
-      lastThreadTs: this.state.userThreadTss[
+      /* lastThreadTs: this.state.userThreadTss[
         this.state.userThreadTss.length - 1
-      ],
+      ], */
       apiToken: this.apiToken,
       channel: this.activeChannel.id,
       username: this.props.botName

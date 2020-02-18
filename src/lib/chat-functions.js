@@ -13,7 +13,7 @@ export const postMessage = ({
       return chat.postMessage(
         {
           token: apiToken,
-          thread_ts: lastThreadTs,
+          /* thread_ts: lastThreadTs, */
           channel,
           text,
           username

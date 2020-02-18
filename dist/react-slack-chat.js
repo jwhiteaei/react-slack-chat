@@ -551,8 +551,8 @@
     },
     function(e, t) {
       var n = 'https://slack.com';
-      Object({ NODE_ENV: 'production', SYSTEM_HOOKS: !1 }).STENO_URL &&
-        (n = Object({ NODE_ENV: 'production', SYSTEM_HOOKS: !1 }).STENO_URL),
+      Object({ NODE_ENV: production, SYSTEM_HOOKS: !1 }).STENO_URL &&
+        (n = Object({ NODE_ENV: production, SYSTEM_HOOKS: !1 }).STENO_URL),
         (e.exports = n);
     },
     function(e, t, n) {
@@ -2469,14 +2469,14 @@
               R < j;
               R++
             ) {
-              var S = O[R];
-              if (S && !S.match(c)) {
-                for (var P = '', T = 0, E = S.length; T < E; T++)
-                  S.charCodeAt(T) > 127 ? (P += 'x') : (P += S[T]);
-                if (!P.match(c)) {
+              var P = O[R];
+              if (P && !P.match(c)) {
+                for (var S = '', E = 0, T = P.length; E < T; E++)
+                  P.charCodeAt(E) > 127 ? (S += 'x') : (S += P[E]);
+                if (!S.match(c)) {
                   var N = O.slice(0, R),
                     U = O.slice(R + 1),
-                    F = S.match(I);
+                    F = P.match(I);
                   F && (N.push(F[1]), U.unshift(F[2])),
                     U.length && (h = '/' + U.join('.') + h),
                     (this.hostname = N.join('.'));
@@ -2507,23 +2507,23 @@
               L === G && (L = escape(G)), (h = h.split(G).join(L));
             }
           }
-        var H = h.indexOf('#');
-        -1 !== H && ((this.hash = h.substr(H)), (h = h.slice(0, H)));
-        var Z = h.indexOf('?');
+        var Z = h.indexOf('#');
+        -1 !== Z && ((this.hash = h.substr(Z)), (h = h.slice(0, Z)));
+        var B = h.indexOf('?');
         if (
-          (-1 !== Z
-            ? ((this.search = h.substr(Z)),
-              (this.query = h.substr(Z + 1)),
+          (-1 !== B
+            ? ((this.search = h.substr(B)),
+              (this.query = h.substr(B + 1)),
               t && (this.query = x.parse(this.query)),
-              (h = h.slice(0, Z)))
+              (h = h.slice(0, B)))
             : t && ((this.search = ''), (this.query = {})),
           h && (this.pathname = h),
           f[v] && this.hostname && !this.pathname && (this.pathname = '/'),
           this.pathname || this.search)
         ) {
           z = this.pathname || '';
-          var B = this.search || '';
-          this.path = z + B;
+          var H = this.search || '';
+          this.path = z + H;
         }
         return (this.href = this.format()), this;
       }),
@@ -2869,7 +2869,7 @@
             }
             return M(h);
           }
-          function S(e) {
+          function P(e) {
             var t,
               n,
               a,
@@ -2919,10 +2919,10 @@
             version: '1.4.1',
             ucs2: { decode: R, encode: M },
             decode: j,
-            encode: S,
+            encode: P,
             toASCII: function(e) {
               return q(e, function(e) {
-                return x.test(e) ? 'xn--' + S(e) : e;
+                return x.test(e) ? 'xn--' + P(e) : e;
               });
             },
             toUnicode: function(e) {
@@ -7077,16 +7077,15 @@ object-assign
         },
         v = function(e) {
           var t = e.text,
-            n = e.lastThreadTs,
-            a = e.apiToken,
-            r = e.channel,
-            o = e.username;
-          return new Promise(function(e, i) {
+            n = (e.lastThreadTs, e.apiToken),
+            a = e.channel,
+            r = e.username;
+          return new Promise(function(e, o) {
             if ('' !== t)
               return l.chat.postMessage(
-                { token: a, thread_ts: n, channel: r, text: t, username: o },
+                { token: n, channel: a, text: t, username: r },
                 function(t, n) {
-                  return t ? i(t) : e(n);
+                  return t ? o(t) : e(n);
                 }
               );
           });
@@ -7165,8 +7164,8 @@ object-assign
                 ('0' + parseInt(e[3], 10).toString(16)).slice(-2)
             : '';
         };
-      function S(e) {
-        return (S =
+      function P(e) {
+        return (P =
           'function' == typeof Symbol && 'symbol' == typeof Symbol.iterator
             ? function(e) {
                 return typeof e;
@@ -7180,7 +7179,7 @@ object-assign
                   : typeof e;
               })(e);
       }
-      function P() {
+      function S() {
         var e = (function(e, t) {
           t || (t = e.slice(0));
           return Object.freeze(
@@ -7188,13 +7187,13 @@ object-assign
           );
         })(['Could not connect to Slack Server. Reason: ', '']);
         return (
-          (P = function() {
+          (S = function() {
             return e;
           }),
           e
         );
       }
-      function T(e, t) {
+      function E(e, t) {
         for (var n = 0; n < t.length; n++) {
           var a = t[n];
           (a.enumerable = a.enumerable || !1),
@@ -7203,8 +7202,8 @@ object-assign
             Object.defineProperty(e, a.key, a);
         }
       }
-      function E(e) {
-        return (E = Object.setPrototypeOf
+      function T(e) {
+        return (T = Object.setPrototypeOf
           ? Object.getPrototypeOf
           : function(e) {
               return e.__proto__ || Object.getPrototypeOf(e);
@@ -7229,7 +7228,7 @@ object-assign
         D = r.isHookMessage,
         G = r.execHooksIfFound,
         L = o.changeColorRecursive,
-        H = (function(e) {
+        Z = (function(e) {
           function t(e) {
             var n, a, r;
             return (
@@ -7238,9 +7237,9 @@ object-assign
                   throw new TypeError('Cannot call a class as a function');
               })(this, t),
               (a = this),
-              (r = E(t).call(this, e)),
+              (r = T(t).call(this, e)),
               ((n =
-                !r || ('object' !== S(r) && 'function' != typeof r)
+                !r || ('object' !== P(r) && 'function' != typeof r)
                   ? N(a)
                   : r).bot = c.rtm.client()),
               (n.state = {
@@ -7488,7 +7487,7 @@ object-assign
                       }),
                         e.bot.listen({ token: e.apiToken }, function(t) {
                           t &&
-                            (F(P(), JSON.stringify(t)),
+                            (F(S(), JSON.stringify(t)),
                             e.setState({
                               helpText: 'Slack Connection Error!'
                             }));
@@ -7503,51 +7502,32 @@ object-assign
                 key: 'postMyMessage',
                 value: function() {
                   var e = this;
-                  return (
-                    console.log('POSTING MESSAGE'),
-                    console.log(
-                      'THIS.STATE.POSTMYMESSAGE',
-                      this.state.postMyMessage
-                    ),
-                    console.log('THIS.APITOKEN', this.apiToken),
-                    console.log('THIS.ACTIVECHANNEL.ID', this.activeChannel.id),
-                    console.log('THIS.PROPS.BOTNAME', this.props.botName),
-                    console.log(
-                      'THIS.STATE.USERTHREADTSS[THIS.STATE.USERTHREADTSS.LENGTH - 1]',
-                      this.state.userThreadTss[
-                        this.state.userThreadTss.length - 1
-                      ]
-                    ),
-                    v({
-                      text: this.state.postMyMessage,
-                      lastThreadTs: this.state.userThreadTss[
-                        this.state.userThreadTss.length - 1
-                      ],
-                      apiToken: this.apiToken,
-                      channel: this.activeChannel.id,
-                      username: this.props.botName
+                  return v({
+                    text: this.state.postMyMessage,
+                    apiToken: this.apiToken,
+                    channel: this.activeChannel.id,
+                    username: this.props.botName
+                  })
+                    .then(function(t) {
+                      return (
+                        e.setState(
+                          { postMyMessage: '', sendingLoader: !1 },
+                          function() {
+                            setTimeout(function() {
+                              var e = document.getElementById(
+                                'widget-reactSlakChatMessages'
+                              );
+                              e.scrollTop = e.scrollHeight;
+                            }, e.refreshTime);
+                          }
+                        ),
+                        e.loadMessages(e.state.currentChannel),
+                        e.forceUpdate()
+                      );
                     })
-                      .then(function(t) {
-                        return (
-                          e.setState(
-                            { postMyMessage: '', sendingLoader: !1 },
-                            function() {
-                              setTimeout(function() {
-                                var e = document.getElementById(
-                                  'widget-reactSlakChatMessages'
-                                );
-                                e.scrollTop = e.scrollHeight;
-                              }, e.refreshTime);
-                            }
-                          ),
-                          e.loadMessages(e.state.currentChannel),
-                          e.forceUpdate()
-                        );
-                      })
-                      .catch(function(e) {
-                        return e ? F('failed to post. Err:', e) : null;
-                      })
-                  );
+                    .catch(function(e) {
+                      return e ? F('failed to post. Err:', e) : null;
+                    });
                 }
               },
               {
@@ -8079,12 +8059,12 @@ object-assign
                   return s.a.createElement('div', null, t);
                 }
               }
-            ]) && T(n.prototype, a),
-            r && T(n, r),
+            ]) && E(n.prototype, a),
+            r && E(n, r),
             t
           );
         })();
-      H.propTypes = {
+      Z.propTypes = {
         apiToken: A.a.string.isRequired,
         channels: A.a.array.isRequired,
         botName: A.a.string,
@@ -8098,9 +8078,9 @@ object-assign
         hooks: A.a.array,
         debugMode: A.a.bool
       };
-      var Z = H;
+      var B = Z;
       n.d(t, 'ReactSlackChat', function() {
-        return Z;
+        return B;
       });
     }
   ]);
