@@ -551,8 +551,8 @@
     },
     function(e, t) {
       var n = 'https://slack.com';
-      Object({ NODE_ENV: production, SYSTEM_HOOKS: !1 }).STENO_URL &&
-        (n = Object({ NODE_ENV: production, SYSTEM_HOOKS: !1 }).STENO_URL),
+      Object({ NODE_ENV: 'production', SYSTEM_HOOKS: !1 }).STENO_URL &&
+        (n = Object({ NODE_ENV: 'production', SYSTEM_HOOKS: !1 }).STENO_URL),
         (e.exports = n);
     },
     function(e, t, n) {
@@ -7119,10 +7119,10 @@ object-assign
             y(t, o) &&
             b(t) &&
             s[2] &&
-              n.map(function(e) {
-                e.id === s[2] &&
-                  w({ hook: e, apiToken: a, channel: r, username: o });
-              });
+            n.map(function(e) {
+              e.id === s[2] &&
+                w({ hook: e, apiToken: a, channel: r, username: o });
+            });
         },
         w = function(e) {
           var t = e.hook,
