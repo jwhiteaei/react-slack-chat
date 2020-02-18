@@ -7460,7 +7460,7 @@ object-assign
                         var r = [];
                         return (
                           n.channels.map(function(t) {
-                            e.state.channels.forEach(function(n) {
+                            e.props.channels.forEach(function(n) {
                               (n.name !== t.name && n.id !== t.id) ||
                                 (e.props.defaultChannel === t.name &&
                                   (e.activeChannel = n),
@@ -7533,7 +7533,7 @@ object-assign
                     (this.chatInitiatedTs = Date.now() / 1e3);
                   var a = function() {
                     var a = n.state.messages.length;
-                    l.conversations.history(
+                    l.channels.history(
                       { token: t.apiToken, channel: e.id },
                       function(r, o) {
                         if (r)

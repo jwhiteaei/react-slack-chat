@@ -273,7 +273,8 @@ class ReactSlackChat extends Component {
           // get the channels we need
           const channels = [];
           payload.channels.map(channel => {
-            this.state.channels.forEach(channelObject => {
+            // this.state.channels.forEach(channelObject => {
+            this.props.channels.forEach(channelObject => {
               // If this channel is exactly as requested
               if (
                 channelObject.name === channel.name ||
@@ -357,7 +358,8 @@ class ReactSlackChat extends Component {
     // define loadMessages function
     const getMessagesFromSlack = () => {
       const messagesLength = that.state.messages.length;
-      conversations.history(
+      // converstions.history(
+      channels.history(
         {
           token: this.apiToken,
           channel: channel.id
