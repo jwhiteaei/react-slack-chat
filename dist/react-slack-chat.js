@@ -551,8 +551,8 @@
     },
     function(e, t) {
       var n = 'https://slack.com';
-      Object({ NODE_ENV: 'production', SYSTEM_HOOKS: !1 }).STENO_URL &&
-        (n = Object({ NODE_ENV: 'production', SYSTEM_HOOKS: !1 }).STENO_URL),
+      Object({ NODE_ENV: production, SYSTEM_HOOKS: !1 }).STENO_URL &&
+        (n = Object({ NODE_ENV: production, SYSTEM_HOOKS: !1 }).STENO_URL),
         (e.exports = n);
     },
     function(e, t, n) {
@@ -7119,10 +7119,10 @@ object-assign
             y(t, o) &&
             b(t) &&
             s[2] &&
-            n.map(function(e) {
-              e.id === s[2] &&
-                w({ hook: e, apiToken: a, channel: r, username: o });
-            });
+              n.map(function(e) {
+                e.id === s[2] &&
+                  w({ hook: e, apiToken: a, channel: r, username: o });
+              });
         },
         w = function(e) {
           var t = e.hook,
@@ -7450,7 +7450,7 @@ object-assign
                   return new Promise(function(t, n) {
                     try {
                       e.bot.started(function(n) {
-                        F(n);
+                        console.log('PAYLOAD', n), F(n);
                         var a = [];
                         n.users.map(function(t) {
                           return e.isValidOnlineUser(t)
@@ -7459,14 +7459,21 @@ object-assign
                         });
                         var r = [];
                         return (
-                          n.channels.map(function(t) {
+                          n.groups.map(function(t) {
                             e.props.channels.forEach(function(n) {
                               (n.name !== t.name && n.id !== t.id) ||
                                 (e.props.defaultChannel === t.name &&
                                   (e.activeChannel = n),
                                 (t.icon = n.icon),
                                 r.push(t));
-                            });
+                            }),
+                              e.props.groups.forEach(function(n) {
+                                (n.name !== t.name && n.id !== t.id) ||
+                                  (e.props.defaultChannel === t.name &&
+                                    (e.activeChannel = n),
+                                  (t.icon = n.icon),
+                                  r.push(t));
+                              });
                           }),
                           t({ channels: r, onlineUsers: a })
                         );
@@ -7533,7 +7540,7 @@ object-assign
                     (this.chatInitiatedTs = Date.now() / 1e3);
                   var a = function() {
                     var a = n.state.messages.length;
-                    l.channels.history(
+                    l.conversations.history(
                       { token: t.apiToken, channel: e.id },
                       function(r, o) {
                         if (r)

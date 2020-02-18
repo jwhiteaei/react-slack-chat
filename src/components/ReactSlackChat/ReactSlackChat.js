@@ -62,6 +62,7 @@ class ReactSlackChat extends Component {
     };
     // Set class variables
     // Base64 decode the API Token
+    /* this.apiToken = this.props.apiToken; */
     this.apiToken = atob(this.props.apiToken);
     this.refreshTime = 30000; // changed from default 5 seconds to 30 seconds, less real-time but supports more users
     this.chatInitiatedTs = '';
@@ -260,6 +261,7 @@ class ReactSlackChat extends Component {
       try {
         // start the bot, get the initial payload
         this.bot.started(payload => {
+          console.log('PAYLOAD', payload);
           debugLog(payload);
           // Create new User object for each online user found
           // Add to our list only if the user is valid
@@ -272,9 +274,23 @@ class ReactSlackChat extends Component {
           );
           // get the channels we need
           const channels = [];
-          payload.channels.map(channel => {
-            // this.state.channels.forEach(channelObject => {
+          /* payload.channels.map(channel => { */
+          payload.groups.map(channel => {
+            /* this.state.channels.forEach(channelObject => { */
             this.props.channels.forEach(channelObject => {
+              // If this channel is exactly as requested
+              if (
+                channelObject.name === channel.name ||
+                channelObject.id === channel.id
+              ) {
+                if (this.props.defaultChannel === channel.name) {
+                  this.activeChannel = channelObject;
+                }
+                channel.icon = channelObject.icon; // Add on the icon property to the channel list
+                channels.push(channel);
+              }
+            });
+            this.props.groups.forEach(channelObject => {
               // If this channel is exactly as requested
               if (
                 channelObject.name === channel.name ||
@@ -359,7 +375,7 @@ class ReactSlackChat extends Component {
     const getMessagesFromSlack = () => {
       const messagesLength = that.state.messages.length;
       // converstions.history(
-      channels.history(
+      conversations.history(
         {
           token: this.apiToken,
           channel: channel.id
