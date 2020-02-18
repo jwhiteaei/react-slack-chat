@@ -262,6 +262,7 @@ class ReactSlackChat extends Component {
         // start the bot, get the initial payload
         this.bot.started(payload => {
           console.log('PAYLOAD', payload);
+          console.log('SLACK-CHAT--this.props', this.props);
           debugLog(payload);
           // Create new User object for each online user found
           // Add to our list only if the user is valid
@@ -275,35 +276,42 @@ class ReactSlackChat extends Component {
           // get the channels we need
           const channels = [];
           /* payload.channels.map(channel => { */
-          payload.groups.map(channel => {
-            /* this.state.channels.forEach(channelObject => { */
-            this.props.channels.forEach(channelObject => {
-              // If this channel is exactly as requested
-              if (
-                channelObject.name === channel.name ||
-                channelObject.id === channel.id
-              ) {
-                if (this.props.defaultChannel === channel.name) {
-                  this.activeChannel = channelObject;
-                }
-                channel.icon = channelObject.icon; // Add on the icon property to the channel list
-                channels.push(channel);
+          if (payload.channels.length) {
+            payload.channels.map(channel => {
+              if (this.props.channels.length) {
+                this.props.channels.forEach(channelObject => {
+                  if (
+                    channelObject.name === channel.name ||
+                    channelObject.id === channel.id
+                  ) {
+                    if (this.props.defaultChannel === channel.name) {
+                      this.activeChannel = channelObject;
+                    }
+                    channel.icon = channelObject.icon; // Add on the icon property to the channel list
+                    channels.push(channel);
+                  }
+                });
               }
             });
-            this.props.groups.forEach(channelObject => {
-              // If this channel is exactly as requested
-              if (
-                channelObject.name === channel.name ||
-                channelObject.id === channel.id
-              ) {
-                if (this.props.defaultChannel === channel.name) {
-                  this.activeChannel = channelObject;
-                }
-                channel.icon = channelObject.icon; // Add on the icon property to the channel list
-                channels.push(channel);
+          }
+          if (payload.groups.length) {
+            payload.groups.map(group => {
+              if (this.props.channels.length) {
+                this.props.channels.forEach(groupObject => {
+                  if (
+                    groupObject.name === group.name ||
+                    groupObject.id === group.id
+                  ) {
+                    if (this.props.defaultChannel === group.name) {
+                      this.activeChannel = groupObject;
+                    }
+                    group.icon = groupObject.icon; // Add on the icon property to the channel list
+                    channels.push(group);
+                  }
+                });
               }
             });
-          });
+          }
           return resolve({ channels, onlineUsers });
         });
         // tell the bot to listen

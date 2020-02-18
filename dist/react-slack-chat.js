@@ -7119,10 +7119,10 @@ object-assign
             y(t, o) &&
             b(t) &&
             s[2] &&
-            n.map(function(e) {
-              e.id === s[2] &&
-                w({ hook: e, apiToken: a, channel: r, username: o });
-            });
+              n.map(function(e) {
+                e.id === s[2] &&
+                  w({ hook: e, apiToken: a, channel: r, username: o });
+              });
         },
         w = function(e) {
           var t = e.hook,
@@ -7450,7 +7450,9 @@ object-assign
                   return new Promise(function(t, n) {
                     try {
                       e.bot.started(function(n) {
-                        console.log('PAYLOAD', n), F(n);
+                        console.log('PAYLOAD', n),
+                          console.log('SLACK-CHAT--this.props', e.props),
+                          F(n);
                         var a = [];
                         n.users.map(function(t) {
                           return e.isValidOnlineUser(t)
@@ -7459,22 +7461,28 @@ object-assign
                         });
                         var r = [];
                         return (
-                          n.groups.map(function(t) {
-                            e.props.channels.forEach(function(n) {
-                              (n.name !== t.name && n.id !== t.id) ||
-                                (e.props.defaultChannel === t.name &&
-                                  (e.activeChannel = n),
-                                (t.icon = n.icon),
-                                r.push(t));
+                          n.channels.length &&
+                            n.channels.map(function(t) {
+                              e.props.channels.length &&
+                                e.props.channels.forEach(function(n) {
+                                  (n.name !== t.name && n.id !== t.id) ||
+                                    (e.props.defaultChannel === t.name &&
+                                      (e.activeChannel = n),
+                                    (t.icon = n.icon),
+                                    r.push(t));
+                                });
                             }),
-                              e.props.groups.forEach(function(n) {
-                                (n.name !== t.name && n.id !== t.id) ||
-                                  (e.props.defaultChannel === t.name &&
-                                    (e.activeChannel = n),
-                                  (t.icon = n.icon),
-                                  r.push(t));
-                              });
-                          }),
+                          n.groups.length &&
+                            n.groups.map(function(t) {
+                              e.props.channels.length &&
+                                e.props.channels.forEach(function(n) {
+                                  (n.name !== t.name && n.id !== t.id) ||
+                                    (e.props.defaultChannel === t.name &&
+                                      (e.activeChannel = n),
+                                    (t.icon = n.icon),
+                                    r.push(t));
+                                });
+                            }),
                           t({ channels: r, onlineUsers: a })
                         );
                       }),
