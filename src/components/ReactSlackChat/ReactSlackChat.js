@@ -261,8 +261,8 @@ class ReactSlackChat extends Component {
       try {
         // start the bot, get the initial payload
         this.bot.started(payload => {
-          console.log('PAYLOAD', payload);
-          console.log('SLACK-CHAT--this.props', this.props);
+          /* console.log('PAYLOAD', payload); */
+          /* console.log('SLACK-CHAT--this.props', this.props); */
           debugLog(payload);
           // Create new User object for each online user found
           // Add to our list only if the user is valid
@@ -369,12 +369,12 @@ class ReactSlackChat extends Component {
   }
 
   loadMessages(channel) {
-    console.log('CHANNEL', channel);
-    console.log('token', this.apiToken);
-    console.log('channel.id', channel.id);
+    /* console.log('CHANNEL', channel); */
+    /* console.log('token', this.apiToken); */
+    /* console.log('channel.id', channel.id); */
     /* console.log(rtm); */
-    console.log(channels);
-    console.log(conversations);
+    /* console.log(channels); */
+    /* console.log(conversations); */
     const that = this;
     if (!this.chatInitiatedTs) {
       this.chatInitiatedTs = Date.now() / 1000;
@@ -469,7 +469,7 @@ class ReactSlackChat extends Component {
                 const chatMessages = document.getElementById(
                   'widget-reactSlakChatMessages'
                 );
-                console.log('refreshing');
+                /* console.log('refreshing'); */
                 /* if (chatMessages !== null) { */
                 chatMessages.scrollTop =
                   chatMessages.scrollHeight < chatMessages.scrollTop + 600 ||

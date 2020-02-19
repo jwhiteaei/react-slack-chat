@@ -157,7 +157,7 @@
                 var i = r.apply(null, a);
                 i && e.push(i);
               } else if ('object' === o)
-                for (var s in a) n.call(a, s) && a[s] && e.push(s);
+                for (var g in a) n.call(a, g) && a[g] && e.push(g);
             }
           }
           return e.join(' ');
@@ -234,7 +234,7 @@
                 }),
                 (e.all = o),
                 (e.exist = i),
-                (e.getUrl = s),
+                (e.getUrl = g),
                 (e.parse = function(e) {
                   var t =
                       arguments.length <= 1 || void 0 === arguments[1]
@@ -263,7 +263,7 @@
                             })(r)
                           ),
                         '<img src="' +
-                          s(t) +
+                          g(t) +
                           '" class="' +
                           n.join(' ') +
                           '" alt="' +
@@ -301,7 +301,7 @@
                 var t = o();
                 return null != t && !!t[e];
               }
-              function s(e) {
+              function g(e) {
                 var t = o();
                 return null == t ? null : t[e];
               }
@@ -490,7 +490,7 @@
           Object.keys(e)
             .map(t => o(t) + '=' + o(e[t]))
             .join('&'),
-        s = e => {
+        g = e => {
           let t = new FormData();
           return (
             Object.keys(e).forEach(n => {
@@ -499,13 +499,13 @@
             t
           );
         };
-      async function g(e, t, n) {
+      async function s(e, t, n) {
         try {
           var o = a(e, t);
           if (o) throw o;
-          var g = /files.upload/.test(e),
-            A = { method: 'POST', body: g ? s(t) : i(t) };
-          g ||
+          var s = /files.upload/.test(e),
+            A = { method: 'POST', body: s ? g(t) : i(t) };
+          s ||
             (A.headers = new Headers({
               'Content-Type': 'application/x-www-form-urlencoded'
             }));
@@ -529,14 +529,14 @@
         var a = new Error();
         if (!n)
           return new Promise(function(n, r) {
-            g(e, t, function(e, t) {
+            s(e, t, function(e, t) {
               e
                 ? ((e.stack = a.stack.replace(/^Error/, 'Error: ' + e.message)),
                   r(e))
                 : n(t);
             });
           });
-        g(e, t, function(e, t) {
+        s(e, t, function(e, t) {
           e && (e.stack = a.stack.replace(/^Error/, 'Error: ' + e.message)),
             n(e, t);
         });
@@ -620,20 +620,20 @@
           var r,
             o,
             i,
-            s = {};
+            g = {};
           if (t.getAllResponseHeaders)
             for (
               r = t.getAllResponseHeaders().split('\n'), o = 0;
               o < r.length;
               o++
             )
-              (i = r[o].match(/\s*([^\s]+):\s+([^\s]+)/)) && (s[i[1]] = i[2]);
+              (i = r[o].match(/\s*([^\s]+):\s+([^\s]+)/)) && (g[i[1]] = i[2]);
           n = a(n, {
             status: t.status,
             contentType:
               t.contentType ||
               (t.getResponseHeader && t.getResponseHeader('Content-Type')),
-            headers: s,
+            headers: g,
             text: t.responseText,
             body: t.response || t.responseText
           });
@@ -2103,8 +2103,8 @@
         r = q(n(139)),
         o = q(n(142)),
         i = q(n(20)),
-        s = q(n(143)),
-        g = q(n(144)),
+        g = q(n(143)),
+        s = q(n(144)),
         A = q(n(145)),
         u = q(n(45)),
         C = q(n(146)),
@@ -2131,8 +2131,8 @@
         api: { test: a.default, client: r.default },
         auth: { test: i.default },
         bots: o.default,
-        channels: s.default,
-        chat: g.default,
+        channels: g.default,
+        chat: s.default,
         dnd: A.default,
         emoji: { list: u.default },
         files: C.default,
@@ -2172,8 +2172,8 @@
         r = n(122),
         o = n(14),
         i = n(127),
-        s = n(15);
-      function g(e, t) {
+        g = n(15);
+      function s(e, t) {
         var n = r.parse(e.url);
         (n.method = 'POST'),
           (n.rejectUnauthorized = !1),
@@ -2207,14 +2207,14 @@
                   'object' == typeof n[e] && (n[e] = JSON.stringify(n[e]));
                 });
                 var i = {
-                  url: `${s}/api/${t}`,
+                  url: `${g}/api/${t}`,
                   headers: {
                     'Content-Type': 'application/x-www-form-urlencoded'
                   },
                   data: n
                 };
                 e && (i = Object.assign({}, i, e)),
-                  g(i, function(e, t) {
+                  s(i, function(e, t) {
                     if (e) a(e);
                     else if (429 === t.statusCode) {
                       var n = Error('ratelimited');
@@ -2255,18 +2255,18 @@
         (t = t || '&'), (n = n || '=');
         var i = {};
         if ('string' != typeof e || 0 === e.length) return i;
-        var s = /\+/g;
+        var g = /\+/g;
         e = e.split(t);
-        var g = 1e3;
-        o && 'number' == typeof o.maxKeys && (g = o.maxKeys);
+        var s = 1e3;
+        o && 'number' == typeof o.maxKeys && (s = o.maxKeys);
         var A = e.length;
-        g > 0 && A > g && (A = g);
+        s > 0 && A > s && (A = s);
         for (var u = 0; u < A; ++u) {
           var C,
             l,
             c,
             I,
-            d = e[u].replace(s, '%20'),
+            d = e[u].replace(g, '%20'),
             p = d.indexOf(n);
           p >= 0
             ? ((C = d.substr(0, p)), (l = d.substr(p + 1)))
@@ -2301,22 +2301,22 @@
             return '';
         }
       };
-      e.exports = function(e, t, n, s) {
+      e.exports = function(e, t, n, g) {
         return (
           (t = t || '&'),
           (n = n || '='),
           null === e && (e = void 0),
           'object' == typeof e
             ? o(i(e), function(i) {
-                var s = encodeURIComponent(a(i)) + n;
+                var g = encodeURIComponent(a(i)) + n;
                 return r(e[i])
                   ? o(e[i], function(e) {
-                      return s + encodeURIComponent(a(e));
+                      return g + encodeURIComponent(a(e));
                     }).join(t)
-                  : s + encodeURIComponent(a(e[i]));
+                  : g + encodeURIComponent(a(e[i]));
               }).join(t)
-            : s
-            ? encodeURIComponent(a(s)) + n + encodeURIComponent(a(e))
+            : g
+            ? encodeURIComponent(a(g)) + n + encodeURIComponent(a(e))
             : ''
         );
       };
@@ -2370,8 +2370,8 @@
         }),
         (t.Url = o);
       var i = /^([a-z0-9.+-]+:)/i,
-        s = /:[0-9]*$/,
-        g = /^(\/\/?(?!\/)[^\?\s]*)(\?[^\s]*)?$/,
+        g = /:[0-9]*$/,
+        s = /^(\/\/?(?!\/)[^\?\s]*)(\?[^\s]*)?$/,
         A = ['{', '}', '|', '\\', '^', '`'].concat([
           '<',
           '>',
@@ -2413,12 +2413,12 @@
             "Parameter 'url' must be a string, not " + typeof e
           );
         var o = e.indexOf('?'),
-          s = -1 !== o && o < e.indexOf('#') ? '?' : '#',
-          A = e.split(s);
+          g = -1 !== o && o < e.indexOf('#') ? '?' : '#',
+          A = e.split(g);
         A[0] = A[0].replace(/\\/g, '/');
-        var h = (e = A.join(s));
+        var h = (e = A.join(g));
         if (((h = h.trim()), !n && 1 === e.split('#').length)) {
-          var m = g.exec(h);
+          var m = s.exec(h);
           if (m)
             return (
               (this.path = h),
@@ -2550,7 +2550,7 @@
               r.isObject(this.query) &&
               Object.keys(this.query).length &&
               (i = x.stringify(this.query));
-          var s = this.search || (i && '?' + i) || '';
+          var g = this.search || (i && '?' + i) || '';
           return (
             t && ':' !== t.substr(-1) && (t += ':'),
             this.slashes || ((!t || f[t]) && !1 !== o)
@@ -2558,13 +2558,13 @@
                 n && '/' !== n.charAt(0) && (n = '/' + n))
               : o || (o = ''),
             a && '#' !== a.charAt(0) && (a = '#' + a),
-            s && '?' !== s.charAt(0) && (s = '?' + s),
+            g && '?' !== g.charAt(0) && (g = '?' + g),
             t +
               o +
               (n = n.replace(/[?#]/g, function(e) {
                 return encodeURIComponent(e);
               })) +
-              (s = s.replace('#', '%23')) +
+              (g = g.replace('#', '%23')) +
               a
           );
         }),
@@ -2581,14 +2581,14 @@
             i < a.length;
             i++
           ) {
-            var s = a[i];
-            n[s] = this[s];
+            var g = a[i];
+            n[g] = this[g];
           }
           if (((n.hash = e.hash), '' === e.href))
             return (n.href = n.format()), n;
           if (e.slashes && !e.protocol) {
-            for (var g = Object.keys(e), A = 0; A < g.length; A++) {
-              var u = g[A];
+            for (var s = Object.keys(e), A = 0; A < s.length; A++) {
+              var u = s[A];
               'protocol' !== u && (n[u] = e[u]);
             }
             return (
@@ -2740,7 +2740,7 @@
         }),
         (o.prototype.parseHost = function() {
           var e = this.host,
-            t = s.exec(e);
+            t = g.exec(e);
           t &&
             (':' !== (t = t[0]) && (this.port = t.substr(1)),
             (e = e.substr(0, e.length - t.length))),
@@ -2754,8 +2754,8 @@
           t && t.nodeType, e && e.nodeType;
           var i = 'object' == typeof a && a;
           i.global !== i && i.window !== i && i.self;
-          var s,
-            g = 2147483647,
+          var g,
+            s = 2147483647,
             A = 36,
             u = 1,
             C = 26,
@@ -2830,7 +2830,7 @@
               r,
               o,
               i,
-              s,
+              g,
               l,
               c,
               f,
@@ -2844,7 +2844,7 @@
               e.charCodeAt(a) >= 128 && b('not-basic'), h.push(e.charCodeAt(a));
             for (r = n > 0 ? n + 1 : 0; r < m; ) {
               for (
-                o = _, i = 1, s = A;
+                o = _, i = 1, g = A;
                 r >= m && b('invalid-input'),
                   ((l =
                     (x = e.charCodeAt(r++)) - 48 < 10
@@ -2854,15 +2854,15 @@
                       : x - 97 < 26
                       ? x - 97
                       : A) >= A ||
-                    l > v((g - _) / i)) &&
+                    l > v((s - _) / i)) &&
                     b('overflow'),
                   (_ += l * i),
-                  !(l < (c = s <= y ? u : s >= y + C ? C : s - y));
-                s += A
+                  !(l < (c = g <= y ? u : g >= y + C ? C : g - y));
+                g += A
               )
-                i > v(g / (f = A - c)) && b('overflow'), (i *= f);
+                i > v(s / (f = A - c)) && b('overflow'), (i *= f);
               (y = O(_ - o, (t = h.length + 1), 0 == o)),
-                v(_ / t) > g - k && b('overflow'),
+                v(_ / t) > s - k && b('overflow'),
                 (k += v(_ / t)),
                 (_ %= t),
                 h.splice(_++, 0, k);
@@ -2876,7 +2876,7 @@
               r,
               o,
               i,
-              s,
+              g,
               l,
               c,
               f,
@@ -2889,17 +2889,17 @@
             for (h = (e = R(e)).length, t = d, n = 0, o = I, i = 0; i < h; ++i)
               (x = e[i]) < 128 && q.push(k(x));
             for (a = r = q.length, r && q.push(p); a < h; ) {
-              for (s = g, i = 0; i < h; ++i)
-                (x = e[i]) >= t && x < s && (s = x);
+              for (g = s, i = 0; i < h; ++i)
+                (x = e[i]) >= t && x < g && (g = x);
               for (
-                s - t > v((g - n) / (m = a + 1)) && b('overflow'),
-                  n += (s - t) * m,
-                  t = s,
+                g - t > v((s - n) / (m = a + 1)) && b('overflow'),
+                  n += (g - t) * m,
+                  t = g,
                   i = 0;
                 i < h;
                 ++i
               )
-                if (((x = e[i]) < t && ++n > g && b('overflow'), x == t)) {
+                if (((x = e[i]) < t && ++n > s && b('overflow'), x == t)) {
                   for (
                     l = n, c = A;
                     !(l < (f = c <= o ? u : c >= o + C ? C : c - o));
@@ -2915,7 +2915,7 @@
             }
             return q.join('');
           }
-          (s = {
+          (g = {
             version: '1.4.1',
             ucs2: { decode: R, encode: M },
             decode: j,
@@ -2933,7 +2933,7 @@
           }),
             void 0 ===
               (r = function() {
-                return s;
+                return g;
               }.call(t, n, t, e)) || (e.exports = r);
         })();
       }.call(this, n(124)(e), n(125)));
@@ -3024,28 +3024,28 @@
         r = n(130),
         o = n(131),
         i = n(132),
-        s = n(133),
-        g = n(17),
+        g = n(133),
+        s = n(17),
         A = n(18),
         u = n(7),
         C = n(134),
-        l = s.create;
+        l = g.create;
       e.exports = (function e(t, n) {
         function r(e, r) {
-          var s, c, I, d, p, f;
+          var g, c, I, d, p, f;
           for (e = new A(u(t, e)), a = 0; a < n.length; a++)
             (c = n[a]).processRequest && c.processRequest(e);
           for (a = 0; a < n.length; a++)
             if ((c = n[a]).createXHR) {
-              s = c.createXHR(e);
+              g = c.createXHR(e);
               break;
             }
-          for (d in ((s = s || new o()),
-          (e.xhr = s),
+          for (d in ((g = g || new o()),
+          (e.xhr = g),
           (I = C(
             i(function(t) {
               clearTimeout(p),
-                (s.onload = s.onerror = s.onabort = s.onreadystatechange = s.ontimeout = s.onprogress = null);
+                (g.onload = g.onerror = g.onabort = g.onreadystatechange = g.ontimeout = g.onprogress = null);
               var o = (function(e, t) {
                   if (e.aborted)
                     return l('Request aborted', e, { name: 'Abort' });
@@ -3079,7 +3079,7 @@
                     '"';
                   return l(r, e);
                 })(e, t),
-                i = o || g.fromRequest(e);
+                i = o || s.fromRequest(e);
               for (a = 0; a < n.length; a++)
                 (c = n[a]).processResponse && c.processResponse(i);
               o && e.onerror && e.onerror(o),
@@ -3087,40 +3087,40 @@
                 r && r(o, o ? void 0 : i);
             })
           )),
-          (f = 'onload' in s && 'onerror' in s),
-          (s.onload = function() {
+          (f = 'onload' in g && 'onerror' in g),
+          (g.onload = function() {
             I();
           }),
-          (s.onerror = I),
-          (s.onabort = function() {
+          (g.onerror = I),
+          (g.onabort = function() {
             I();
           }),
-          (s.onreadystatechange = function() {
-            if (4 === s.readyState) {
+          (g.onreadystatechange = function() {
+            if (4 === g.readyState) {
               if (e.aborted) return I();
               if (!f) {
                 var t;
                 try {
-                  t = s.status;
+                  t = g.status;
                 } catch (n) {}
                 var n = 0 === t ? new Error('Internal XHR Error') : null;
                 return I(n);
               }
             }
           }),
-          (s.ontimeout = function() {}),
-          (s.onprogress = function() {}),
-          s.open(e.method, e.url),
+          (g.ontimeout = function() {}),
+          (g.onprogress = function() {}),
+          g.open(e.method, e.url),
           e.timeout &&
             (p = setTimeout(function() {
               (e.timedOut = !0), I();
               try {
-                s.abort();
+                g.abort();
               } catch (e) {}
             }, e.timeout)),
           e.headers))
-            e.headers.hasOwnProperty(d) && s.setRequestHeader(d, e.headers[d]);
-          return s.send(e.body), e;
+            e.headers.hasOwnProperty(d) && g.setRequestHeader(d, e.headers[d]);
+          return g.send(e.body), e;
         }
         (t = t || {}), (n = n || []);
         var c,
@@ -3146,8 +3146,8 @@
             return e();
           }),
           (r.Request = A),
-          (r.Response = g),
-          (r.RequestError = s),
+          (r.Response = s),
+          (r.RequestError = g),
           r
         );
       })({}, [r]);
@@ -3391,26 +3391,26 @@ object-assign
             for (
               var n,
                 i,
-                s = (function(e) {
+                g = (function(e) {
                   if (null == e)
                     throw new TypeError(
                       'Object.assign cannot be called with null or undefined'
                     );
                   return Object(e);
                 })(e),
-                g = 1;
-              g < arguments.length;
-              g++
+                s = 1;
+              s < arguments.length;
+              s++
             ) {
-              for (var A in (n = Object(arguments[g])))
-                r.call(n, A) && (s[A] = n[A]);
+              for (var A in (n = Object(arguments[s])))
+                r.call(n, A) && (g[A] = n[A]);
               if (a) {
                 i = a(n);
                 for (var u = 0; u < i.length; u++)
-                  o.call(n, i[u]) && (s[i[u]] = n[i[u]]);
+                  o.call(n, i[u]) && (g[i[u]] = n[i[u]]);
               }
             }
-            return s;
+            return g;
           };
     },
     function(e) {
@@ -6186,8 +6186,8 @@ object-assign
         r = f(n(23)),
         o = f(n(24)),
         i = f(n(25)),
-        s = f(n(26)),
-        g = f(n(27)),
+        g = f(n(26)),
+        s = f(n(27)),
         A = f(n(28)),
         u = f(n(29)),
         C = f(n(30)),
@@ -6204,8 +6204,8 @@ object-assign
         create: r.default,
         history: o.default,
         info: i.default,
-        invite: s.default,
-        join: g.default,
+        invite: g.default,
+        join: s.default,
         kick: A.default,
         leave: u.default,
         list: C.default,
@@ -6220,11 +6220,11 @@ object-assign
     function(e, t, n) {
       'use strict';
       Object.defineProperty(t, '__esModule', { value: !0 });
-      var a = s(n(36)),
-        r = s(n(38)),
-        o = s(n(39)),
-        i = s(n(37));
-      function s(e) {
+      var a = g(n(36)),
+        r = g(n(38)),
+        o = g(n(39)),
+        i = g(n(37));
+      function g(e) {
         return e && e.__esModule ? e : { default: e };
       }
       (t.default = {
@@ -6238,12 +6238,12 @@ object-assign
     function(e, t, n) {
       'use strict';
       Object.defineProperty(t, '__esModule', { value: !0 });
-      var a = g(n(42)),
-        r = g(n(40)),
-        o = g(n(41)),
-        i = g(n(43)),
-        s = g(n(44));
-      function g(e) {
+      var a = s(n(42)),
+        r = s(n(40)),
+        o = s(n(41)),
+        i = s(n(43)),
+        g = s(n(44));
+      function s(e) {
         return e && e.__esModule ? e : { default: e };
       }
       (t.default = {
@@ -6251,7 +6251,7 @@ object-assign
         endDnd: r.default,
         endSnooze: o.default,
         setSnooze: i.default,
-        teamInfo: s.default
+        teamInfo: g.default
       }),
         (e.exports = t.default);
     },
@@ -6262,8 +6262,8 @@ object-assign
         r = l(n(50)),
         o = l(n(51)),
         i = l(n(54)),
-        s = l(n(46)),
-        g = l(n(47)),
+        g = l(n(46)),
+        s = l(n(47)),
         A = l(n(48)),
         u = l(n(52)),
         C = l(n(53));
@@ -6275,7 +6275,7 @@ object-assign
         info: r.default,
         list: o.default,
         upload: i.default,
-        comments: { add: s.default, delete: g.default, edit: A.default },
+        comments: { add: g.default, delete: s.default, edit: A.default },
         revokePublicURL: u.default,
         sharedPublicURL: C.default
       }),
@@ -6288,8 +6288,8 @@ object-assign
         r = h(n(56)),
         o = h(n(57)),
         i = h(n(58)),
-        s = h(n(59)),
-        g = h(n(60)),
+        g = h(n(59)),
+        s = h(n(60)),
         A = h(n(61)),
         u = h(n(62)),
         C = h(n(63)),
@@ -6308,8 +6308,8 @@ object-assign
         close: r.default,
         create: o.default,
         createChild: i.default,
-        history: s.default,
-        info: g.default,
+        history: g.default,
+        info: s.default,
         invite: A.default,
         kick: u.default,
         leave: C.default,
@@ -6326,12 +6326,12 @@ object-assign
     function(e, t, n) {
       'use strict';
       Object.defineProperty(t, '__esModule', { value: !0 });
-      var a = g(n(71)),
-        r = g(n(72)),
-        o = g(n(73)),
-        i = g(n(74)),
-        s = g(n(75));
-      function g(e) {
+      var a = s(n(71)),
+        r = s(n(72)),
+        o = s(n(73)),
+        i = s(n(74)),
+        g = s(n(75));
+      function s(e) {
         return e && e.__esModule ? e : { default: e };
       }
       (t.default = {
@@ -6339,19 +6339,19 @@ object-assign
         history: r.default,
         list: o.default,
         mark: i.default,
-        open: s.default
+        open: g.default
       }),
         (e.exports = t.default);
     },
     function(e, t, n) {
       'use strict';
       Object.defineProperty(t, '__esModule', { value: !0 });
-      var a = g(n(76)),
-        r = g(n(77)),
-        o = g(n(78)),
-        i = g(n(79)),
-        s = g(n(80));
-      function g(e) {
+      var a = s(n(76)),
+        r = s(n(77)),
+        o = s(n(78)),
+        i = s(n(79)),
+        g = s(n(80));
+      function s(e) {
         return e && e.__esModule ? e : { default: e };
       }
       (t.default = {
@@ -6359,7 +6359,7 @@ object-assign
         history: r.default,
         list: o.default,
         mark: i.default,
-        open: s.default
+        open: g.default
       }),
         (e.exports = t.default);
     },
@@ -6381,11 +6381,11 @@ object-assign
     function(e, t, n) {
       'use strict';
       Object.defineProperty(t, '__esModule', { value: !0 });
-      var a = s(n(84)),
-        r = s(n(85)),
-        o = s(n(86)),
-        i = s(n(87));
-      function s(e) {
+      var a = g(n(84)),
+        r = g(n(85)),
+        o = g(n(86)),
+        i = g(n(87));
+      function g(e) {
         return e && e.__esModule ? e : { default: e };
       }
       (t.default = {
@@ -6399,12 +6399,12 @@ object-assign
     function(e, t, n) {
       'use strict';
       Object.defineProperty(t, '__esModule', { value: !0 });
-      var a = g(n(88)),
-        r = g(n(89)),
-        o = g(n(90)),
-        i = g(n(91)),
-        s = g(n(92));
-      function g(e) {
+      var a = s(n(88)),
+        r = s(n(89)),
+        o = s(n(90)),
+        i = s(n(91)),
+        g = s(n(92));
+      function s(e) {
         return e && e.__esModule ? e : { default: e };
       }
       (t.default = {
@@ -6412,7 +6412,7 @@ object-assign
         complete: r.default,
         delete: o.default,
         info: i.default,
-        list: s.default
+        list: g.default
       }),
         (e.exports = t.default);
     },
@@ -6583,12 +6583,12 @@ object-assign
     function(e, t, n) {
       'use strict';
       Object.defineProperty(t, '__esModule', { value: !0 });
-      var a = g(n(99)),
-        r = g(n(100)),
-        o = g(n(101)),
-        i = g(n(102)),
-        s = g(n(103));
-      function g(e) {
+      var a = s(n(99)),
+        r = s(n(100)),
+        o = s(n(101)),
+        i = s(n(102)),
+        g = s(n(103));
+      function s(e) {
         return e && e.__esModule ? e : { default: e };
       }
       (t.default = {
@@ -6596,7 +6596,7 @@ object-assign
         billableInfo: r.default,
         info: o.default,
         integrationLogs: i.default,
-        profile: { get: s.default }
+        profile: { get: g.default }
       }),
         (e.exports = t.default);
     },
@@ -6607,8 +6607,8 @@ object-assign
         r = u(n(105)),
         o = u(n(106)),
         i = u(n(107)),
-        s = u(n(108)),
-        g = u(n(109)),
+        g = u(n(108)),
+        s = u(n(109)),
         A = u(n(110));
       function u(e) {
         return e && e.__esModule ? e : { default: e };
@@ -6618,8 +6618,8 @@ object-assign
         disable: r.default,
         enable: o.default,
         list: i.default,
-        update: s.default,
-        users: { list: g.default, update: A.default }
+        update: g.default,
+        users: { list: s.default, update: A.default }
       }),
         (e.exports = t.default);
     },
@@ -6630,8 +6630,8 @@ object-assign
         r = A(n(112)),
         o = A(n(113)),
         i = A(n(114)),
-        s = A(n(115)),
-        g = A(n(116));
+        g = A(n(115)),
+        s = A(n(116));
       function A(e) {
         return e && e.__esModule ? e : { default: e };
       }
@@ -6640,8 +6640,8 @@ object-assign
         identity: r.default,
         info: o.default,
         list: i.default,
-        setActive: s.default,
-        setPresence: g.default
+        setActive: g.default,
+        setPresence: s.default
       }),
         (e.exports = t.default);
     },
@@ -6767,7 +6767,7 @@ object-assign
           function() {
             return void 0 === r && (r = a.apply(this, arguments)), r;
           }),
-        s = (function(e) {
+        g = (function(e) {
           var t = {};
           return function(e, n) {
             if ('function' == typeof e) return e();
@@ -6789,7 +6789,7 @@ object-assign
             return t[e];
           };
         })(),
-        g = null,
+        s = null,
         A = 0,
         u = [],
         C = n(164);
@@ -6802,9 +6802,9 @@ object-assign
             for (var i = 0; i < r.parts.length; i++) r.parts[i](a.parts[i]);
             for (; i < a.parts.length; i++) r.parts.push(x(a.parts[i], t));
           } else {
-            var s = [];
-            for (i = 0; i < a.parts.length; i++) s.push(x(a.parts[i], t));
-            o[a.id] = { id: a.id, refs: 1, parts: s };
+            var g = [];
+            for (i = 0; i < a.parts.length; i++) g.push(x(a.parts[i], t));
+            o[a.id] = { id: a.id, refs: 1, parts: g };
           }
         }
       }
@@ -6812,13 +6812,13 @@ object-assign
         for (var n = [], a = {}, r = 0; r < e.length; r++) {
           var o = e[r],
             i = t.base ? o[0] + t.base : o[0],
-            s = { css: o[1], media: o[2], sourceMap: o[3] };
-          a[i] ? a[i].parts.push(s) : n.push((a[i] = { id: i, parts: [s] }));
+            g = { css: o[1], media: o[2], sourceMap: o[3] };
+          a[i] ? a[i].parts.push(g) : n.push((a[i] = { id: i, parts: [g] }));
         }
         return n;
       }
       function I(e, t) {
-        var n = s(e.insertInto);
+        var n = g(e.insertInto);
         if (!n)
           throw new Error(
             "Couldn't find a style target. This probably means that the value for the 'insertInto' parameter is invalid."
@@ -6837,7 +6837,7 @@ object-assign
             throw new Error(
               "[Style Loader]\n\n Invalid value for parameter 'insertAt' ('options.insertAt') found.\n Must be 'top', 'bottom', or Object.\n (https://github.com/webpack-contrib/style-loader#insertat)\n"
             );
-          var r = s(e.insertAt.before, n);
+          var r = g(e.insertAt.before, n);
           n.insertBefore(t, r);
         }
       }
@@ -6880,7 +6880,7 @@ object-assign
         }
         if (t.singleton) {
           var i = A++;
-          (n = g || (g = p(t))),
+          (n = s || (s = p(t))),
             (a = _.bind(null, n, i, !1)),
             (r = _.bind(null, n, i, !0));
         } else
@@ -6911,8 +6911,8 @@ object-assign
                     btoa(unescape(encodeURIComponent(JSON.stringify(r)))) +
                     ' */');
                 var i = new Blob([a], { type: 'text/css' }),
-                  s = e.href;
-                (e.href = URL.createObjectURL(i)), s && URL.revokeObjectURL(s);
+                  g = e.href;
+                (e.href = URL.createObjectURL(i)), g && URL.revokeObjectURL(g);
               }.bind(null, n, t)),
               (r = function() {
                 d(n), n.href && URL.revokeObjectURL(n.href);
@@ -6961,14 +6961,14 @@ object-assign
           function(e) {
             for (var a = [], r = 0; r < n.length; r++) {
               var i = n[r];
-              (s = o[i.id]).refs--, a.push(s);
+              (g = o[i.id]).refs--, a.push(g);
             }
             e && l(c(e, t), t);
             for (r = 0; r < a.length; r++) {
-              var s;
-              if (0 === (s = a[r]).refs) {
-                for (var g = 0; g < s.parts.length; g++) s.parts[g]();
-                delete o[s.id];
+              var g;
+              if (0 === (g = a[r]).refs) {
+                for (var s = 0; s < g.parts.length; s++) g.parts[s]();
+                delete o[g.id];
               }
             }
           }
@@ -7048,9 +7048,9 @@ object-assign
           return O;
         });
       var i = n(3),
-        s = n.n(i),
-        g = n(5),
-        A = n.n(g),
+        g = n.n(i),
+        s = n(5),
+        A = n.n(s),
         u = n(4),
         C = n.n(u),
         l = n(6),
@@ -7113,13 +7113,13 @@ object-assign
             r = e.channel,
             o = e.username,
             i = q(t.text),
-            s = R(i);
-          s &&
+            g = R(i);
+          g &&
             y(t, o) &&
             b(t) &&
-            s[2] &&
+            g[2] &&
               n.map(function(e) {
-                e.id === s[2] &&
+                e.id === g[2] &&
                   w({ hook: e, apiToken: a, channel: r, username: o });
               });
         },
@@ -7339,7 +7339,7 @@ object-assign
                     if (a && a[0] && a[1]) {
                       var r = e.text.indexOf(this.fileUploadTitle) > -1,
                         o = a[1].split('/');
-                      return s.a.createElement(
+                      return g.a.createElement(
                         'div',
                         {
                           className: C()(
@@ -7349,13 +7349,13 @@ object-assign
                           key: e.ts
                         },
                         r
-                          ? s.a.createElement('img', {
+                          ? g.a.createElement('img', {
                               src: this.props.userImage,
                               className: f.a.user__contact__photo,
                               alt: 'userIcon'
                             })
                           : null,
-                        s.a.createElement(
+                        g.a.createElement(
                           'div',
                           {
                             className: C()(
@@ -7363,26 +7363,26 @@ object-assign
                               r ? f.a.mine : f.a.notMine
                             )
                           },
-                          s.a.createElement(
+                          g.a.createElement(
                             'strong',
                             null,
                             'Sent an Attachment: '
                           ),
-                          s.a.createElement('span', null, o[o.length - 1]),
-                          s.a.createElement('hr', null),
-                          s.a.createElement(
+                          g.a.createElement('span', null, o[o.length - 1]),
+                          g.a.createElement('hr', null),
+                          g.a.createElement(
                             'a',
                             { href: a[1], target: '_blank' },
-                            s.a.createElement('span', null, 'Click to Download')
+                            g.a.createElement('span', null, 'Click to Download')
                           )
                         ),
                         r ? null : this.getUserImg(e)
                       );
                     }
-                    return s.a.createElement(
+                    return g.a.createElement(
                       'div',
                       { className: C()(f.a.chat__msgRow), key: e.ts },
-                      s.a.createElement('div', {
+                      g.a.createElement('div', {
                         className: C()(f.a.chat__message, f.a.system__message),
                         dangerouslySetInnerHTML: { __html: t }
                       })
@@ -7390,14 +7390,14 @@ object-assign
                   }
                   if (D(t)) return null;
                   var i = y(e, this.props.botName),
-                    g = (function(e) {
+                    s = (function(e) {
                       return /(:[:a-zA-Z\/_]*:)/.test(e);
                     })(t);
                   return (
                     this.messageFormatter.emoji &&
-                      g &&
+                      s &&
                       (t = Object(I.parse)(t)),
-                    s.a.createElement(
+                    g.a.createElement(
                       'div',
                       {
                         className: C()(
@@ -7407,21 +7407,21 @@ object-assign
                         key: e.ts
                       },
                       n
-                        ? s.a.createElement('img', {
+                        ? g.a.createElement('img', {
                             src: this.props.userImage,
                             className: f.a.user__contact__photo,
                             alt: 'userIcon'
                           })
                         : null,
-                      g
-                        ? s.a.createElement('div', {
+                      s
+                        ? g.a.createElement('div', {
                             className: C()(
                               f.a.chat__message,
                               i ? f.a.mentioned : ''
                             ),
                             dangerouslySetInnerHTML: { __html: t }
                           })
-                        : s.a.createElement(
+                        : g.a.createElement(
                             'div',
                             {
                               className: C()(
@@ -7449,9 +7449,7 @@ object-assign
                   return new Promise(function(t, n) {
                     try {
                       e.bot.started(function(n) {
-                        console.log('PAYLOAD', n),
-                          console.log('SLACK-CHAT--this.props', e.props),
-                          F(n);
+                        F(n);
                         var a = [];
                         n.users.map(function(t) {
                           return e.isValidOnlineUser(t)
@@ -7533,13 +7531,8 @@ object-assign
               {
                 key: 'loadMessages',
                 value: function(e) {
-                  var t = this;
-                  console.log('CHANNEL', e),
-                    console.log('token', this.apiToken),
-                    console.log('channel.id', e.id),
-                    console.log(l.channels),
-                    console.log(l.conversations);
-                  var n = this;
+                  var t = this,
+                    n = this;
                   this.chatInitiatedTs ||
                     (this.chatInitiatedTs = Date.now() / 1e3);
                   var a = function() {
@@ -7562,11 +7555,11 @@ object-assign
                         ) {
                           if (0 !== t.state.messages.length) {
                             var i =
-                              ((s = t.state.messages),
-                              (g = o.messages),
+                              ((g = t.state.messages),
+                              (s = o.messages),
                               (A = t.props.botName),
-                              (u = JSON.stringify(s)),
-                              g.filter(function(e) {
+                              (u = JSON.stringify(g)),
+                              s.filter(function(e) {
                                 if (
                                   -1 === u.indexOf(JSON.stringify(e)) &&
                                   e.username !== A
@@ -7615,15 +7608,14 @@ object-assign
                               var e = document.getElementById(
                                 'widget-reactSlakChatMessages'
                               );
-                              console.log('refreshing'),
-                                (e.scrollTop =
-                                  e.scrollHeight < e.scrollTop + 600 || 0 === a
-                                    ? e.scrollHeight
-                                    : e.scrollTop);
+                              e.scrollTop =
+                                e.scrollHeight < e.scrollTop + 600 || 0 === a
+                                  ? e.scrollHeight
+                                  : e.scrollTop;
                             })
                           );
                         }
-                        var s, g, A, u;
+                        var g, s, A, u;
                       }
                     );
                   };
@@ -7644,24 +7636,24 @@ object-assign
                       e.id === n && (t = e.image);
                     }),
                     t
-                      ? s.a.createElement('img', {
+                      ? g.a.createElement('img', {
                           src: t,
                           className: f.a.chat__contact__photo,
                           alt: 'mentionedUserImg'
                         })
                       : b(e)
-                      ? s.a.createElement('img', {
+                      ? g.a.createElement('img', {
                           src: 'https://robohash.org/'.concat(n, '?set=set2'),
                           className: f.a.chat__contact__photo,
                           alt: n
                         })
                       : k(e)
-                      ? s.a.createElement('img', {
+                      ? g.a.createElement('img', {
                           src: 'https://robohash.org/'.concat(n, '?set=set3'),
                           className: f.a.chat__contact__photo,
                           alt: n
                         })
-                      : s.a.createElement('img', {
+                      : g.a.createElement('img', {
                           src: 'https://robohash.org/'.concat(n),
                           className: f.a.chat__contact__photo,
                           alt: n
@@ -7703,22 +7695,22 @@ object-assign
                             filetype: 'auto',
                             channels: i
                           },
-                          s = new FormData();
-                        s.append('token', n.token),
-                          s.append('filename', n.filename),
-                          s.append('title', n.title),
-                          s.append('filetype', n.filetype),
-                          s.append('channels', n.channels),
-                          s.append('file', new Blob([a]));
-                        var g = new XMLHttpRequest();
-                        g.open('POST', 'https://slack.com/api/files.upload'),
-                          g.send(s),
-                          (g.onload = function() {
-                            if (200 !== g.status) {
+                          g = new FormData();
+                        g.append('token', n.token),
+                          g.append('filename', n.filename),
+                          g.append('title', n.title),
+                          g.append('filetype', n.filetype),
+                          g.append('channels', n.channels),
+                          g.append('file', new Blob([a]));
+                        var s = new XMLHttpRequest();
+                        s.open('POST', 'https://slack.com/api/files.upload'),
+                          s.send(g),
+                          (s.onload = function() {
+                            if (200 !== s.status) {
                               var n = new Error(
                                 'There was an error uploading the file. Response:',
-                                g.status,
-                                g.responseText
+                                s.status,
+                                s.responseText
                               );
                               return t(n);
                             }
@@ -7860,10 +7852,10 @@ object-assign
                 value: function() {
                   var e = this;
                   if (this.state.failed) return !1;
-                  var t = s.a.createElement(
+                  var t = g.a.createElement(
                     'div',
                     null,
-                    s.a.createElement(
+                    g.a.createElement(
                       'div',
                       {
                         className: C()(
@@ -7876,30 +7868,30 @@ object-assign
                         ),
                         onClick: this.openChatBox
                       },
-                      s.a.createElement(
+                      g.a.createElement(
                         'div',
                         { className: f.a.helpHeader },
                         this.state.newMessageNotification > 0 &&
-                          s.a.createElement(
+                          g.a.createElement(
                             'span',
                             { className: f.a.unreadNotificationsBadge },
                             this.state.newMessageNotification
                           ),
-                        s.a.createElement(
+                        g.a.createElement(
                           'h2',
                           { className: f.a.transition },
                           this.state.helpText || 'Help?'
                         ),
-                        s.a.createElement(
+                        g.a.createElement(
                           'h2',
                           { className: f.a.subText },
                           'Click on a chat group to interact'
                         )
                       ),
-                      s.a.createElement('div', {
+                      g.a.createElement('div', {
                         className: C()(f.a.card_circle, f.a.transition)
                       }),
-                      s.a.createElement(
+                      g.a.createElement(
                         'div',
                         {
                           className: C()(
@@ -7912,7 +7904,7 @@ object-assign
                         },
                         this.state.channels.length
                           ? this.state.channels.map(function(t) {
-                              return s.a.createElement(
+                              return g.a.createElement(
                                 'div',
                                 {
                                   className: f.a.contact,
@@ -7922,20 +7914,20 @@ object-assign
                                   }
                                 },
                                 t.icon
-                                  ? s.a.createElement('img', {
+                                  ? g.a.createElement('img', {
                                       src: t.icon,
                                       className: f.a.contact__photo
                                     })
-                                  : s.a.createElement('div', {
+                                  : g.a.createElement('div', {
                                       dangerouslySetInnerHTML: { __html: h.a },
                                       className: f.a.contact__photo
                                     }),
-                                s.a.createElement(
+                                g.a.createElement(
                                   'span',
                                   { className: f.a.contact__name },
                                   t.name
                                 ),
-                                s.a.createElement('span', {
+                                g.a.createElement('span', {
                                   className: C()(
                                     f.a.contact__status,
                                     f.a.online
@@ -7945,44 +7937,44 @@ object-assign
                             })
                           : null
                       ),
-                      s.a.createElement(
+                      g.a.createElement(
                         'div',
                         { className: C()(f.a.chat) },
-                        s.a.createElement(
+                        g.a.createElement(
                           'div',
                           { className: C()(f.a.chatHeader) },
-                          s.a.createElement('span', {
+                          g.a.createElement('span', {
                             className: f.a.chat__back,
                             onClick: this.goToChannelView
                           }),
-                          s.a.createElement(
+                          g.a.createElement(
                             'div',
                             { className: f.a.chat__person },
-                            s.a.createElement(
+                            g.a.createElement(
                               'span',
                               { className: f.a.chat__status },
                               'status'
                             ),
-                            s.a.createElement('span', {
+                            g.a.createElement('span', {
                               className: C()(f.a.chat__online, f.a.active)
                             }),
-                            s.a.createElement(
+                            g.a.createElement(
                               'span',
                               { className: f.a.chat__name },
                               this.activeChannel.name
                             )
                           ),
                           this.activeChannel.icon
-                            ? s.a.createElement('img', {
+                            ? g.a.createElement('img', {
                                 src: this.activeChannel.icon,
                                 className: f.a.channel__header__photo
                               })
-                            : s.a.createElement('div', {
+                            : g.a.createElement('div', {
                                 dangerouslySetInnerHTML: { __html: h.a },
                                 className: f.a.channel__header__photo
                               }),
                           this.props.closeChatButton
-                            ? s.a.createElement(
+                            ? g.a.createElement(
                                 'button',
                                 {
                                   className: f.a.channel__close__button,
@@ -7992,7 +7984,7 @@ object-assign
                               )
                             : null
                         ),
-                        s.a.createElement(
+                        g.a.createElement(
                           'div',
                           {
                             className: f.a.chat__messages,
@@ -8002,14 +7994,14 @@ object-assign
                             return e.displayFormattedMessage(t);
                           })
                         ),
-                        s.a.createElement(
+                        g.a.createElement(
                           'div',
                           null,
                           this.state.fileUploadLoader
-                            ? s.a.createElement(
+                            ? g.a.createElement(
                                 'div',
                                 { className: f.a.chat__file__uploading },
-                                s.a.createElement(
+                                g.a.createElement(
                                   'span',
                                   { className: f.a.loading },
                                   'Uploading'
@@ -8018,19 +8010,19 @@ object-assign
                             : null,
                           this.state.fileUploadLoader
                             ? null
-                            : s.a.createElement(
+                            : g.a.createElement(
                                 'div',
                                 null,
-                                s.a.createElement(
+                                g.a.createElement(
                                   'div',
                                   { className: f.a.attachment },
-                                  s.a.createElement(
+                                  g.a.createElement(
                                     'label',
                                     {
                                       htmlFor: 'chat__upload',
                                       className: f.a.attachmentIcon
                                     },
-                                    s.a.createElement('input', {
+                                    g.a.createElement('input', {
                                       type: 'file',
                                       id: 'chat__upload',
                                       className: f.a.chat__upload,
@@ -8041,7 +8033,7 @@ object-assign
                                     })
                                   )
                                 ),
-                                s.a.createElement('input', {
+                                g.a.createElement('input', {
                                   type: 'text',
                                   id: 'chat__input__text',
                                   className: f.a.chat__input,
@@ -8061,7 +8053,7 @@ object-assign
                       )
                     )
                   );
-                  return s.a.createElement('div', null, t);
+                  return g.a.createElement('div', null, t);
                 }
               }
             ]) && E(n.prototype, a),
