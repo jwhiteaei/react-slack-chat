@@ -365,21 +365,6 @@
         'channels.setPurpose': ['token', 'channel', 'purpose'],
         'channels.setTopic': ['token', 'channel', 'topic'],
         'channels.unarchive': ['token', 'channel'],
-        'converstions.archive': ['token', 'channel'],
-        'converstions.create': ['token', 'name'],
-        'converstions.history': ['token', 'channel'],
-        'converstions.info': ['token', 'channel'],
-        'converstions.invite': ['token', 'channel', 'user'],
-        'converstions.join': ['token', 'name'],
-        'converstions.kick': ['token', 'channel', 'user'],
-        'converstions.leave': ['token', 'channel'],
-        'converstions.list': ['token'],
-        'converstions.mark': ['token', 'channel', 'ts'],
-        'converstions.rename': ['token', 'channel', 'name'],
-        'converstions.replies': ['token', 'channel', 'thread_ts'],
-        'converstions.setPurpose': ['token', 'channel', 'purpose'],
-        'converstions.setTopic': ['token', 'channel', 'topic'],
-        'converstions.unarchive': ['token', 'channel'],
         'chat.delete': ['token', 'channel', 'ts'],
         'chat.getPermalink': ['token', 'channel', 'message_ts'],
         'chat.meMessage': ['token', 'channel', 'text'],
@@ -566,8 +551,8 @@
     },
     function(e, t) {
       var n = 'https://slack.com';
-      Object({ NODE_ENV: 'production', SYSTEM_HOOKS: !1 }).STENO_URL &&
-        (n = Object({ NODE_ENV: 'production', SYSTEM_HOOKS: !1 }).STENO_URL),
+      Object({ NODE_ENV: production, SYSTEM_HOOKS: !1 }).STENO_URL &&
+        (n = Object({ NODE_ENV: production, SYSTEM_HOOKS: !1 }).STENO_URL),
         (e.exports = n);
     },
     function(e, t, n) {
@@ -886,216 +871,6 @@
       Object.defineProperty(t, '__esModule', { value: !0 }),
         (t.default = function(e, t) {
           var n = 'channels.unarchive',
-            o = (0, r.default)(n, e);
-          o ? t(o) : (0, a.default)(n, e, t);
-        });
-      var a = o(n(0)),
-        r = o(n(1));
-      function o(e) {
-        return e && e.__esModule ? e : { default: e };
-      }
-      e.exports = t.default;
-    },
-    function(e, t, n) {
-      'use strict';
-      Object.defineProperty(t, '__esModule', { value: !0 }),
-        (t.default = function(e, t) {
-          var n = 'conversations.archive',
-            o = (0, r.default)(n, e);
-          o ? t(o) : (0, a.default)(n, e, t);
-        });
-      var a = o(n(0)),
-        r = o(n(1));
-      function o(e) {
-        return e && e.__esModule ? e : { default: e };
-      }
-      e.exports = t.default;
-    },
-    function(e, t, n) {
-      'use strict';
-      Object.defineProperty(t, '__esModule', { value: !0 }),
-        (t.default = function(e, t) {
-          var n = 'conversations.create',
-            o = (0, r.default)(n, e);
-          o ? t(o) : (0, a.default)(n, e, t);
-        });
-      var a = o(n(0)),
-        r = o(n(1));
-      function o(e) {
-        return e && e.__esModule ? e : { default: e };
-      }
-      e.exports = t.default;
-    },
-    function(e, t, n) {
-      'use strict';
-      Object.defineProperty(t, '__esModule', { value: !0 }),
-        (t.default = function(e, t) {
-          var n = 'conversations.history',
-            o = (0, r.default)(n, e);
-          o ? t(o) : (0, a.default)(n, e, t);
-        });
-      var a = o(n(0)),
-        r = o(n(1));
-      function o(e) {
-        return e && e.__esModule ? e : { default: e };
-      }
-      e.exports = t.default;
-    },
-    function(e, t, n) {
-      'use strict';
-      Object.defineProperty(t, '__esModule', { value: !0 }),
-        (t.default = function(e, t) {
-          var n = 'conversations.info',
-            o = (0, r.default)(n, e);
-          o ? t(o) : (0, a.default)(n, e, t);
-        });
-      var a = o(n(0)),
-        r = o(n(1));
-      function o(e) {
-        return e && e.__esModule ? e : { default: e };
-      }
-      e.exports = t.default;
-    },
-    function(e, t, n) {
-      'use strict';
-      Object.defineProperty(t, '__esModule', { value: !0 }),
-        (t.default = function(e, t) {
-          var n = 'conversations.invite',
-            o = (0, r.default)(n, e);
-          o ? t(o) : (0, a.default)(n, e, t);
-        });
-      var a = o(n(0)),
-        r = o(n(1));
-      function o(e) {
-        return e && e.__esModule ? e : { default: e };
-      }
-      e.exports = t.default;
-    },
-    function(e, t, n) {
-      'use strict';
-      Object.defineProperty(t, '__esModule', { value: !0 }),
-        (t.default = function(e, t) {
-          var n = 'conversations.join',
-            o = (0, r.default)(n, e);
-          o ? t(o) : (0, a.default)(n, e, t);
-        });
-      var a = o(n(0)),
-        r = o(n(1));
-      function o(e) {
-        return e && e.__esModule ? e : { default: e };
-      }
-      e.exports = t.default;
-    },
-    function(e, t, n) {
-      'use strict';
-      Object.defineProperty(t, '__esModule', { value: !0 }),
-        (t.default = function(e, t) {
-          var n = 'conversations.kick',
-            o = (0, r.default)(n, e);
-          o ? t(o) : (0, a.default)(n, e, t);
-        });
-      var a = o(n(0)),
-        r = o(n(1));
-      function o(e) {
-        return e && e.__esModule ? e : { default: e };
-      }
-      e.exports = t.default;
-    },
-    function(e, t, n) {
-      'use strict';
-      Object.defineProperty(t, '__esModule', { value: !0 }),
-        (t.default = function(e, t) {
-          var n = 'conversations.leave',
-            o = (0, r.default)(n, e);
-          o ? t(o) : (0, a.default)(n, e, t);
-        });
-      var a = o(n(0)),
-        r = o(n(1));
-      function o(e) {
-        return e && e.__esModule ? e : { default: e };
-      }
-      e.exports = t.default;
-    },
-    function(e, t, n) {
-      'use strict';
-      Object.defineProperty(t, '__esModule', { value: !0 }),
-        (t.default = function(e, t) {
-          var n = 'conversations.list',
-            o = (0, r.default)(n, e);
-          o ? t(o) : (0, a.default)(n, e, t);
-        });
-      var a = o(n(0)),
-        r = o(n(1));
-      function o(e) {
-        return e && e.__esModule ? e : { default: e };
-      }
-      e.exports = t.default;
-    },
-    function(e, t, n) {
-      'use strict';
-      Object.defineProperty(t, '__esModule', { value: !0 }),
-        (t.default = function(e, t) {
-          var n = 'conversations.mark',
-            o = (0, r.default)(n, e);
-          o ? t(o) : (0, a.default)(n, e, t);
-        });
-      var a = o(n(0)),
-        r = o(n(1));
-      function o(e) {
-        return e && e.__esModule ? e : { default: e };
-      }
-      e.exports = t.default;
-    },
-    function(e, t, n) {
-      'use strict';
-      Object.defineProperty(t, '__esModule', { value: !0 }),
-        (t.default = function(e, t) {
-          var n = 'conversations.rename',
-            o = (0, r.default)(n, e);
-          o ? t(o) : (0, a.default)(n, e, t);
-        });
-      var a = o(n(0)),
-        r = o(n(1));
-      function o(e) {
-        return e && e.__esModule ? e : { default: e };
-      }
-      e.exports = t.default;
-    },
-    function(e, t, n) {
-      'use strict';
-      Object.defineProperty(t, '__esModule', { value: !0 }),
-        (t.default = function(e, t) {
-          var n = 'conversations.setPurpose',
-            o = (0, r.default)(n, e);
-          o ? t(o) : (0, a.default)(n, e, t);
-        });
-      var a = o(n(0)),
-        r = o(n(1));
-      function o(e) {
-        return e && e.__esModule ? e : { default: e };
-      }
-      e.exports = t.default;
-    },
-    function(e, t, n) {
-      'use strict';
-      Object.defineProperty(t, '__esModule', { value: !0 }),
-        (t.default = function(e, t) {
-          var n = 'conversations.setTopic',
-            o = (0, r.default)(n, e);
-          o ? t(o) : (0, a.default)(n, e, t);
-        });
-      var a = o(n(0)),
-        r = o(n(1));
-      function o(e) {
-        return e && e.__esModule ? e : { default: e };
-      }
-      e.exports = t.default;
-    },
-    function(e, t, n) {
-      'use strict';
-      Object.defineProperty(t, '__esModule', { value: !0 }),
-        (t.default = function(e, t) {
-          var n = 'conversations.unarchive',
             o = (0, r.default)(n, e);
           o ? t(o) : (0, a.default)(n, e, t);
         });
@@ -2352,12 +2127,11 @@
       }
       (t.default = {
         describe:
-          '\n  slack\n    api.client(token)\n    api.test(params, (err, data)=>)\n    auth.test(token, (err, data)=>)\n    bots.info\n    channels.archive({token, channel}, (err, data)=>)\n    channels.create({token, name}, (err, data)=>)\n    channels.history({token, channel}, (err, data)=>)\n    channels.info\n    channels.invite\n    channels.join\n    channels.kick\n    channels.leave\n    channels.list({token, exclude_archived}, (err, data)=>)\n    channels.mark\n    channels.rename\n    channels.setPurpose\n    channels.setTopic\n    channels.unarchive\n    conversations.archive({token, channel}, (err, data)=>)\n    conversations.create({token, name}, (err, data)=>)\n    conversations.history({token, channel}, (err, data)=>)\n    conversations.info\n    conversations.invite\n    conversations.join\n    conversations.kick\n    conversations.leave\n    conversations.list({token, exclude_archived}, (err, data)=>)\n    conversations.mark\n    conversations.rename\n    conversations.setPurpose\n    conversations.setTopic\n    conversations.unarchive\n    chat.delete\n    chat.postMessage({token, text, channel}, (err, data)=>)\n    chat.update\n    emoji.list\n    files.delete\n    files.info\n    files.list\n    files.upload\n    groups.archive\n    groups.close\n    groups.create\n    groups.createChild\n    groups.history\n    groups.info\n    groups.invite\n    groups.kick\n    groups.leave\n    groups.list\n    groups.mark\n    groups.open\n    groups.rename\n    groups.setPurpose\n    groups.setTopic\n    groups.unarchive\n    im.close\n    im.history\n    im.list\n    im.mark\n    im.open\n    mpim.close\n    mpim.history\n    mpim.list\n    mpim.mark\n    mpim.open\n    oauth.access({client_id, client_secret, code}, (err, data)=>)\n    pins.add\n    pins.list\n    pins.remove\n    reactions.add\n    reactions.get\n    reactions.list\n    reactions.remove\n    reminders.add\n    reminders.complete\n    reminders.delete\n    reminders.info\n    reminders.list\n    rtm.client()\n    rtm.start({token}, (err, data)=>)\n    search.all\n    search.files\n    search.messages\n    stars.add\n    stars.list\n    stars.remove\n    team.acccessLogs\n    team.billableInfo\n    team.info(token, (err, data)=>)\n    team.integrationLogs\n    team.profile.get\n    usergroups.create\n    usergroups.disable\n    usergroups.enable\n    usergroups.list\n    usergroups.update\n    usergroups.users.list\n    usergroups.users.update\n    users.getPresence\n    users.identity\n    users.info\n    users.list(token, (err, data)=>)\n    users.setActive\n    users.setPresence\n',
+          '\n  slack\n    api.client(token)\n    api.test(params, (err, data)=>)\n    auth.test(token, (err, data)=>)\n    bots.info\n    channels.archive({token, channel}, (err, data)=>)\n    channels.create({token, name}, (err, data)=>)\n    channels.history({token, channel}, (err, data)=>)\n    channels.info\n    channels.invite\n    channels.join\n    channels.kick\n    channels.leave\n    channels.list({token, exclude_archived}, (err, data)=>)\n    channels.mark\n    channels.rename\n    channels.setPurpose\n    channels.setTopic\n    channels.unarchive\n    chat.delete\n    chat.postMessage({token, text, channel}, (err, data)=>)\n    chat.update\n    emoji.list\n    files.delete\n    files.info\n    files.list\n    files.upload\n    groups.archive\n    groups.close\n    groups.create\n    groups.createChild\n    groups.history\n    groups.info\n    groups.invite\n    groups.kick\n    groups.leave\n    groups.list\n    groups.mark\n    groups.open\n    groups.rename\n    groups.setPurpose\n    groups.setTopic\n    groups.unarchive\n    im.close\n    im.history\n    im.list\n    im.mark\n    im.open\n    mpim.close\n    mpim.history\n    mpim.list\n    mpim.mark\n    mpim.open\n    oauth.access({client_id, client_secret, code}, (err, data)=>)\n    pins.add\n    pins.list\n    pins.remove\n    reactions.add\n    reactions.get\n    reactions.list\n    reactions.remove\n    reminders.add\n    reminders.complete\n    reminders.delete\n    reminders.info\n    reminders.list\n    rtm.client()\n    rtm.start({token}, (err, data)=>)\n    search.all\n    search.files\n    search.messages\n    stars.add\n    stars.list\n    stars.remove\n    team.acccessLogs\n    team.billableInfo\n    team.info(token, (err, data)=>)\n    team.integrationLogs\n    team.profile.get\n    usergroups.create\n    usergroups.disable\n    usergroups.enable\n    usergroups.list\n    usergroups.update\n    usergroups.users.list\n    usergroups.users.update\n    users.getPresence\n    users.identity\n    users.info\n    users.list(token, (err, data)=>)\n    users.setActive\n    users.setPresence\n',
         api: { test: a.default, client: r.default },
         auth: { test: i.default },
         bots: o.default,
         channels: s.default,
-        conversations: z.default,
         chat: g.default,
         dnd: A.default,
         emoji: { list: u.default },
@@ -6110,48 +5884,6 @@ object-assign
             (t.channels.unarchive = function(t, a) {
               (t.token = e), n(35).call({}, t, a);
             }),
-            (t.conversations.archive = function(t, a) {
-              (t.token = e), n(22).call({}, t, a);
-            }),
-            (t.conversations.create = function(t, a) {
-              (t.token = e), n(23).call({}, t, a);
-            }),
-            (t.conversations.history = function(t, a) {
-              (t.token = e), n(24).call({}, t, a);
-            }),
-            (t.conversations.info = function(t, a) {
-              (t.token = e), n(25).call({}, t, a);
-            }),
-            (t.conversations.invite = function(t, a) {
-              (t.token = e), n(26).call({}, t, a);
-            }),
-            (t.conversations.join = function(t, a) {
-              (t.token = e), n(27).call({}, t, a);
-            }),
-            (t.conversations.kick = function(t, a) {
-              (t.token = e), n(28).call({}, t, a);
-            }),
-            (t.conversations.leave = function(t, a) {
-              (t.token = e), n(29).call({}, t, a);
-            }),
-            (t.conversations.list = function(t, a) {
-              (t.token = e), n(30).call({}, t, a);
-            }),
-            (t.conversations.mark = function(t, a) {
-              (t.token = e), n(31).call({}, t, a);
-            }),
-            (t.conversations.rename = function(t, a) {
-              (t.token = e), n(32).call({}, t, a);
-            }),
-            (t.conversations.setPurpose = function(t, a) {
-              (t.token = e), n(33).call({}, t, a);
-            }),
-            (t.conversations.setTopic = function(t, a) {
-              (t.token = e), n(34).call({}, t, a);
-            }),
-            (t.conversations.unarchive = function(t, a) {
-              (t.token = e), n(35).call({}, t, a);
-            }),
             (t.chat.delete = function(t, a) {
               (t.token = e), n(36).call({}, t, a);
             }),
@@ -7386,10 +7118,10 @@ object-assign
             y(t, o) &&
             b(t) &&
             s[2] &&
-            n.map(function(e) {
-              e.id === s[2] &&
-                w({ hook: e, apiToken: a, channel: r, username: o });
-            });
+              n.map(function(e) {
+                e.id === s[2] &&
+                  w({ hook: e, apiToken: a, channel: r, username: o });
+              });
         },
         w = function(e) {
           var t = e.hook,
