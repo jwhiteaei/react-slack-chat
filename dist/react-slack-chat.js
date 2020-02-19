@@ -551,8 +551,8 @@
     },
     function(e, t) {
       var n = 'https://slack.com';
-      Object({ NODE_ENV: production, SYSTEM_HOOKS: !1 }).STENO_URL &&
-        (n = Object({ NODE_ENV: production, SYSTEM_HOOKS: !1 }).STENO_URL),
+      Object({ NODE_ENV: 'production', SYSTEM_HOOKS: !1 }).STENO_URL &&
+        (n = Object({ NODE_ENV: 'production', SYSTEM_HOOKS: !1 }).STENO_URL),
         (e.exports = n);
     },
     function(e, t, n) {
