@@ -16,7 +16,8 @@ export const postMessage = ({
           /* thread_ts: lastThreadTs, */
           channel,
           text,
-          username
+          username,
+          as_user: false
         },
         (err, data) => {
           return err ? reject(err) : resolve(data);

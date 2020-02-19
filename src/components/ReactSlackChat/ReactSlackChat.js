@@ -730,26 +730,34 @@ class ReactSlackChat extends Component {
               this.state.chatbox.channelActiveView ? styles.channelActive : ''
             )}
           >
-            {this.state.channels.map(channel => (
-              <div
-                className={styles.contact}
-                key={channel.id}
-                onClick={e => this.goToChatView(e, channel)}
-              >
-                {channel.icon ? (
-                  <img src={channel.icon} className={styles.contact__photo} />
-                ) : (
+            {this.state.channels.length
+              ? this.state.channels.map(channel => (
                   <div
-                    dangerouslySetInnerHTML={{ __html: defaultChannelIcon }}
-                    className={styles.contact__photo}
-                  />
-                )}
-                <span className={styles.contact__name}>{channel.name}</span>
-                <span
-                  className={classNames(styles.contact__status, styles.online)}
-                />
-              </div>
-            ))}
+                    className={styles.contact}
+                    key={channel.id}
+                    onClick={e => this.goToChatView(e, channel)}
+                  >
+                    {channel.icon ? (
+                      <img
+                        src={channel.icon}
+                        className={styles.contact__photo}
+                      />
+                    ) : (
+                      <div
+                        dangerouslySetInnerHTML={{ __html: defaultChannelIcon }}
+                        className={styles.contact__photo}
+                      />
+                    )}
+                    <span className={styles.contact__name}>{channel.name}</span>
+                    <span
+                      className={classNames(
+                        styles.contact__status,
+                        styles.online
+                      )}
+                    />
+                  </div>
+                ))
+              : null}
           </div>
           <div className={classNames(styles.chat)}>
             <div className={classNames(styles.chatHeader)}>

@@ -7083,7 +7083,7 @@ object-assign
           return new Promise(function(e, o) {
             if ('' !== t)
               return l.chat.postMessage(
-                { token: n, channel: a, text: t, username: r },
+                { token: n, channel: a, text: t, username: r, as_user: !1 },
                 function(t, n) {
                   return t ? o(t) : e(n);
                 }
@@ -7118,10 +7118,10 @@ object-assign
             y(t, o) &&
             b(t) &&
             s[2] &&
-            n.map(function(e) {
-              e.id === s[2] &&
-                w({ hook: e, apiToken: a, channel: r, username: o });
-            });
+              n.map(function(e) {
+                e.id === s[2] &&
+                  w({ hook: e, apiToken: a, channel: r, username: o });
+              });
         },
         w = function(e) {
           var t = e.hook,
@@ -7910,35 +7910,40 @@ object-assign
                               : ''
                           )
                         },
-                        this.state.channels.map(function(t) {
-                          return s.a.createElement(
-                            'div',
-                            {
-                              className: f.a.contact,
-                              key: t.id,
-                              onClick: function(n) {
-                                return e.goToChatView(n, t);
-                              }
-                            },
-                            t.icon
-                              ? s.a.createElement('img', {
-                                  src: t.icon,
-                                  className: f.a.contact__photo
+                        this.state.channels.length
+                          ? this.state.channels.map(function(t) {
+                              return s.a.createElement(
+                                'div',
+                                {
+                                  className: f.a.contact,
+                                  key: t.id,
+                                  onClick: function(n) {
+                                    return e.goToChatView(n, t);
+                                  }
+                                },
+                                t.icon
+                                  ? s.a.createElement('img', {
+                                      src: t.icon,
+                                      className: f.a.contact__photo
+                                    })
+                                  : s.a.createElement('div', {
+                                      dangerouslySetInnerHTML: { __html: h.a },
+                                      className: f.a.contact__photo
+                                    }),
+                                s.a.createElement(
+                                  'span',
+                                  { className: f.a.contact__name },
+                                  t.name
+                                ),
+                                s.a.createElement('span', {
+                                  className: C()(
+                                    f.a.contact__status,
+                                    f.a.online
+                                  )
                                 })
-                              : s.a.createElement('div', {
-                                  dangerouslySetInnerHTML: { __html: h.a },
-                                  className: f.a.contact__photo
-                                }),
-                            s.a.createElement(
-                              'span',
-                              { className: f.a.contact__name },
-                              t.name
-                            ),
-                            s.a.createElement('span', {
-                              className: C()(f.a.contact__status, f.a.online)
+                              );
                             })
-                          );
-                        })
+                          : null
                       ),
                       s.a.createElement(
                         'div',
